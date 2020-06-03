@@ -1,34 +1,23 @@
 import React, { Component } from 'react';
 import './App.css';
-import Nav from './components/mainNav';
-import SideNav from './components/sideNav';
+import { Switch, Route } from 'react-router-dom';
+import Main from './components/main';
+import Login from './components/login';
+import Signup from './components/signup';
 
 class App extends Component {
-	state = {
-		menuOpen: false,
-	};
+	state = {};
 	render() {
 		return (
 			<div>
-				<SideNav
-					menuOpen={this.state.menuOpen}
-					onStateChange={this.handleStateChange}
-				/>
-				<Nav handleBarClick={this.onBarClick} />
+				<Switch>
+					<Route path='/login' component={Login} />
+					<Route path='/signup' component={Signup} />
+					<Route path='/' component={Main} />
+				</Switch>
 			</div>
 		);
 	}
-	onBarClick = () => {
-		this.setState({
-			menuOpen: true,
-		});
-	};
-
-	handleStateChange = (state) => {
-		this.setState({
-			menuOpen: state.isOpen,
-		});
-	};
 }
 
 export default App;

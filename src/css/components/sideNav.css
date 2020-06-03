@@ -42,7 +42,7 @@
 
 /* General sidebar styles */
 .bm-menu {
-	background: #343a40;
+	background: #212121;
 	padding: 2.5em 1.5em 0;
 	font-size: 1.15em;
 }
@@ -84,7 +84,7 @@
 a {
 	padding: 0.6em;
 	display: block;
-	color: #ffebee;
+	color: #fafafa;
 	text-align: center;
 }
 

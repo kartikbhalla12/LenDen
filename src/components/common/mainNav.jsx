@@ -7,7 +7,7 @@ class MainNav extends Component {
 	state = {};
 	render() {
 		return (
-			<Navbar bg='dark' variant='dark'>
+			<Navbar variant='dark' style={{ backgroundColor: '#212121' }}>
 				<Navbar.Brand
 					onClick={this.props.handleBarClick}
 					style={{ cursor: 'pointer' }}>

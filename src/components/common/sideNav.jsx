@@ -1,9 +1,7 @@
 import { slide as Menu } from 'react-burger-menu';
 import React, { Component } from 'react';
-import { Image, Container } from 'react-bootstrap';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCoffee } from '@fortawesome/free-solid-svg-icons';
-import './../css/components/sideNav.css';
+import { Image } from 'react-bootstrap';
+import './../../css/components/sideNav.css';
 
 class SideNav extends Component {
 	state = {};

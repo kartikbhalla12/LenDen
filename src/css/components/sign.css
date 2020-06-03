@@ -1,0 +1,59 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway');
+@import url('https://fonts.googleapis.com/css2?family=Kalam');
+
+.mainContainer {
+	font-family: raleway;
+	display: flex;
+	min-height: 100vh;
+	background-color: #212121;
+	align-items: center;
+	text-align: center;
+}
+
+.formBox {
+	width: 80vw;
+	margin: auto;
+	max-width: 350px;
+}
+.formBox > h2 {
+	margin-top: 4vh;
+	font-size: 20px;
+	color: white;
+}
+
+.formBox > hr {
+	margin-top: 5vh;
+	height: 0.5px;
+	border-color: rgba(255, 255, 255, 0.2);
+}
+
+.form {
+	margin-top: 2vh;
+}
+
+.separator {
+	margin-top: 4vh;
+	display: flex;
+	align-items: center;
+	text-align: center;
+	color: white;
+	font-family: kalam;
+	font-size: 15px;
+}
+
+.separator::before,
+.separator::after {
+	content: '';
+	flex: 1;
+	border-bottom: 1px solid #fff;
+}
+.separator::before {
+	margin-right: 0.25em;
+}
+.separator::after {
+	margin-left: 0.25em;
+}
+
+.signupButton {
+	margin-top: 2vh;
+}
