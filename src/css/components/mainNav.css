@@ -12,7 +12,6 @@
 	margin-right: 10px;
 	background-color: #424242;
 	border: none;
-	border-radius: 5%;
 	/* border-bottom: #eeeeee 1px solid; */
 	box-shadow: none;
 }
@@ -63,6 +62,19 @@
 
 	.navbar-dark .navbar-nav .nav-link {
 		margin: auto 0.1vw;
+	}
+}
+
+@media screen and (max-width: 350px) {
+	#logo {
+		width: 2em;
+		margin: auto 5px;
+	}
+	#searchIcon {
+		display: none;
+	}
+	#searchInput::placeholder {
+		font-size: 14px;
 	}
 }
 

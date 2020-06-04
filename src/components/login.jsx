@@ -18,12 +18,16 @@ class Login extends Component {
 						<Form.Group controlId='formBasicPassword'>
 							<Form.Control type='password' placeholder='Password' />
 						</Form.Group>
-						<Button variant='primary' type='submit'>
+						<Button className='btn-log' variant='primary' type='submit'>
 							Sign In
 						</Button>
 					</Form>
 					<div className='separator'>New to LenDen ?</div>
-					<Button className='signButton' onClick={() => this.props.history.push('/signup') } variant='primary' type='submit'>
+					<Button
+						className='signButton btn-log'
+						onClick={() => this.props.history.push('/signup')}
+						variant='primary'
+						type='submit'>
 						Create your LenDen account
 					</Button>
 				</div>

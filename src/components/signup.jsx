@@ -21,12 +21,16 @@ class Signup extends Component {
 						<Form.Group controlId='formBasicPassword'>
 							<Form.Control type='password' placeholder='Password' />
 						</Form.Group>
-						<Button variant='primary' type='submit'>
+						<Button className='btn-log' variant='dark' type='submit'>
 							Sign Up
 						</Button>
 					</Form>
 					<div className='separator'>Already have an account? </div>
-					<Button className='signButton' onClick={() => this.props.history.push('/login')} variant='primary' type='submit'>
+					<Button
+						className='signButton btn-log'
+						onClick={() => this.props.history.push('/login')}
+						variant='dark'
+						type='submit'>
 						Log In Here!
 					</Button>
 				</div>

@@ -91,3 +91,27 @@ a {
 .bm-cross-button > button {
 	outline: none;
 }
+
+.active {
+	color: #ef5350;
+}
+
+#userImageMain {
+	max-width: 200px;
+	margin: 0 auto 2vh auto;
+	text-align: center;
+}
+
+#navAnchor {
+	text-align: center;
+	margin-bottom: 6vh;
+}
+
+@media screen and (max-width: 500px) {
+	#userImageMain {
+		max-width: 130px;
+	}
+	#navAnchor {
+		margin-bottom: 4vh;
+	}
+}

@@ -22,11 +22,7 @@ class MainNav extends Component {
 				</Navbar.Brand>
 				<Nav className='ml-auto' style={{ backgroundColor: '#424242' }}>
 					<FontAwesomeIcon id='searchIcon' icon={faSearch} />
-					<Form.Control
-						id='searchInput'
-						type='text'
-						placeholder='Search Something'
-					/>
+					<Form.Control id='searchInput' type='text' placeholder='Search...' />
 				</Nav>
 				<Nav className='ml-auto'>
 					<Nav.Link href='#deets'>

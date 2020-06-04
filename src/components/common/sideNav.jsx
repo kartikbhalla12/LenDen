@@ -2,6 +2,9 @@ import { slide as Menu } from 'react-burger-menu';
 import React, { Component } from 'react';
 import { Image } from 'react-bootstrap';
 import './../../css/components/sideNav.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faBell, faHeart } from '@fortawesome/free-solid-svg-icons';
+import { NavLink } from 'react-router-dom';
 
 class SideNav extends Component {
 	state = {};
@@ -17,33 +20,48 @@ class SideNav extends Component {
 				// styles={styles}
 				onStateChange={(state) => this.props.onStateChange(state)}>
 				<Image
-					style={{
-						maxWidth: 200,
-						margin: '0 auto 2vh auto',
-						textAlign: 'center',
-					}}
+					id='userImageMain'
 					src='http://placekitten.com/g/300/300'
 					roundedCircle
 				/>
-				<a
-					id='home'
-					className='menu-item'
-					style={{ textAlign: 'center', marginBottom: ' 6vh' }}
-					href='/'>
+				<NavLink id='navAnchor' to='/login' className='menu-item'>
 					Login/Signup
-				</a>
-				<a id='home' className='menu-item' href='/'>
+				</NavLink>
+				<NavLink to='/notifications' className='menu-item'>
+					Notifications
+					<FontAwesomeIcon
+						icon={faBell}
+						style={{ marginLeft: '5px', color: '#ef5350' }}
+					/>
+				</NavLink>
+				<NavLink to='/wishlist' className='menu-item'>
+					Wishlist
+					{/* <FontAwesomeIcon
+						icon={faHeart}
+						style={{ marginLeft: '5px', color: '#ef5350' }}
+					/> */}
+				</NavLink>
+				<NavLink to='/' className='menu-item'>
 					Home
-				</a>
-				<a id='about' className='menu-item' href='/about'>
-					About
-				</a>
-				<a id='contact' className='menu-item' href='/contact'>
-					Contact
-				</a>
-				<a onClick={this.showSettings} className='menu-item--small' href=''>
-					Settings
-				</a>
+				</NavLink>
+				<NavLink to='/books' className='menu-item'>
+					Books
+				</NavLink>
+				<NavLink to='/gaming' className='menu-item'>
+					Gaming
+				</NavLink>
+				<NavLink to='/mobile' className='menu-item'>
+					Mobile
+				</NavLink>
+				<NavLink to='/blog' className='menu-item'>
+					Blog
+				</NavLink>
+				<NavLink to='/contact' className='menu-item'>
+					Contact Us
+				</NavLink>
+				<NavLink to='/about' className='menu-item'>
+					About Us
+				</NavLink>
 			</Menu>
 		);
 	}

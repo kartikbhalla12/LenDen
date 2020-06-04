@@ -57,3 +57,11 @@
 .signButton {
 	margin-top: 2vh;
 }
+
+.btn-log,
+.btn-log:active,
+.btn-log:hover {
+	background-color: #ef5350 !important;
+	box-shadow: none;
+	border: none;
+}
