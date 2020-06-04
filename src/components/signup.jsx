@@ -25,8 +25,8 @@ class Signup extends Component {
 							Sign Up
 						</Button>
 					</Form>
-					<div class='separator'>Already have an account? </div>
-					<Button className='signupButton' variant='primary' type='submit'>
+					<div className='separator'>Already have an account? </div>
+					<Button className='signButton' onClick={() => this.props.history.push('/login')} variant='primary' type='submit'>
 						Log In Here!
 					</Button>
 				</div>

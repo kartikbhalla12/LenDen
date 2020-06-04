@@ -22,8 +22,8 @@ class Login extends Component {
 							Sign In
 						</Button>
 					</Form>
-					<div class='separator'>New to LenDen ?</div>
-					<Button className='signupButton' variant='primary' type='submit'>
+					<div className='separator'>New to LenDen ?</div>
+					<Button className='signButton' onClick={() => this.props.history.push('/signup') } variant='primary' type='submit'>
 						Create your LenDen account
 					</Button>
 				</div>

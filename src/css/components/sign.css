@@ -4,7 +4,7 @@
 .mainContainer {
 	font-family: raleway;
 	display: flex;
-	min-height: 100vh;
+	height: 100vh;
 	background-color: #212121;
 	align-items: center;
 	text-align: center;
@@ -54,6 +54,6 @@
 	margin-left: 0.25em;
 }
 
-.signupButton {
+.signButton {
 	margin-top: 2vh;
 }
