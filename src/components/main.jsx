@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import Nav from './common/mainNav';
 import SideNav from './common/sideNav';
+import { Switch, Route } from 'react-router-dom';
+import Home from './home';
 
 class Main extends Component {
 	state = {
@@ -14,6 +16,9 @@ class Main extends Component {
 					onStateChange={this.handleStateChange}
 				/>
 				<Nav handleBarClick={this.onBarClick} />
+				<Switch>
+					<Route path='/' component={Home} />
+				</Switch>
 			</div>
 		);
 	}
