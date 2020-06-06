@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import '../css/components/sign.css';
 import { Image, Form, Button, Alert } from 'react-bootstrap';
 import Joi from 'joi-browser';
+import BarLoader from 'react-spinners/BarLoader';
 
 class Login extends Component {
 	state = {
@@ -10,6 +11,7 @@ class Login extends Component {
 			password: '',
 		},
 		error: '',
+		loading: false,
 	};
 
 	schema = {
@@ -24,7 +26,9 @@ class Login extends Component {
 		this.setState({ error });
 		if (error) return;
 
+		this.setState({ loading: true });
 		console.log('submitted');
+		this.props.history.push('/');
 	};
 
 	handleChange = ({ currentTarget: input }) => {
@@ -42,6 +46,7 @@ class Login extends Component {
 
 	render() {
 		const { data, error } = this.state;
+
 		return (
 			<div className='mainContainer'>
 				<div className='formBox'>
@@ -76,6 +81,15 @@ class Login extends Component {
 						<Button className='btn-log' variant='primary' type='submit'>
 							Sign In
 						</Button>
+						<BarLoader
+							css={{
+								display: 'block',
+								margin: '3vh auto 0 auto',
+							}}
+							size={50}
+							color={'#ef5350'}
+							loading={this.state.loading}
+						/>
 					</Form>
 					<div className='separator'>New to LenDen ?</div>
 					<Button
