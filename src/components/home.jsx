@@ -4,8 +4,8 @@ import { Image } from 'react-bootstrap';
 class Home extends Component {
 	state = {};
 	imageStyle = {
-		maxWidth: '150px',
-		maxHeight: '150px',
+		maxWidth: '80px',
+		maxHeight: '80px',
 		display: 'block',
 		margin: 'auto',
 		position: 'absolute',
@@ -15,11 +15,10 @@ class Home extends Component {
 	};
 	categoryStyle = {
 		position: 'relative',
-		minWidth: '200px',
-		height: '200px',
+		minWidth: '110px',
+		height: '110px',
 		backgroundColor: 'rgba(0,0,0, .05)',
 		borderRadius: '50%',
-		border: '3px solid black',
 		margin: '1vh 0',
 	};
 	render() {
@@ -36,21 +35,94 @@ class Home extends Component {
 				/>
 				<div
 					style={{
-						marginTop: '6vh',
+						marginTop: '2vh',
 						display: 'flex',
 						flexWrap: 'wrap',
 						justifyContent: 'center',
 					}}>
-					<div style={this.categoryStyle}>
-						<Image
-							style={this.imageStyle}
-							src='/images/categories/gaming.png'
-						/>
+					<div
+						style={{
+							width: '400px',
+							backgroundColor: 'rgba(0,0,0,0.06)',
+							padding: '2vh 2vw',
+							display: 'flex',
+							margin: '0.8rem',
+							verticalAlign: 'middle',
+						}}>
+						<div style={this.categoryStyle}>
+							<Image
+								style={this.imageStyle}
+								src='/images/categories/gaming.png'
+							/>
+						</div>
+						<div
+							style={{
+								marginLeft: '1vw',
+								textAlign: 'center',
+								alignSelf: 'center',
+							}}>
+							<h3>GAMING</h3>
+							<p>
+								Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores
+							</p>
+						</div>
 					</div>
 					<div
 						style={{
+							width: '400px',
+							backgroundColor: 'rgba(0,0,0,0.06)',
+							padding: '2vh 2vw',
+							display: 'flex',
+							margin: '0.8rem',
+						}}>
+						<div style={this.categoryStyle}>
+							<Image
+								style={this.imageStyle}
+								src='/images/categories/book.png'
+							/>
+						</div>
+						<div
+							style={{
+								marginLeft: '1vw',
+								textAlign: 'center',
+								alignSelf: 'center',
+							}}>
+							<h3>BOOKS</h3>
+							<p>
+								Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores
+							</p>
+						</div>
+					</div>
+					<div
+						style={{
+							width: '400px',
+							backgroundColor: 'rgba(0,0,0,0.06)',
+							padding: '2vh 2vw',
+							display: 'flex',
+							margin: '0.8rem',
+						}}>
+						<div style={this.categoryStyle}>
+							<Image
+								style={this.imageStyle}
+								src='/images/categories/mobile.png'
+							/>
+						</div>
+						<div
+							style={{
+								marginLeft: '1vw',
+								textAlign: 'center',
+								alignSelf: 'center',
+							}}>
+							<h3>MOBILES</h3>
+							<p>
+								Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores
+							</p>
+						</div>
+					</div>
+					{/* <div
+						style={{
 							...this.categoryStyle,
-							margin: '2vh 2vw',
+							margin: '1vh 2vw',
 						}}>
 						<Image style={this.imageStyle} src='/images/categories/book.png' />
 					</div>
@@ -59,7 +131,7 @@ class Home extends Component {
 							style={this.imageStyle}
 							src='/images/categories/mobile.png'
 						/>
-					</div>
+					</div> */}
 				</div>
 			</div>
 		);
