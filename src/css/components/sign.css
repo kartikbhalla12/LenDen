@@ -65,3 +65,10 @@
 	box-shadow: none;
 	border: none;
 }
+
+#error-alert {
+	color: white;
+	background-color: rgba(239, 103, 100, 0.4);
+	border: none;
+	font-size: 13px;
+}

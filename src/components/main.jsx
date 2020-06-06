@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import Nav from './common/mainNav';
-import SideNav from './common/sideNav';
+import Nav from './navBar/mainNav';
+import SideNav from './navBar/sideNav';
 import { Switch, Route } from 'react-router-dom';
 import Home from './home';
 

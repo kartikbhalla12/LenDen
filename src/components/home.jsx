@@ -23,7 +23,7 @@ class Home extends Component {
 	};
 	render() {
 		return (
-			<div class='container' style={{ padding: '1vh' }}>
+			<div className='container' style={{ padding: '1vh' }}>
 				<Image //GIF Placeholder
 					src='http://placekitten.com/1900/450'
 					style={{
