@@ -24,6 +24,7 @@ class Login extends CommonForm {
 		this.setState({ loading: true });
 		console.log('submitted');
 		this.props.history.push('/');
+		this.setState({ loading: false });
 	};
 
 	render() {

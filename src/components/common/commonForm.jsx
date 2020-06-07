@@ -6,7 +6,7 @@ import BarLoader from 'react-spinners/BarLoader';
 class CommonForm extends Component {
 	state = {
 		data: {},
-		errors: '',
+		error: '',
 	};
 	handleChange = ({ currentTarget: input }) => {
 		const data = { ...this.state.data };

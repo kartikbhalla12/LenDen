@@ -1,29 +1,48 @@
 import React, { Component } from 'react';
 import '../css/components/sign.css';
 import { Image, Form, Button } from 'react-bootstrap';
+import CommonForm from './common/commonForm';
+import Joi from 'joi-browser';
 
-class Signup extends Component {
-	state = {};
+class Signup extends CommonForm {
+	state = {
+		data: {
+			name: '',
+			email: '',
+			password: '',
+		},
+		error: '',
+		loading: false,
+	};
+
+	schema = {
+		name: Joi.string().min(3).max(255).required().label('Name'),
+		email: Joi.string().email().required().label('Email'),
+		password: Joi.string().required().label('Password'),
+	};
+
+	doSubmit = () => {
+		this.setState({ loading: true });
+		console.log('submitted');
+		this.props.history.push('/');
+		this.setState({ loading: false });
+	};
+
 	render() {
 		return (
 			<div className='mainContainer'>
 				<div className='formBox'>
 					<Image src='/images/demoLogo.png' style={{ maxWidth: '150px' }} />
 					<h2>Sign Up Today!</h2>
-					<Form className='form'>
-						<Form.Group controlId='formName'>
-							<Form.Control type='name' placeholder='Name' />
-						</Form.Group>
-						<Form.Group controlId='formBasicEmail'>
-							<Form.Control type='email' placeholder='Email Address' />
-						</Form.Group>
-
-						<Form.Group controlId='formBasicPassword'>
-							<Form.Control type='password' placeholder='Password' />
-						</Form.Group>
+					<Form noValidate className='form' onSubmit={this.handleSubmit}>
+						{this.renderInput('name', 'Name')}
+						{this.renderInput('email', 'Email Address')}
+						{this.renderInput('password', 'Password')}
+						{this.renderAlert()}
 						<Button className='btn-log' variant='dark' type='submit'>
 							Sign Up
 						</Button>
+						{this.renderLoader()}
 					</Form>
 					<div className='separator'>Already have an account? </div>
 					<Button
