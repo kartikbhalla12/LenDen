@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
 import { Image } from 'react-bootstrap';
+import CategoryElement from './common/categoryElement';
+import MainGif from './common/mainGif';
 
 class Home extends Component {
 	state = {};
 	imageStyle = {
-		maxWidth: '80px',
-		maxHeight: '80px',
+		maxWidth: '60px',
+		maxHeight: '60px',
 		display: 'block',
 		margin: 'auto',
 		position: 'absolute',
@@ -15,110 +17,40 @@ class Home extends Component {
 	};
 	categoryStyle = {
 		position: 'relative',
-		minWidth: '110px',
-		height: '110px',
+		minWidth: '80px',
+		height: '80px',
 		backgroundColor: 'rgba(0,0,0, .05)',
 		borderRadius: '50%',
-		margin: '1vh 0',
+		margin: 'auto',
 	};
 	render() {
 		return (
-			<div className='container' style={{ padding: '1vh' }}>
-				<Image //GIF Placeholder
-					src='http://placekitten.com/1900/450'
-					style={{
-						margin: '0 auto',
-						maxWidth: '90vw',
-						display: 'block',
-						maxHeight: '40vh',
-					}}
-				/>
+			<div className='container' style={{ padding: '0.5vh' }}>
+				<MainGif />
 				<div
 					style={{
-						marginTop: '2vh',
+						position: 'relative',
+						// marginTop: '0.5vh',
 						display: 'flex',
 						flexWrap: 'wrap',
 						justifyContent: 'center',
 					}}>
-					<div
-						style={{
-							width: '400px',
-							backgroundColor: 'rgba(0,0,0,0.06)',
-							padding: '2vh 2vw',
-							display: 'flex',
-							margin: '0.8rem',
-							verticalAlign: 'middle',
-						}}>
-						<div style={this.categoryStyle}>
-							<Image
-								style={this.imageStyle}
-								src='/images/categories/gaming.png'
-							/>
-						</div>
-						<div
-							style={{
-								marginLeft: '1vw',
-								textAlign: 'center',
-								alignSelf: 'center',
-							}}>
-							<h3>GAMING</h3>
-							<p>
-								Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores
-							</p>
-						</div>
-					</div>
-					<div
-						style={{
-							width: '400px',
-							backgroundColor: 'rgba(0,0,0,0.06)',
-							padding: '2vh 2vw',
-							display: 'flex',
-							margin: '0.8rem',
-						}}>
-						<div style={this.categoryStyle}>
-							<Image
-								style={this.imageStyle}
-								src='/images/categories/book.png'
-							/>
-						</div>
-						<div
-							style={{
-								marginLeft: '1vw',
-								textAlign: 'center',
-								alignSelf: 'center',
-							}}>
-							<h3>BOOKS</h3>
-							<p>
-								Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores
-							</p>
-						</div>
-					</div>
-					<div
-						style={{
-							width: '400px',
-							backgroundColor: 'rgba(0,0,0,0.06)',
-							padding: '2vh 2vw',
-							display: 'flex',
-							margin: '0.8rem',
-						}}>
-						<div style={this.categoryStyle}>
-							<Image
-								style={this.imageStyle}
-								src='/images/categories/mobile.png'
-							/>
-						</div>
-						<div
-							style={{
-								marginLeft: '1vw',
-								textAlign: 'center',
-								alignSelf: 'center',
-							}}>
-							<h3>MOBILES</h3>
-							<p>
-								Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores
-							</p>
-						</div>
-					</div>
+					<CategoryElement
+						categoryTitle='GAMING'
+						categoryMessage='kirensd dsug hd uidshg aiud saui dusag dauisd uigsa d dsadasd dsa d'
+						src='/images/categories/gaming.png'
+					/>
+					<CategoryElement
+						categoryTitle='BOOKS'
+						categoryMessage='kirensd dsug hd uidshg aiud saui dusag dauisd uigsa d dsadasd dsa d'
+						src='/images/categories/book.png'
+					/>
+					<CategoryElement
+						categoryTitle='MOBILES'
+						categoryMessage='kirensd dsug hd uidshg aiud saui dusag dauisd uigsa d dsadasd dsa d'
+						src='/images/categories/mobile.png'
+					/>
+
 					{/* <div
 						style={{
 							...this.categoryStyle,

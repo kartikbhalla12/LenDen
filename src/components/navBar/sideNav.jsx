@@ -41,7 +41,7 @@ class SideNav extends Component {
 						style={{ marginLeft: '5px', color: '#ef5350' }}
 					/> */}
 				</NavLink>
-				<NavLink to='/' className='menu-item'>
+				<NavLink to='/' exact className='menu-item'>
 					Home
 				</NavLink>
 				<NavLink to='/my-products' className='menu-item'>

@@ -1,0 +1,120 @@
+.category {
+	width: 500px;
+	background-color: rgba(0, 0, 0, 0.06);
+	padding: 0.5rem;
+	display: flex;
+	margin: 0.7rem 0.4rem;
+}
+.imageBox {
+	min-width: 80px;
+	height: 80px;
+	position: relative;
+	background-color: rgba(0, 0, 0, 0.05);
+	border-radius: 50%;
+	margin: auto 0;
+}
+
+.imageBox img {
+	max-width: 60px;
+	max-height: 60px;
+}
+@media screen and (max-width: 1800px) {
+	.category {
+		width: 410px;
+	}
+
+	.category > div > h3 {
+		font-size: 25px;
+	}
+
+	.category > div > p {
+		font-size: 15px;
+	}
+}
+
+@media screen and (max-width: 1400px) {
+	.category {
+		width: 350px;
+	}
+
+	.category > div > h3 {
+		font-size: 25px;
+	}
+
+	.category > div > p {
+		font-size: 15px;
+	}
+}
+
+@media screen and (max-width: 1200px) {
+	.category {
+		width: 300px;
+	}
+
+	.category > div > h3 {
+		font-size: 22px;
+	}
+
+	.category > div > p {
+		font-size: 14.5px;
+	}
+}
+
+@media screen and (max-width: 1000px) {
+	.category {
+		width: 220px;
+		height: 100px;
+	}
+
+	.category > div > h3 {
+		font-size: 22px;
+	}
+
+	.category > div > p {
+		display: none;
+	}
+}
+
+@media screen and (max-width: 760px) {
+	.category {
+		width: 140px;
+		height: 80px;
+	}
+
+	.category > div > h3 {
+		font-size: 14px;
+	}
+
+	.imageBox {
+		min-width: 60px;
+		height: 60px;
+	}
+	.imageBox img {
+		max-width: 50px;
+		max-height: 50px;
+	}
+}
+
+@media screen and (max-width: 500px) {
+	.category {
+		width: fit-content;
+		height: 80px;
+		background-color: transparent;
+		display: block;
+	}
+
+	.category > div > h3 {
+		margin-top: 1vh;
+		font-size: 18px;
+	}
+
+	.imageBox {
+		margin: auto;
+		width: 70px;
+		height: 70px;
+	}
+	.imageBox img {
+		max-width: 50px;
+		max-height: 50px;
+	}
+}
