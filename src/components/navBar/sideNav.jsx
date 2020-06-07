@@ -44,6 +44,9 @@ class SideNav extends Component {
 				<NavLink to='/' className='menu-item'>
 					Home
 				</NavLink>
+				<NavLink to='/my-products' className='menu-item'>
+					My Products
+				</NavLink>
 				<NavLink to='/books' className='menu-item'>
 					Books
 				</NavLink>
