@@ -53,8 +53,8 @@ class SideNav extends Component {
 				<NavLink to='/gaming' className='menu-item'>
 					Gaming
 				</NavLink>
-				<NavLink to='/mobile' className='menu-item'>
-					Mobile
+				<NavLink to='/mobiles' className='menu-item'>
+					Mobiles
 				</NavLink>
 				<NavLink to='/blog' className='menu-item'>
 					Blog

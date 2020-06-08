@@ -1,14 +1,21 @@
 import React, { Component } from 'react';
 import { Image } from 'react-bootstrap';
 import '../../css/components/common/category.css';
+import { Redirect, withRouter } from 'react-router-dom';
 
 class CategoryElement extends Component {
 	state = {};
 
+	handleClick = () => {
+		const { categoryTitle, history } = this.props;
+		const path = `/${categoryTitle.toLowerCase()}`;
+		history.push(path);
+	};
+
 	render() {
 		const { categoryTitle, categoryMessage, src } = this.props;
 		return (
-			<div className='category'>
+			<div className='category' onClick={this.handleClick}>
 				<div className='imageBox'>
 					<Image
 						style={{
@@ -38,4 +45,4 @@ class CategoryElement extends Component {
 	}
 }
 
-export default CategoryElement;
+export default withRouter(CategoryElement);
