@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import CategoryElement from './common/categoryElement';
+import CategoryElement from '../common/categoryElement';
 
 class Categories extends Component {
 	state = {};

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Image } from 'react-bootstrap';
 import '../../css/components/common/category.css';
-import { Redirect, withRouter } from 'react-router-dom';
+import { withRouter } from 'react-router-dom';
 
 class CategoryElement extends Component {
 	state = {};

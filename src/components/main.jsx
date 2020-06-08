@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import MainNav from './navBar/mainNav';
 import SideNav from './navBar/sideNav';
 import { Switch, Route } from 'react-router-dom';
-import Home from './home';
+import Home from './home/home';
 
 class Main extends Component {
 	state = {
