@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Navbar, Nav, Image, Form, Input, Button } from 'react-bootstrap';
+import { Navbar, Nav, Image, Form } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
 	faBars,
@@ -16,7 +16,7 @@ class MainNav extends Component {
 			<div>
 				<Navbar variant='dark' style={{ backgroundColor: '#212121' }}>
 					<Navbar.Brand
-						onClick={this.props.handleBarClick}
+						onClick={this.props.onBarClick}
 						style={{ cursor: 'pointer' }}>
 						<FontAwesomeIcon icon={faBars} />
 						<Image id='logo' src='/images/demoLogo.png' />
@@ -55,13 +55,8 @@ class MainNav extends Component {
 						</Nav.Link>
 					</Nav>
 				</Navbar>
-				<div
-					id='mobileSearchBox'
-					style={{ backgroundColor: '#212121', padding: '0.6rem' }}>
-					<div
-						className='ml-auto'
-						id='mobileSearchBoxItem'
-						style={{ backgroundColor: '#424242' }}>
+				<div id='mobileSearchBox'>
+					<div className='ml-auto' id='mobileSearchBoxItem'>
 						<FontAwesomeIcon id='mobileSearchIcon' icon={faSearch} />
 						<Form.Control
 							id='mobileSearchInput'

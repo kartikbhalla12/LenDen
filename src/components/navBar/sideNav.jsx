@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import { Image } from 'react-bootstrap';
 import './../../css/components/sideNav.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBell, faHeart } from '@fortawesome/free-solid-svg-icons';
+import { faBell } from '@fortawesome/free-solid-svg-icons';
 import { NavLink } from 'react-router-dom';
 
 class SideNav extends Component {

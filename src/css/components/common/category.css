@@ -1,5 +1,5 @@
 .category {
-	width: 500px;
+	width: 530px;
 	background-color: rgba(0, 0, 0, 0.06);
 	padding: 0.5rem;
 	display: flex;
@@ -11,7 +11,7 @@
 	position: relative;
 	background-color: rgba(0, 0, 0, 0.05);
 	border-radius: 50%;
-	margin: auto 0;
+	margin: auto 0.2rem;
 }
 
 .imageBox img {
@@ -48,7 +48,7 @@
 
 @media screen and (max-width: 1200px) {
 	.category {
-		width: 300px;
+		width: 280px;
 	}
 
 	.category > div > h3 {
@@ -62,12 +62,12 @@
 
 @media screen and (max-width: 1000px) {
 	.category {
-		width: 220px;
+		width: 200px;
 		height: 100px;
 	}
 
 	.category > div > h3 {
-		font-size: 22px;
+		font-size: 20px;
 	}
 
 	.category > div > p {
@@ -116,5 +116,25 @@
 	.imageBox img {
 		max-width: 50px;
 		max-height: 50px;
+	}
+}
+
+@media screen and (max-width: 340px) {
+	.category {
+		margin: 0;
+	}
+
+	.category > div > h3 {
+		font-size: 12px;
+	}
+
+	.imageBox {
+		width: 50px;
+		height: 50px;
+		padding: 1.8rem;
+	}
+	.imageBox img {
+		max-width: 35px;
+		max-height: 35px;
 	}
 }

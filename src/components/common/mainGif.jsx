@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { Image } from 'react-bootstrap';
-import '../../css/components/common/mainGif.css';
 
 class MainGif extends Component {
 	state = { src: '' };
@@ -12,7 +11,7 @@ class MainGif extends Component {
 	handleGif = () => {
 		const src =
 			window.innerWidth > 600
-				? 'http://placekitten.com/1900/450'
+				? 'http://placekitten.com/2000/350'
 				: 'http://placekitten.com/1200/450';
 		this.setState({ src });
 	};
@@ -24,7 +23,7 @@ class MainGif extends Component {
 				style={{
 					margin: '0 auto 0.4vh auto',
 					width: 'inherit',
-					maxWidth: '90vw',
+					maxWidth: '100%',
 					display: 'block',
 					maxHeight: '40vh',
 				}}

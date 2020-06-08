@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import '../css/components/sign.css';
 import { Image, Form, Button } from 'react-bootstrap';
 import CommonForm from './common/commonForm';
