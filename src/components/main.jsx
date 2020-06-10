@@ -2,8 +2,9 @@ import React, { Component } from 'react';
 import MainNav from './navBar/mainNav';
 import SideNav from './navBar/sideNav';
 import { Switch, Route } from 'react-router-dom';
-import Home from './home/home';
+import Home from './home';
 import Me from './me';
+import Books from './books';
 
 class Main extends Component {
 	state = {
@@ -23,6 +24,7 @@ class Main extends Component {
 					onUserClick={this.handleUserClick}
 				/>
 				<Switch>
+					<Route path='/books' component={Books} />
 					<Route path='/me' component={Me} />
 					<Route path='/' component={Home} />
 				</Switch>

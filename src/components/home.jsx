@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
-import MainGif from '../common/mainGif';
-import Categories from './categories';
+import MainGif from './common/mainGif';
+import Categories from './common/categories';
 
 class Home extends Component {
 	state = {};

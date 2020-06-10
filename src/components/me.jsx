@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Image, Button } from 'react-bootstrap';
-import Categories from './home/categories';
+import Categories from './common/categories';
 import '../css/components/me.css';
 
 class Me extends Component {

@@ -61,7 +61,7 @@ class MainNav extends Component {
 						<Form.Control
 							id='mobileSearchInput'
 							type='text'
-							placeholder='Search...'
+							placeholder='Search for products'
 						/>
 					</div>
 				</div>
