@@ -97,9 +97,15 @@ a {
 }
 
 #userImageMain {
+	cursor: pointer;
 	max-width: 200px;
 	margin: 0 auto 2vh auto;
 	text-align: center;
+}
+
+#userImageMain:hover {
+	box-shadow: 0 0 20px rgba(239, 83, 80, 0.9);
+	transition: box-shadow 0.3s ease-in-out;
 }
 
 #navAnchor {

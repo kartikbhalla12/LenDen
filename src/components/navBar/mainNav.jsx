@@ -26,7 +26,7 @@ class MainNav extends Component {
 						<Form.Control
 							id='navSearchInput'
 							type='text'
-							placeholder='Search...'
+							placeholder='Search for products'
 						/>
 					</Nav>
 					<Nav className='ml-auto'>
@@ -44,7 +44,7 @@ class MainNav extends Component {
 								style={{ color: '#f5f5f5' }}
 							/>
 						</Nav.Link>
-						<Nav.Link id='userImage'>
+						<Nav.Link id='userImage' onClick={this.props.onUserClick}>
 							<Image
 								style={{
 									maxWidth: 42,

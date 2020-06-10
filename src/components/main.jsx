@@ -3,6 +3,7 @@ import MainNav from './navBar/mainNav';
 import SideNav from './navBar/sideNav';
 import { Switch, Route } from 'react-router-dom';
 import Home from './home/home';
+import Me from './me';
 
 class Main extends Component {
 	state = {
@@ -14,9 +15,15 @@ class Main extends Component {
 				<SideNav
 					menuOpen={this.state.menuOpen}
 					onStateChange={this.handleStateChange}
+					onUserClick={this.handleUserClick}
+					onNavLinkClick={this.handleNavLinkClick}
 				/>
-				<MainNav onBarClick={this.handleBarClick} />
+				<MainNav
+					onBarClick={this.handleBarClick}
+					onUserClick={this.handleUserClick}
+				/>
 				<Switch>
+					<Route path='/me' component={Me} />
 					<Route path='/' component={Home} />
 				</Switch>
 			</React.Fragment>
@@ -31,6 +38,18 @@ class Main extends Component {
 	handleStateChange = (state) => {
 		this.setState({
 			menuOpen: state.isOpen,
+		});
+	};
+
+	handleUserClick = () => {
+		this.setState({
+			menuOpen: false,
+		});
+		this.props.history.push('/me');
+	};
+	handleNavLinkClick = () => {
+		this.setState({
+			menuOpen: false,
 		});
 	};
 }
