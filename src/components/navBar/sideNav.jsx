@@ -5,6 +5,7 @@ import './../../css/components/sideNav.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBell } from '@fortawesome/free-solid-svg-icons';
 import { NavLink } from 'react-router-dom';
+import * as authService from './../../services/authService';
 
 class SideNav extends Component {
 	state = {};
@@ -13,95 +14,106 @@ class SideNav extends Component {
 	}
 
 	render() {
+		const {
+			user,
+			menuOpen,
+			onUserClick,
+			onNavLinkClick,
+			onStateChange,
+		} = this.props;
 		return (
 			//customBurgerIcon={false} customCrossIcon={false}
 			<Menu
 				customBurgerIcon={false}
-				isOpen={this.props.menuOpen}
+				isOpen={menuOpen}
 				// styles={styles}
-				onStateChange={(state) => this.props.onStateChange(state)}>
+				onStateChange={(state) => onStateChange(state)}>
 				<Image
 					id='userImageMain'
-					src='http://placekitten.com/g/300/300'
+					src={
+						user
+							? 'http://placekitten.com/g/300/300'
+							: '/images/genericUser.png'
+					}
 					roundedCircle
-					onClick={this.props.onUserClick}
+					onClick={onUserClick}
 				/>
-				<NavLink
-					id='navAnchor'
-					to='/login'
-					className='menu-item'
-					onClick={this.props.onNavLinkClick}>
-					Sign In
-				</NavLink>
+				{!user && (
+					<NavLink
+						id='navAnchor'
+						to='/login'
+						className='menu-item'
+						onClick={onNavLinkClick}>
+						Sign In
+					</NavLink>
+				)}
+				{user && (
+					<NavLink
+						id='navAnchor'
+						to='/me'
+						className='menu-item'
+						onClick={onNavLinkClick}>
+						Hey, {user.name}
+					</NavLink>
+				)}
+
 				<NavLink
 					to='/notifications'
 					className='menu-item'
-					onClick={this.props.onNavLinkClick}>
+					onClick={onNavLinkClick}>
 					Notifications
 					<FontAwesomeIcon
 						icon={faBell}
 						style={{ marginLeft: '5px', color: '#ef5350' }}
 					/>
 				</NavLink>
-				<NavLink
-					to='/wishlist'
-					className='menu-item'
-					onClick={this.props.onNavLinkClick}>
+				<NavLink to='/wishlist' className='menu-item' onClick={onNavLinkClick}>
 					Wishlist
 					{/* <FontAwesomeIcon
 						icon={faHeart}
 						style={{ marginLeft: '5px', color: '#ef5350' }}
 					/> */}
 				</NavLink>
-				<NavLink
-					to='/'
-					exact
-					className='menu-item'
-					onClick={this.props.onNavLinkClick}>
+				<NavLink to='/' exact className='menu-item' onClick={onNavLinkClick}>
 					Home
 				</NavLink>
 				<NavLink
 					to='/my-products'
 					className='menu-item'
-					onClick={this.props.onNavLinkClick}>
+					onClick={onNavLinkClick}>
 					My Products
 				</NavLink>
-				<NavLink
-					to='/books'
-					className='menu-item'
-					onClick={this.props.onNavLinkClick}>
+				<NavLink to='/books' className='menu-item' onClick={onNavLinkClick}>
 					Books
 				</NavLink>
-				<NavLink
-					to='/gaming'
-					className='menu-item'
-					onClick={this.props.onNavLinkClick}>
+				<NavLink to='/gaming' className='menu-item' onClick={onNavLinkClick}>
 					Gaming
 				</NavLink>
-				<NavLink
-					to='/mobiles'
-					className='menu-item'
-					onClick={this.props.onNavLinkClick}>
+				<NavLink to='/mobiles' className='menu-item' onClick={onNavLinkClick}>
 					Mobiles
 				</NavLink>
-				<NavLink
-					to='/blog'
-					className='menu-item'
-					onClick={this.props.onNavLinkClick}>
+				<NavLink to='/blog' className='menu-item' onClick={onNavLinkClick}>
 					Blog
 				</NavLink>
-				<NavLink
-					to='/contact'
-					className='menu-item'
-					onClick={this.props.onNavLinkClick}>
+				<NavLink to='/contact' className='menu-item' onClick={onNavLinkClick}>
 					Contact Us
 				</NavLink>
-				<NavLink
-					to='/about'
-					className='menu-item'
-					onClick={this.props.onNavLinkClick}>
+				<NavLink to='/about' className='menu-item' onClick={onNavLinkClick}>
 					About Us
 				</NavLink>
+
+				{user && (
+					// <NavLink
+					// 	id='signOutNav'
+					// 	to=''
+					// 	className='menu-item'
+					// 	onClick={onNavLinkClick}>
+					// 	Sign Out
+					// </NavLink>
+					<div id='signOutNav' onClick={authService.logout}>
+						SIGN OUT
+					</div>
+				)}
 			</Menu>
 		);
 	}

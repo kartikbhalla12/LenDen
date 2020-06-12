@@ -15,7 +15,7 @@ class Me extends Component {
 						style={{ display: 'block', margin: '0 auto' }}
 					/>
 					<div style={{ margin: '5vh 0', textAlign: 'center' }}>
-						<h3>Hey, Kartik Bhalla!</h3>
+						<h3 id='username'>Hey, Kartik Bhalla!</h3>
 						<Button
 							style={{ marginTop: '1vh' }}
 							className='btn-log'

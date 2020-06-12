@@ -49,7 +49,11 @@ class MainNav extends Component {
 								style={{
 									maxWidth: 42,
 								}}
-								src='http://placekitten.com/g/300/300'
+								src={
+									this.props.user
+										? 'http://placekitten.com/g/300/300'
+										: '/images/genericUser.png'
+								}
 								roundedCircle
 							/>
 						</Nav.Link>
