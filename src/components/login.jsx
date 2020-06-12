@@ -2,6 +2,7 @@ import React from 'react';
 import '../css/components/sign.css';
 import { Image, Form, Button } from 'react-bootstrap';
 import Joi from 'joi-browser';
+import * as authService from '../services/authService';
 
 import CommonForm from './common/commonForm';
 
@@ -12,6 +13,7 @@ class Login extends CommonForm {
 			password: '',
 		},
 		error: '',
+		success: '',
 		loading: false,
 	};
 
@@ -20,11 +22,27 @@ class Login extends CommonForm {
 		password: Joi.string().required().label('Password'),
 	};
 
-	doSubmit = () => {
+	doSubmit = async () => {
+		const { data } = this.state;
 		this.setState({ loading: true });
-		console.log('submitted');
-		this.props.history.push('/');
-		this.setState({ loading: false });
+
+		try {
+			const { headers } = await authService.login(data);
+			localStorage.setItem('token', headers['authorization']);
+			// this.props.history.replace('/');
+			window.location.replace('/');
+			// this.resetForm();
+		} catch (ex) {
+			if (ex.response && ex.response.status === 403) {
+				const error = 'Invalid email or password';
+				this.setState({ error });
+			}
+			this.setState({ loading: false });
+		}
+
+		// this.setState({ loading: true });
+		// console.log('submitted');
+		// this.setState({ loading: false });
 	};
 
 	render() {

@@ -3,6 +3,7 @@ import '../css/components/sign.css';
 import { Image, Form, Button } from 'react-bootstrap';
 import CommonForm from './common/commonForm';
 import Joi from 'joi-browser';
+import * as userService from '../services/userService';
 
 class Signup extends CommonForm {
 	state = {
@@ -12,20 +13,34 @@ class Signup extends CommonForm {
 			password: '',
 		},
 		error: '',
+		success: '',
 		loading: false,
 	};
 
 	schema = {
 		name: Joi.string().min(3).max(255).required().label('Name'),
 		email: Joi.string().email().required().label('Email'),
-		password: Joi.string().required().label('Password'),
+		password: Joi.string().min(6).max(255).required().label('Password'),
 	};
 
-	doSubmit = () => {
+	doSubmit = async () => {
+		const { data } = this.state;
 		this.setState({ loading: true });
-		console.log('submitted');
-		this.props.history.push('/');
-		this.setState({ loading: false });
+
+		try {
+			await userService.register(data);
+			this.setState({ loading: false });
+			this.resetForm();
+
+			const success = 'Successfully registered!';
+			this.setState({ success });
+		} catch (ex) {
+			if (ex.response && ex.response.status === 400) {
+				const error = 'User already registered!';
+				this.setState({ error });
+			}
+			this.setState({ loading: false });
+		}
 	};
 
 	render() {
@@ -39,6 +54,7 @@ class Signup extends CommonForm {
 						{this.renderInput('email', 'Email Address')}
 						{this.renderInput('password', 'Password')}
 						{this.renderAlert()}
+						{this.renderSuccessAlert()}
 						<Button className='btn-log' variant='dark' type='submit'>
 							Sign Up
 						</Button>

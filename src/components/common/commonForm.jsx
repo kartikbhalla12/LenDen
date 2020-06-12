@@ -7,6 +7,7 @@ class CommonForm extends Component {
 	state = {
 		data: {},
 		error: '',
+		success: '',
 	};
 	handleChange = ({ currentTarget: input }) => {
 		const data = { ...this.state.data };
@@ -23,7 +24,10 @@ class CommonForm extends Component {
 
 	handleSubmit = (e) => {
 		e.preventDefault();
-
+		this.setState({
+			success: '',
+			error: '',
+		});
 		const error = this.validate();
 		this.setState({ error });
 		if (error) return;
@@ -57,6 +61,17 @@ class CommonForm extends Component {
 		);
 	};
 
+	renderSuccessAlert = () => {
+		const { success } = this.state;
+		return (
+			success && (
+				<Alert id='error-success' variant='primary'>
+					{success}
+				</Alert>
+			)
+		);
+	};
+
 	renderLoader = () => {
 		return (
 			<BarLoader
@@ -69,6 +84,15 @@ class CommonForm extends Component {
 				loading={this.state.loading}
 			/>
 		);
+	};
+
+	resetForm = () => {
+		const data = {
+			name: '',
+			email: '',
+			password: '',
+		};
+		this.setState({ data });
 	};
 }
 

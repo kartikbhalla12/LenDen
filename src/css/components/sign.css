@@ -71,8 +71,16 @@
 	background-color: rgba(239, 103, 100, 0.4);
 	border: none;
 	font-size: 13px;
+	padding: 0.75rem 1rem;
 }
 .input:focus {
 	border: none;
 	box-shadow: 0 0 0 0.2rem rgba(239, 103, 100, 0.4);
+}
+
+#error-success {
+	color: white;
+	background-color: rgba(129, 199, 132, 0.4);
+	border: none;
+	font-size: 13px;
 }
