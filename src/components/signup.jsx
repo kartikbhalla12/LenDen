@@ -4,6 +4,8 @@ import { Image, Form, Button } from 'react-bootstrap';
 import CommonForm from './common/commonForm';
 import Joi from 'joi-browser';
 import * as userService from '../services/userService';
+import * as authService from '../services/authService';
+import { Redirect } from 'react-router-dom';
 
 class Signup extends CommonForm {
 	state = {
@@ -44,6 +46,7 @@ class Signup extends CommonForm {
 	};
 
 	render() {
+		if (authService.getCurrentUser()) return <Redirect to='/' />;
 		return (
 			<div className='mainContainer'>
 				<div className='formBox'>

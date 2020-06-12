@@ -2,9 +2,9 @@ import React from 'react';
 import '../css/components/sign.css';
 import { Image, Form, Button } from 'react-bootstrap';
 import Joi from 'joi-browser';
-import * as authService from '../services/authService';
-
 import CommonForm from './common/commonForm';
+import * as authService from '../services/authService';
+import { Redirect } from 'react-router-dom';
 
 class Login extends CommonForm {
 	state = {
@@ -27,11 +27,8 @@ class Login extends CommonForm {
 		this.setState({ loading: true });
 
 		try {
-			const { headers } = await authService.login(data);
-			localStorage.setItem('token', headers['authorization']);
-			// this.props.history.replace('/');
+			await authService.login(data);
 			window.location.replace('/');
-			// this.resetForm();
 		} catch (ex) {
 			if (ex.response && ex.response.status === 403) {
 				const error = 'Invalid email or password';
@@ -46,6 +43,7 @@ class Login extends CommonForm {
 	};
 
 	render() {
+		if (authService.getCurrentUser()) return <Redirect to='/' />;
 		return (
 			<div className='mainContainer'>
 				<div className='formBox'>

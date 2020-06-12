@@ -53,7 +53,7 @@ class SideNav extends Component {
 						to='/me'
 						className='menu-item'
 						onClick={onNavLinkClick}>
-						Hey, {user.name}
+						Hey, {user.name.split(' ')[0]}
 					</NavLink>
 				)}
 

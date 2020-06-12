@@ -6,6 +6,7 @@ import Home from './home';
 import Me from './me';
 import Books from './books';
 import jwtDecode from 'jwt-decode';
+import * as authService from '../services/authService';
 
 class Main extends Component {
 	state = {
@@ -13,11 +14,8 @@ class Main extends Component {
 	};
 
 	componentDidMount = () => {
-		try {
-			const jwt = localStorage.getItem('token');
-			const user = jwtDecode(jwt);
-			this.setState({ user });
-		} catch {}
+		const user = authService.getCurrentUser();
+		this.setState({ user });
 	};
 
 	render() {

@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import { Image, Button } from 'react-bootstrap';
 import Categories from './common/categories';
 import '../css/components/me.css';
-
+import * as authService from '../services/authService';
+import { Redirect } from 'react-router-dom';
 class Me extends Component {
 	state = {};
 	render() {
