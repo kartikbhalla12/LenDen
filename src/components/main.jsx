@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import MainNav from './navBar/mainNav';
 import SideNav from './navBar/sideNav';
-import { Switch, Route, Redirect } from 'react-router-dom';
+import { Switch, Route } from 'react-router-dom';
+import ProtectedRoute from './common/protectedRoute';
 import Home from './home';
 import Me from './me';
 import Books from './books';
-import jwtDecode from 'jwt-decode';
 import * as authService from '../services/authService';
 
 class Main extends Component {
@@ -19,28 +19,24 @@ class Main extends Component {
 	};
 
 	render() {
+		const { user, menuOpen } = this.state;
 		return (
 			<React.Fragment>
 				<SideNav
-					menuOpen={this.state.menuOpen}
+					menuOpen={menuOpen}
 					onStateChange={this.handleStateChange}
 					onUserClick={this.handleUserClick}
 					onNavLinkClick={this.handleNavLinkClick}
-					user={this.state.user}
+					user={user}
 				/>
 				<MainNav
 					onBarClick={this.handleBarClick}
 					onUserClick={this.handleUserClick}
-					user={this.state.user}
+					user={user}
 				/>
 				<Switch>
 					<Route path='/books' component={Books} />
-					<Route path='/me' component={Me} />
-					{/* {this.state.user ? (
-						<Route path='/me' component={Me} />
-					) : (
-						<Redirect from='/me' to='/login' />
-					)} */}
+					<ProtectedRoute path='/me' component={Me} />
 					<Route path='/' component={Home} />
 				</Switch>
 			</React.Fragment>
