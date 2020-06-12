@@ -5,12 +5,21 @@ import * as authService from './../../services/authService';
 class ProtectedRoute extends Component {
 	state = {};
 	render() {
-		const { path, component: Component, render } = this.props;
+		const { component: Component, render, ...rest } = this.props;
 		return (
 			<Route
-				path={path}
+				{...rest}
 				render={(props) => {
-					if (!authService.getCurrentUser()) return <Redirect to='/login' />;
+					console.log(props);
+					if (!authService.getCurrentUser())
+						return (
+							<Redirect
+								to={{
+									pathname: '/login',
+									state: { from: props.location },
+								}}
+							/>
+						);
 					return Component ? <Component {...props} /> : render();
 				}}
 			/>

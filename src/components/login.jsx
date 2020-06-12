@@ -28,7 +28,9 @@ class Login extends CommonForm {
 
 		try {
 			await authService.login(data);
-			window.location.replace('/');
+			this.props.location.state
+				? window.location.replace(this.props.location.state.from.pathname)
+				: window.location.replace('/');
 		} catch (ex) {
 			if (ex.response && ex.response.status === 403) {
 				const error = 'Invalid email or password';
@@ -36,10 +38,6 @@ class Login extends CommonForm {
 			}
 			this.setState({ loading: false });
 		}
-
-		// this.setState({ loading: true });
-		// console.log('submitted');
-		// this.setState({ loading: false });
 	};
 
 	render() {
