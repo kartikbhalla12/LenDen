@@ -133,7 +133,7 @@ class Me extends Component {
 									style={{
 										textAlign: 'left',
 									}}>
-									{this.state.addresss ? (
+									{this.state.address ? (
 										`${_.startCase(
 											this.state.address.housenumber
 										)}, ${_.startCase(
