@@ -1,0 +1,7 @@
+#address-error {
+	color: black;
+	background-color: rgba(239, 103, 100, 0.6);
+	border: none;
+	font-size: 13px;
+	padding: 0.75rem 1rem;
+}

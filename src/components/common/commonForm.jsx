@@ -50,11 +50,11 @@ class CommonForm extends Component {
 			</Form.Group>
 		);
 	}
-	renderAlert = () => {
+	renderAlert = (id) => {
 		const { error } = this.state;
 		return (
 			error && (
-				<Alert id='error-alert' variant='danger'>
+				<Alert id={id} variant='danger'>
 					{error}
 				</Alert>
 			)
