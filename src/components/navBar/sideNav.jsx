@@ -53,7 +53,7 @@ class SideNav extends Component {
 						to='/me'
 						className='menu-item'
 						onClick={onNavLinkClick}>
-						Hey, {user.name.split(' ')[0]}
+						My Account
 					</NavLink>
 				)}
 
@@ -74,14 +74,19 @@ class SideNav extends Component {
 						style={{ marginLeft: '5px', color: '#ef5350' }}
 					/> */}
 				</NavLink>
-				<NavLink to='/' exact className='menu-item' onClick={onNavLinkClick}>
-					Home
-				</NavLink>
 				<NavLink
 					to='/my-products'
 					className='menu-item'
 					onClick={onNavLinkClick}>
 					My Products
+				</NavLink>
+				<NavLink
+					id='homeAnchor'
+					to='/'
+					exact
+					className='menu-item'
+					onClick={onNavLinkClick}>
+					Home
 				</NavLink>
 				<NavLink to='/books' className='menu-item' onClick={onNavLinkClick}>
 					Books

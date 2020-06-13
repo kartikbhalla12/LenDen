@@ -110,12 +110,16 @@ a {
 
 #navAnchor {
 	text-align: center;
-	margin-bottom: 4vh;
+	margin-bottom: 2vh;
+}
+
+#homeAnchor {
+	margin-top: 2vh;
 }
 
 #signOutNav {
 	text-align: center;
-	margin-top: 2vh;
+	margin: 2vh 0;
 	background-color: rgba(239, 103, 100, 0.5);
 	padding: 0.4rem 0;
 	color: white;

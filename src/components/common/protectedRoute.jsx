@@ -10,7 +10,6 @@ class ProtectedRoute extends Component {
 			<Route
 				{...rest}
 				render={(props) => {
-					console.log(props);
 					if (!authService.getCurrentUser())
 						return (
 							<Redirect

@@ -13,8 +13,8 @@ class Main extends Component {
 		menuOpen: false,
 	};
 
-	componentDidMount = () => {
-		const user = authService.getCurrentUser();
+	componentDidMount = async () => {
+		const user = await authService.getCurrentUser();
 		this.setState({ user });
 	};
 
