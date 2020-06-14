@@ -50,7 +50,7 @@ class Books extends Component {
 								emptyStarColor='#fff'
 							/>
 						</div>
-						{/* <div
+						<div
 							style={{
 								position: 'absolute',
 								bottom: 0,
@@ -58,8 +58,8 @@ class Books extends Component {
 								backgroundColor: 'rgba(255,255,255,0.5)',
 								borderTopRightRadius: '10px',
 							}}>
-							<span>Vigyan Vihar, Delhi</span>
-						</div> */}
+							<span>240</span>
+						</div>
 					</div>
 
 					<div

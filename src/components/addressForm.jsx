@@ -28,12 +28,13 @@ class AddressForm extends CommonForm {
 	componentDidMount = async () => {
 		const user = await authService.getCurrentUser();
 		this.setState({ user });
-
-		const { data: address } = await addressService.getAddress(user.userId);
-		if (address) {
-			this.setState({ addressExist: true });
-			this.populateData(address);
-		}
+		try {
+			const { data: address } = await addressService.getAddress(user.userId);
+			if (address) {
+				this.setState({ addressExist: true });
+				this.populateData(address);
+			}
+		} catch (ex) {}
 	};
 
 	schema = {

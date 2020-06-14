@@ -35,7 +35,7 @@ class Me extends Component {
 						style={{
 							display: 'flex',
 							justifyContent: 'center',
-							alignContent: 'center',
+							alignItems: 'center',
 							margin: '3vh 0',
 							flexWrap: 'wrap',
 						}}>
@@ -44,7 +44,7 @@ class Me extends Component {
 							roundedCircle
 							style={{ display: 'block', maxWidth: 200 }}
 						/>
-						<div style={{ margin: '5vh 5vw', textAlign: 'center' }}>
+						<div style={{ margin: '1rem', textAlign: 'center' }}>
 							<h3 id='username'>Hey, {_.startCase(user.name)}</h3>
 							<Button
 								style={{ marginTop: '1vh' }}
@@ -74,7 +74,7 @@ class Me extends Component {
 					/>
 				</div>
 
-				<Categories />
+				{/* <Categories /> */}
 			</React.Fragment>
 		);
 	}
