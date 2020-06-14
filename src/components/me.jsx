@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Image, Button } from 'react-bootstrap';
-import Categories from './common/categories';
+
 import _ from 'lodash';
 import * as authService from '../services/authService';
 import * as addressService from '../services/addressService';
@@ -27,7 +27,7 @@ class Me extends Component {
 	};
 
 	render() {
-		const { user, address } = this.state;
+		const { user } = this.state;
 		return (
 			<React.Fragment>
 				<div className='container'>

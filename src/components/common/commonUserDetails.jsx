@@ -47,9 +47,9 @@ class CommonUserDetails extends Component {
 	};
 
 	renderTextAddress = (address) => {
-		return `${_.startCase(address.housenumber)}, ${_.startCase(
+		return `${_.startCase(address.housenumber)}, ${
 			address.streetname
-		)}, ${_.startCase(address.city)},  ${_.startCase(
+		}, ${_.startCase(address.city)},  ${_.startCase(
 			address.state
 		)} -  ${_.startCase(address.postalcode)} `;
 	};

@@ -1,7 +1,7 @@
-import React, { Component } from 'react';
+import React from 'react';
 import CommonForm from './common/commonForm';
 import Joi from 'joi-browser';
-import { Image, Form, Button, Row, Col } from 'react-bootstrap';
+import { Form, Button, Row, Col } from 'react-bootstrap';
 import * as addressService from '../services/addressService';
 import * as authService from '../services/authService';
 import _ from 'lodash';
