@@ -2,11 +2,23 @@ import React, { Component } from 'react';
 import { Image } from 'react-bootstrap';
 import StarRating from 'react-star-rating-component';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faStar, faWallet } from '@fortawesome/free-solid-svg-icons';
+import {
+	faStar,
+	faWallet,
+	faHeart,
+	faExchangeAlt,
+} from '@fortawesome/free-solid-svg-icons';
 
-class CommonProduct extends Component {
+class DesktopProduct extends Component {
 	state = {
-		color: '',
+		// product: {
+		// 	//API call
+		// 	name: '',
+		// 	src: '',
+		// 	rating: 0,
+		// 	ldc: 0,
+		// 	wishlist: '',
+		// },
 	};
 
 	renderRating(rating) {
@@ -25,7 +37,7 @@ class CommonProduct extends Component {
 					starCount={5}
 					value={rating}
 					starColor='#ef5350'
-					emptyStarColor='#fff'
+					emptyStarColor='#424242'
 				/>
 			</div>
 		);
@@ -116,6 +128,49 @@ class CommonProduct extends Component {
 			</div>
 		);
 	}
+
+	addToWishlist = () => {
+		const { product } = this.state;
+		if (product.wishlist === '#fff') product.wishlist = '#ef5350';
+		else product.wishlist = '#fff';
+		this.setState({ product });
+	};
+
+	render() {
+		const { name, src, rating, ldc, wishlist } = this.props.product;
+		return (
+			<div
+				style={{
+					width: '280px',
+					height: '400px',
+					margin: '10px',
+				}}>
+				<div style={{ position: 'relative' }}>
+					{this.renderProductImage(src)}
+					{this.renderRating(rating)}
+					{this.renderLdc(ldc)}
+				</div>
+				{this.renderProductName(name)}
+
+				<div style={{ display: 'flex' }}>
+					{this.renderButton('BARTER', faExchangeAlt, () => {}, '#f44336', {
+						borderBottomLeftRadius: '10px',
+						margin: '0 5px 0 0',
+					})}
+					{this.renderButton(
+						'',
+						faHeart,
+						this.addToWishlist,
+						wishlist ? '#ef5350' : '#fff',
+						{
+							borderBottomRightRadius: '10px',
+							margin: '0 0 0 5px',
+						}
+					)}
+				</div>
+			</div>
+		);
+	}
 }
 
-export default CommonProduct;
+export default DesktopProduct;
