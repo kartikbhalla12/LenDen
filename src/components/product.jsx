@@ -15,10 +15,14 @@ class Product extends Component {
 		},
 	};
 	render() {
-		// return <DesktopProduct product={this.state.product} />;
+		// return ;
 		return (
 			<div>
 				<MobileProduct />
+				<MobileProduct />
+				<MobileProduct />
+				<MobileProduct />
+				{/* <DesktopProduct product={this.state.product} /> */}
 			</div>
 		);
 	}
