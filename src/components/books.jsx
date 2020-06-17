@@ -14,6 +14,9 @@ class Books extends Component {
 					justifyContent: 'center',
 				}}>
 				<Product />
+				<Product />
+				<Product />
+				<Product />
 			</div>
 		);
 	}
