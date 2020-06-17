@@ -5,6 +5,7 @@ import MobileProduct from './mobileProduct';
 
 class Product extends Component {
 	state = {
+		isMobile: false,
 		product: {
 			//API call
 			name: 'Kitten',
@@ -20,15 +21,19 @@ class Product extends Component {
 			toes for`,
 		},
 	};
-	render() {
-		// return ;
-		return (
-			<div>
-				<MobileProduct product={this.state.product} />
 
-				{/* <DesktopProduct product={this.state.product} /> */}
-			</div>
-		);
+	componentDidMount = () => {
+		this.handleProduct();
+		window.addEventListener('resize', this.handleProduct);
+	};
+	handleProduct = () => {
+		const isMobile = window.innerWidth > 700 ? false : true;
+		this.setState({ isMobile });
+	};
+	render() {
+		if (this.state.isMobile)
+			return <MobileProduct product={this.state.product} />;
+		else return <DesktopProduct product={this.state.product} />;
 	}
 }
 
