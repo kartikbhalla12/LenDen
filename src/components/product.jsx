@@ -8,7 +8,8 @@ class Product extends Component {
 		isMobile: false,
 		product: {
 			//API call
-			name: 'Kitten',
+			name: 'Kitten hgasf  asfghd a sdhf hf dahs  dfsah dsa',
+			category: 'books',
 			src: 'http://placekitten.com/350/450',
 			rating: 4,
 			ldc: 240,
@@ -32,8 +33,23 @@ class Product extends Component {
 	};
 	render() {
 		if (this.state.isMobile)
-			return <MobileProduct product={this.state.product} />;
-		else return <DesktopProduct product={this.state.product} />;
+			return (
+				<MobileProduct
+					product={this.state.product}
+					onClick={() => {
+						console.log('heh');
+					}}
+				/>
+			);
+		else
+			return (
+				<DesktopProduct
+					product={this.state.product}
+					onClick={() => {
+						console.log('heh');
+					}}
+				/>
+			);
 	}
 }
 

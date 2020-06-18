@@ -14,6 +14,7 @@ class DesktopProduct extends CommonProduct {
 
 	render() {
 		const { name, desc, src, rating, ldc, wishlist } = this.props.product;
+		const { onClick } = this.props;
 		return (
 			<div
 				style={{
@@ -21,17 +22,23 @@ class DesktopProduct extends CommonProduct {
 					height: '450px',
 					margin: '10px',
 				}}>
-				<div style={{ position: 'relative' }}>
+				<div
+					onClick={onClick}
+					style={{ position: 'relative', cursor: 'pointer' }}>
 					{this.renderProductImage(src, {
 						maxHeight: '300px',
 						borderTopLeftRadius: '10px',
 						borderTopRightRadius: '10px',
 					})}
 					<div style={{ position: 'absolute', top: '10px', right: '15px' }}>
-						{this.renderStarRating(rating, {
-							marginLeft: '5px',
-							fontSize: '19px',
-						})}
+						{this.renderStarRating(
+							rating,
+							{},
+							{
+								marginLeft: '5px',
+								fontSize: '19px',
+							}
+						)}
 					</div>
 					{this.renderLdc(
 						ldc,
@@ -49,10 +56,15 @@ class DesktopProduct extends CommonProduct {
 						}
 					)}
 				</div>
-				{this.renderProductName(name, { maxWidth: 'inherit', margin: '8px 0' })}
-				{this.renderDescription(desc, {
-					marginBottom: '10px',
-				})}
+				<div style={{ cursor: 'pointer' }} onClick={onClick}>
+					{this.renderProductName(name, {
+						maxWidth: 'inherit',
+						margin: '8px 0',
+					})}
+					{this.renderDescription(desc, {
+						marginBottom: '10px',
+					})}
+				</div>
 
 				<div style={{ display: 'flex' }}>
 					{this.renderButton(

@@ -19,6 +19,7 @@
 #navSearchBox {
 	display: flex;
 	background-color: #424242;
+	border-radius: 5px;
 }
 
 #navSearchInput {
@@ -44,6 +45,7 @@
 	/* margin: 1vh auto; */
 	width: 93vw;
 	margin: 0 auto;
+	border-radius: 5px;
 }
 
 #mobileSearchIcon {

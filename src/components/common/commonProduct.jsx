@@ -7,18 +7,22 @@ import { Image } from 'react-bootstrap';
 class CommonProduct extends Component {
 	state = {};
 
-	renderStarRating(rating, style) {
+	renderStarRating(rating, style, iconStyle) {
 		return (
-			<StarRating
-				// style={{ position: 'absolute' }}
-				name='rate2'
-				editing={false}
-				renderStarIcon={() => <FontAwesomeIcon icon={faStar} style={style} />}
-				starCount={5}
-				value={rating}
-				starColor='#ef5350'
-				emptyStarColor='#424242'
-			/>
+			<div style={style}>
+				<StarRating
+					// style={{ position: 'absolute' }}
+					name='rate2'
+					editing={false}
+					renderStarIcon={() => (
+						<FontAwesomeIcon icon={faStar} style={iconStyle} />
+					)}
+					starCount={5}
+					value={rating}
+					starColor='#ef5350'
+					emptyStarColor='#424242'
+				/>
+			</div>
 		);
 	}
 

@@ -8,6 +8,7 @@ class MobileProduct extends CommonProduct {
 
 	render() {
 		const { name, desc, src, rating, ldc, wishlist } = this.props.product;
+		const { onClick } = this.props;
 		return (
 			<div>
 				<div
@@ -17,7 +18,7 @@ class MobileProduct extends CommonProduct {
 						height: 150,
 						margin: '1rem 0',
 					}}>
-					<div style={{ flexBasis: '30%' }}>
+					<div onClick={onClick} style={{ flexBasis: '30%' }}>
 						{this.renderProductImage(src, {
 							height: 150,
 							borderRadius: '5px',
@@ -30,31 +31,42 @@ class MobileProduct extends CommonProduct {
 							height: '150px',
 							position: 'relative',
 						}}>
-						<div style={{ display: 'flex', alignItems: 'top' }}>
+						<div
+							onClick={onClick}
+							style={{ alignItems: 'top', marginBottom: '10px' }}>
 							{this.renderProductName(name, {
-								flexBasis: '45%',
-								maxWidth: '150px',
+								maxWidth: '60vw',
 							})}
-							<div style={{ flexBasis: '55%', textAlign: 'right' }}>
-								{this.renderStarRating(rating, {
-									marginRight: '2px',
-									fontSize: '14px',
-								})}
-							</div>
 						</div>
-						{this.renderDescription(desc)}
+						<div onClick={onClick}>{this.renderDescription(desc)}</div>
 
-						{this.renderLdc(
-							ldc,
-							{
-								color: '#000',
-								fontSize: '18px',
-								margin: '2px 0 5px 0',
-							},
-							{
-								fontSize: '16px',
-							}
-						)}
+						<div style={{ display: 'flex', alignItems: 'top' }}>
+							{this.renderLdc(
+								ldc,
+								{
+									flexBasis: '40%',
+									// maxWidth: '100px',
+									color: '#000',
+									fontSize: '18px',
+									margin: '2px 0 5px 0',
+								},
+								{
+									fontSize: '16px',
+								}
+							)}
+
+							{this.renderStarRating(
+								rating,
+								{
+									flexBasis: '60%',
+									textAlign: 'right',
+								},
+								{
+									marginRight: '3px',
+									fontSize: '15px',
+								}
+							)}
+						</div>
 
 						<div
 							style={{
@@ -65,7 +77,9 @@ class MobileProduct extends CommonProduct {
 								right: 0,
 							}}>
 							{this.renderButton(
-								() => {},
+								() => {
+									console.log('btn');
+								},
 								'BARTER',
 								{
 									padding: '8px',
@@ -81,7 +95,9 @@ class MobileProduct extends CommonProduct {
 							)}
 
 							{this.renderButton(
-								() => {},
+								() => {
+									console.log('btn');
+								},
 								'',
 								{
 									padding: '8px',
