@@ -7,6 +7,7 @@ import Home from './home';
 import Me from './me';
 import Books from './books';
 import * as authService from '../services/authService';
+import ProductPage from './productPage';
 
 class Main extends Component {
 	state = {
@@ -35,6 +36,7 @@ class Main extends Component {
 					user={user}
 				/>
 				<Switch>
+					<Route path='/books/:id' component={ProductPage} />
 					<Route path='/books' component={Books} />
 					<ProtectedRoute path='/me' component={Me} />
 					<Route path='/' component={Home} />
