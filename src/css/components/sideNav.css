@@ -66,6 +66,9 @@
 	outline: none;
 	text-transform: uppercase;
 	font-weight: 700;
+	padding: 0.6em;
+	color: #fafafa;
+	text-align: center;
 }
 
 .bm-item:hover {
@@ -79,13 +82,6 @@
 /* Styling of overlay */
 .bm-overlay {
 	background: rgba(0, 0, 0, 0.3);
-}
-
-a {
-	padding: 0.6em;
-	display: block;
-	color: #fafafa;
-	text-align: center;
 }
 
 .bm-cross-button > button {
