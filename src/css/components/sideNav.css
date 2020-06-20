@@ -80,8 +80,7 @@
 .bm-overlay {
 	background: rgba(0, 0, 0, 0.3);
 }
-
-a {
+a[class*='bm-item'] {
 	padding: 0.6em;
 	display: block;
 	color: #fafafa;
