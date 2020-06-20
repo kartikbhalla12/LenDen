@@ -23,3 +23,47 @@
 	padding-right: 0.5rem;
 	content: '>';
 }
+
+.productImage {
+	width: 60%;
+}
+#barterIcon {
+	font-size: 20px;
+}
+#barterIcon > svg {
+	font-size: 20px;
+}
+.carousel-inner {
+	border-radius: 5px;
+}
+@media screen and (max-width: 1800px) {
+	.productImage {
+		width: 70%;
+	}
+}
+
+@media screen and (max-width: 1500px) {
+	.productImage {
+		width: 80%;
+	}
+}
+@media screen and (max-width: 1400px) {
+	.productImage {
+		width: 90%;
+	}
+}
+
+@media screen and (max-width: 1200px) {
+	.productImage {
+		width: 100%;
+	}
+}
+
+@media screen and (max-width: 800px) {
+	#barterIcon {
+		font-size: 16px;
+	}
+	#barterIcon > svg {
+		font-size: 16px;
+	}
+}

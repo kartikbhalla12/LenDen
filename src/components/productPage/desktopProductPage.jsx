@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Image, Breadcrumb } from 'react-bootstrap';
 import { LinkContainer } from 'react-router-bootstrap';
 import _ from 'lodash';
-import '../css/components/common/productPage.css';
+import '../../css/components/common/productPage.css';
 import StarRating from 'react-star-rating-component';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
@@ -15,34 +15,10 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 import { Carousel } from 'react-bootstrap';
 
-class ProductPage extends Component {
-	state = {
-		product: {
-			name: 'Kitten hgasf  asfghd a sdhf hf dahs  dfsah dsa',
-			category: 'books',
-			src: [
-				'http://placekitten.com/350/450',
-				'http://placekitten.com/350/350',
-				'http://placekitten.com/350/850',
-			],
-			rating: 4,
-			ldc: 240,
-			wishlist: true,
-			desc: `Open the door, let me out, let me out, let me-out, let me-aow, let
-		meaow, meaow! have my breakfast spaghetti yarn attack the dog then
-		pretend like nothing happened. Instantly break out into full speed
-		gallop across the house for no reason murr i hate humans they are
-		so annoying for floof tum, tickle bum, jellybean footies curly
-		toes for`,
-		},
-	};
-	componentDidMount = () => {
-		const { id } = this.props.match.params;
-		//api call using id
-		//populate state
-	};
+class DesktopProductPage extends Component {
+	state = {};
 	render() {
-		const { src, category, name, rating, ldc, desc } = this.state.product;
+		const { src, category, name, rating, ldc, desc } = this.props.product;
 		return (
 			<div
 				className='container'
@@ -53,11 +29,12 @@ class ProductPage extends Component {
 				}}>
 				<div style={{ flexBasis: '40%', position: 'relative' }}>
 					<div
+						className='productImage'
 						style={{
 							position: 'absolute',
 							right: 0,
-							width: '60%',
-							minWidth: '350px',
+							// width: '60%',
+							// minWidth: '300px',
 						}}>
 						<Carousel
 							interval={null}
@@ -83,7 +60,7 @@ class ProductPage extends Component {
 							}>
 							{src.map((item) => {
 								return (
-									<Carousel.Item>
+									<Carousel.Item key={item}>
 										<Image
 											fluid
 											src={item}
@@ -93,7 +70,7 @@ class ProductPage extends Component {
 												height: '500px',
 												objectFit: 'cover',
 												maxWidth: 'inherit',
-												borderRadius: '5px',
+												// borderRadius: '5px',
 											}}
 										/>
 									</Carousel.Item>
@@ -103,6 +80,7 @@ class ProductPage extends Component {
 
 						<div style={{ display: 'flex', marginTop: '10px' }}>
 							<div
+								id='barterIcon'
 								style={{
 									flexBasis: '50%',
 									textAlign: 'center',
@@ -112,15 +90,14 @@ class ProductPage extends Component {
 									marginRight: '5px',
 									borderRadius: '5px',
 									fontFamily: 'Balsamiq Sans',
-									fontSize: '20px',
+									// fontSize: '20px',
 									color: '#424242',
 								}}>
 								<FontAwesomeIcon
-									className='navIcon'
 									icon={faExchangeAlt}
 									style={{
 										color: '#ef5350',
-										fontSize: '20px',
+										// fontSize: '20px',
 										marginRight: '5px',
 									}}
 								/>
@@ -227,4 +204,4 @@ class ProductPage extends Component {
 	}
 }
 
-export default ProductPage;
+export default DesktopProductPage;
