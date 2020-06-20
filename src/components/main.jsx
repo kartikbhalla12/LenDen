@@ -1,13 +1,14 @@
 import React, { Component } from 'react';
 import MainNav from './navBar/mainNav';
 import SideNav from './navBar/sideNav';
-import { Switch, Route } from 'react-router-dom';
+import { Switch, Route, Redirect } from 'react-router-dom';
 import ProtectedRoute from './common/protectedRoute';
 import Home from './home';
 import Me from './me';
 import Books from './books';
 import * as authService from '../services/authService';
 import ProductPage from './productPage/productPage';
+import NotFound from './common/notFound';
 
 class Main extends Component {
 	state = {
@@ -38,8 +39,10 @@ class Main extends Component {
 				<Switch>
 					<Route path='/books/:id' component={ProductPage} />
 					<Route path='/books' component={Books} />
+					<Route path='/not-found' component={NotFound} />
 					<ProtectedRoute path='/me' component={Me} />
-					<Route path='/' component={Home} />
+					<Route path='/' exact component={Home} />
+					<Redirect to='/not-found' />
 				</Switch>
 			</React.Fragment>
 		);
