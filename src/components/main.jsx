@@ -7,7 +7,7 @@ import Home from './home';
 import Me from './me';
 import Books from './books';
 import * as authService from '../services/authService';
-import ProductPage from './productPage';
+import ProductPage from './productPage/productPage';
 
 class Main extends Component {
 	state = {

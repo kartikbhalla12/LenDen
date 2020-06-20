@@ -32,24 +32,21 @@ class Product extends Component {
 		this.setState({ isMobile });
 	};
 	render() {
-		if (this.state.isMobile)
-			return (
-				<MobileProduct
-					product={this.state.product}
-					onClick={() => {
-						console.log('heh');
-					}}
-				/>
-			);
-		else
-			return (
-				<DesktopProduct
-					product={this.state.product}
-					onClick={() => {
-						console.log('heh');
-					}}
-				/>
-			);
+		return this.state.isMobile ? (
+			<MobileProduct
+				product={this.state.product}
+				onClick={() => {
+					console.log('heh');
+				}}
+			/>
+		) : (
+			<DesktopProduct
+				product={this.state.product}
+				onClick={() => {
+					console.log('heh');
+				}}
+			/>
+		);
 	}
 }
 
