@@ -37,6 +37,7 @@ class DesktopProductPage extends Component {
 							// minWidth: '300px',
 						}}>
 						<Carousel
+							wrap={false}
 							interval={null}
 							nextIcon={
 								<FontAwesomeIcon

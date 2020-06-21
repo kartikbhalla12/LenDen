@@ -18,53 +18,175 @@ class MobileProductPage extends Component {
 	render() {
 		const { src, category, name, rating, ldc, desc } = this.props.product;
 		return (
-			<div
-				className='container'
-				style={{
-					marginTop: '10px',
-					padding: '0 10px',
-				}}>
-				<Carousel
-					interval={null}
-					nextIcon={
+			<div>
+				<div
+					className='container'
+					style={{
+						marginTop: '10px',
+						padding: '0 10px',
+					}}>
+					<Carousel
+						wrap={false}
+						interval={null}
+						nextIcon={
+							<FontAwesomeIcon
+								className='navIcon'
+								icon={faAngleDoubleRight}
+								style={{
+									color: '#ef5350',
+									fontSize: '30px',
+								}}
+							/>
+						}
+						prevIcon={
+							<FontAwesomeIcon
+								className='navIcon'
+								icon={faAngleDoubleLeft}
+								style={{
+									color: '#ef5350',
+									fontSize: '30px',
+								}}
+							/>
+						}>
+						{src.map((item) => {
+							return (
+								<Carousel.Item key={item}>
+									<Image
+										fluid
+										src={item}
+										style={{
+											display: 'block',
+											width: '100%',
+											height: '40vh',
+											objectFit: 'cover',
+											maxWidth: 'inherit',
+											// borderRadius: '5px',
+										}}
+									/>
+								</Carousel.Item>
+							);
+						})}
+					</Carousel>
+					<div
+						style={{
+							marginTop: '10px',
+							fontFamily: 'Balsamiq Sans',
+							color: '#424242',
+							fontWeight: 400,
+							fontSize: '20px',
+						}}>
+						{name}
+					</div>
+					<div style={{ display: 'flex' }}>
+						<div
+							style={{
+								flexBasis: '40%',
+
+								fontFamily: 'Balsamiq Sans',
+								fontSize: '27px',
+							}}>
+							<FontAwesomeIcon
+								className='navIcon'
+								icon={faWallet}
+								style={{
+									marginRight: '10px',
+									// fontSize: '16px',
+								}}
+							/>
+							{ldc}
+						</div>
+						<div style={{ flexBasis: '60%', textAlign: 'right' }}>
+							<StarRating
+								name='rate2'
+								editing={false}
+								renderStarIcon={() => (
+									<FontAwesomeIcon
+										icon={faStar}
+										style={{
+											fontSize: '20px',
+											marginRight: '5px',
+											marginTop: '10px',
+										}}
+									/>
+								)}
+								starCount={5}
+								value={rating}
+								starColor='#ef5350'
+								emptyStarColor='#424242'
+							/>
+						</div>
+					</div>
+
+					<div
+						style={{
+							color: '#616161',
+							fontStyle: 'italic',
+							marginTop: '',
+						}}>
+						{desc}
+					</div>
+				</div>
+				<div
+					// className='fixed-bottom'
+					style={{
+						backgroundColor: '#f8f8f8',
+						display: 'flex',
+						position: 'sticky',
+						width: '100%',
+						bottom: '0',
+						left: '0',
+						// paddingTop: '10px',
+					}}>
+					<div
+						id='barterIcon'
+						style={{
+							flexBasis: '50%',
+							textAlign: 'center',
+							padding: '1rem',
+							backgroundColor: 'rgba(239,83,80,0.15)',
+							cursor: 'pointer',
+							// marginRight: '5px',
+							// borderRadius: '5px',
+							fontFamily: 'Balsamiq Sans',
+							// fontSize: '20px',
+							color: '#424242',
+							borderRight: '1px solid #ef5350',
+						}}>
 						<FontAwesomeIcon
-							className='navIcon'
-							icon={faAngleDoubleRight}
+							icon={faExchangeAlt}
 							style={{
 								color: '#ef5350',
-								fontSize: '30px',
+								// fontSize: '20px',
+								marginRight: '5px',
 							}}
 						/>
-					}
-					prevIcon={
+						BARTER
+					</div>
+					<div
+						style={{
+							flexBasis: '50%',
+							textAlign: 'center',
+							padding: '1rem',
+							backgroundColor: 'rgba(239,83,80,0.15)',
+							cursor: 'pointer',
+							// marginLeft: '5px',
+							// borderRadius: '5px',
+							fontFamily: 'Balsamiq Sans',
+							fontSize: '18px',
+							color: '#424242',
+							borderLeft: '1px solid #ef5350',
+						}}>
 						<FontAwesomeIcon
 							className='navIcon'
-							icon={faAngleDoubleLeft}
+							icon={faHeart}
 							style={{
-								color: '#ef5350',
-								fontSize: '30px',
+								color: '#fff',
+								fontSize: '25px',
 							}}
 						/>
-					}>
-					{src.map((item) => {
-						return (
-							<Carousel.Item key={item}>
-								<Image
-									fluid
-									src={item}
-									style={{
-										display: 'block',
-										width: '100%',
-										height: '350px',
-										objectFit: 'cover',
-										maxWidth: 'inherit',
-										// borderRadius: '5px',
-									}}
-								/>
-							</Carousel.Item>
-						);
-					})}
-				</Carousel>
+						{/* WISHLIST */}
+					</div>
+				</div>
 			</div>
 		);
 	}
