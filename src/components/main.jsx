@@ -9,6 +9,7 @@ import Books from './books';
 import * as authService from '../services/authService';
 import ProductPage from './productPage/productPage';
 import NotFound from './common/notFound';
+import NewProduct from './newProduct/newProduct';
 
 class Main extends Component {
 	state = {
@@ -39,6 +40,7 @@ class Main extends Component {
 				<Switch>
 					<Route path='/books/:id' component={ProductPage} />
 					<Route path='/books' component={Books} />
+					<Route path='/new' component={NewProduct} />
 					<Route path='/not-found' component={NotFound} />
 					<ProtectedRoute path='/me' component={Me} />
 					<Route path='/' exact component={Home} />
