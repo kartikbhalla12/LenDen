@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import { Image, Form, Button } from 'react-bootstrap';
-import { Switch, Route, Redirect } from 'react-router-dom';
+import { Form } from 'react-bootstrap';
+import { Switch, Route } from 'react-router-dom';
 import BookForm from './bookForm';
 
 class NewProduct extends Component {
@@ -25,9 +25,34 @@ class NewProduct extends Component {
 	render() {
 		const { data } = this.state;
 		return (
-			<div>
-				<div style={{ width: '300px', margin: '0px auto' }}>
+			<div
+				className='container'
+				style={{
+					marginTop: '5vh',
+				}}>
+				<h2
+					style={{
+						textAlign: 'center',
+						fontFamily: 'Balsamiq Sans',
+						fontWeight: '700',
+					}}>
+					POST YOUR PRODUCT
+				</h2>
+				<div
+					style={{
+						width: '80vw',
+						margin: '5vh auto 0 auto',
+						maxWidth: '300px',
+					}}>
 					<Form noValidate className='form' onSubmit={this.handleSubmit}>
+						<h5
+							style={{
+								textAlign: 'center',
+								fontFamily: 'Balsamiq Sans',
+								fontWeight: '400',
+							}}>
+							Choose a Category
+						</h5>
 						<Form.Control
 							as='select'
 							className='my-1 mr-sm-2'

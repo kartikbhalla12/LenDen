@@ -1,0 +1,10 @@
+.deleteImage {
+	background: #000 !important;
+	text-transform: lowercase;
+	border-radius: 100%;
+}
+
+.uploadPictureContainer {
+	width: 10rem !important;
+	margin: 20px !important;
+}
