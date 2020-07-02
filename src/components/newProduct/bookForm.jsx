@@ -5,7 +5,9 @@ import ImageUploader from 'react-images-upload';
 import http from '../../services/httpService';
 import './../../css/components/newProduct.css';
 
-const api = 'http://www.localhost:8080/lenden';
+import { api } from '../../config.json';
+
+// const api = 'http://www.localhost:8080/lenden';
 const apiEndPoint = `${api}/products/book/cDSx9bg71lgLTecGKpPmWFc8poP8lD`;
 
 class BookForm extends CommonForm {
@@ -51,7 +53,8 @@ class BookForm extends CommonForm {
 		const fd = new FormData();
 		fd.set('data', data);
 		pictures.forEach((pic) => fd.append('image', pic));
-		await http.post(apiEndPoint, fd);
+		const res = await http.post(apiEndPoint, fd);
+		console.log(res);
 	};
 
 	render() {
