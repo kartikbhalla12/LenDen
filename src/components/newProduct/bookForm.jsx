@@ -2,28 +2,56 @@ import React from 'react';
 import CommonForm from './../common/commonForm';
 import { Image, Form, Button, Row, Col } from 'react-bootstrap';
 import ImageUploader from 'react-images-upload';
+import http from '../../services/httpService';
 import './../../css/components/newProduct.css';
+
+const api = 'http://localhost:8080/lenden';
+const apiEndPoint = `${api}/products/book/cDSx9bg71lgLTecGKpPmWFc8poP8lD`;
 
 class BookForm extends CommonForm {
 	state = {
 		data: {
-			title: '',
-			mrp: 0,
-			cover: '',
-			ques1: '',
-			ques2: '',
-			ques3: '',
-			ques4: '',
-			ques5: '',
-			description: '',
+			title: 'Lorem, ipsum',
+			mrp: 124,
+			cover: 0,
+			ques1: 1,
+			ques2: 0,
+			ques3: 0,
+			ques4: 1,
+			ques5: 0,
+			description:
+				'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Magni, vel?',
 		},
 		pictures: [],
 	};
 
 	onDrop = (picture) => {
+		// const pictures = this.state.pictures;
+
+		// picture.forEach((pic) => {
+		// 	console.log(pic);
+		// });
+		// const fd = new FormData();
+		// fd.append('image', picture[0], picture[0].name);
+		// pictures.push(fd);
+		// console.log(pictures);
 		this.setState({
 			pictures: this.state.pictures.concat(picture),
 		});
+	};
+
+	handleSubmit = async (e) => {
+		const { data, pictures } = this.state;
+		e.preventDefault();
+		// console.log({ ...data, pictures });
+		// await http.post(apiEndPoint, pictures[0]);
+
+		// await http.post(apiEndPoint, { ...data, pictures });
+
+		const fd = new FormData();
+		fd.set('data', data);
+		pictures.forEach((pic) => fd.append('image', pic));
+		await http.post(apiEndPoint, fd);
 	};
 
 	render() {
