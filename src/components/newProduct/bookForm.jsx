@@ -8,7 +8,7 @@ import './../../css/components/newProduct.css';
 import { api } from '../../config.json';
 
 // const api = 'http://localhost:8080/lenden';
-const apiEndPoint = `${api}/products/book/DZK9hdPGOWToy60nMdQe43rTAxJ8j6`;
+const apiEndPoint = `${api}/users/book/DZK9hdPGOWToy60nMdQe43rTAxJ8j6`;
 
 class BookForm extends CommonForm {
 	state = {
