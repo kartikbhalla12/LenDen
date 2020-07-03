@@ -51,8 +51,8 @@ class BookForm extends CommonForm {
 		// await http.post(apiEndPoint, { ...data, pictures });
 
 		const fd = new FormData();
-		fd.set('data', 'Kartik');
-		// pictures.forEach((pic) => fd.append('image', pic));
+		// fd.set('data', 'Kartik');
+		pictures.forEach((pic) => fd.append('image', pic));
 		const res = await http.post(apiEndPoint, fd, {
 			headers: {
 				'Content-Type': 'multipart/form-data',
