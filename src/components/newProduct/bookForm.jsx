@@ -51,6 +51,9 @@ class BookForm extends CommonForm {
 		// await http.post(apiEndPoint, { ...data, pictures });
 
 		const fd = new FormData();
+		for (let key in data) {
+			fd.set(key, data[key]);
+		}
 		// fd.set('data', 'Kartik');
 		pictures.forEach((pic) => fd.append('image', pic));
 		const res = await http.post(apiEndPoint, fd, {
