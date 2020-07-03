@@ -5,10 +5,10 @@ import ImageUploader from 'react-images-upload';
 import http from '../../services/httpService';
 import './../../css/components/newProduct.css';
 
-import { api } from '../../config.json';
+// import { api } from '../../config.json';
 
-// const api = 'http://www.localhost:8080/lenden';
-const apiEndPoint = `${api}/products/book/wq744Jk3YI1zS7Lr3c2wHwl4xGUZUF`;
+const api = 'http://localhost:8080/lenden';
+const apiEndPoint = `${api}/products/book/DZK9hdPGOWToy60nMdQe43rTAxJ8j6`;
 
 class BookForm extends CommonForm {
 	state = {
