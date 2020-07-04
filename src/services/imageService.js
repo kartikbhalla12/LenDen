@@ -7,15 +7,9 @@ export default async function uploadImages(pictures) {
 	const fd = new FormData();
 	pictures.forEach(pic => fd.append('image', pic));
 
-	try {
-		const res = await http.post(apiEndPoint, fd, {
-			headers: {
-				'Content-Type': 'multipart/form-data',
-			},
-		});
-
-		return res;
-	} catch (ex) {
-		console.log(ex);
-	}
+	return http.post(apiEndPoint, fd, {
+		headers: {
+			'Content-Type': 'multipart/form-data',
+		},
+	});
 }
