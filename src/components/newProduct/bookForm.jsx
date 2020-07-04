@@ -2,13 +2,15 @@ import React from 'react';
 import CommonForm from './../common/commonForm';
 import { Image, Form, Button, Row, Col } from 'react-bootstrap';
 import ImageUploader from 'react-images-upload';
-import http from '../../services/httpService';
+import uploadImages from '../../services/imageService';
+// import http from '../../services/httpService';
+
 import './../../css/components/newProduct.css';
 
 import { api } from '../../config.json';
 
 // const api = 'http://localhost:8080/lenden';
-const apiEndPoint = `${api}/users/book/DZK9hdPGOWToy60nMdQe43rTAxJ8j6`;
+const apiEndPoint = `${api}/products/book/DZK9hdPGOWToy60nMdQe43rTAxJ8j6`;
 
 class BookForm extends CommonForm {
 	state = {
@@ -27,7 +29,7 @@ class BookForm extends CommonForm {
 		pictures: [],
 	};
 
-	onDrop = (picture) => {
+	onDrop = picture => {
 		// const pictures = this.state.pictures;
 
 		// picture.forEach((pic) => {
@@ -42,26 +44,29 @@ class BookForm extends CommonForm {
 		});
 	};
 
-	handleSubmit = async (e) => {
-		const { data, pictures } = this.state;
+	handleSubmit = async e => {
 		e.preventDefault();
+
+		const { data, pictures } = this.state;
+
 		// console.log({ ...data, pictures });
 		// await http.post(apiEndPoint, pictures[0]);
 
 		// await http.post(apiEndPoint, { ...data, pictures });
 
-		const fd = new FormData();
-		for (let key in data) {
-			fd.set(key, data[key]);
-		}
-		// fd.set('data', 'Kartik');
-		pictures.forEach((pic) => fd.append('image', pic));
-		const res = await http.post(apiEndPoint, fd, {
-			headers: {
-				'Content-Type': 'multipart/form-data',
-			},
-		});
-		console.log(res);
+		// const fd = new FormData();
+		// pictures.forEach(pic => fd.append('image', pic));
+		// const res = await http.post(apiEndPoint, fd, {
+		// 	headers: {
+		// 		'Content-Type': 'multipart/form-data',
+		// 	},
+		// });
+		// console.log(res);
+
+		const url = uploadImages(pictures);
+		console.log(url);
+
+		// this.setState({ url });
 	};
 
 	render() {
