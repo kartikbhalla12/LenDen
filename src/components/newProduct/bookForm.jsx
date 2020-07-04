@@ -63,7 +63,7 @@ class BookForm extends CommonForm {
 		// });
 		// console.log(res);
 
-		const url = uploadImages(pictures);
+		const url = await uploadImages(pictures);
 		console.log(url);
 
 		// this.setState({ url });
