@@ -61,7 +61,9 @@ class Signup extends CommonForm {
 						<Button className='btn-log' variant='dark' type='submit'>
 							Sign Up
 						</Button>
-						{this.renderLoader()}
+						{this.renderLoader('#ef5350', {
+							margin: '3vh auto 0 auto',
+						})}
 					</Form>
 					<div className='separator'>Already have an account? </div>
 					<Button

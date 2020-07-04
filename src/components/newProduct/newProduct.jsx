@@ -3,6 +3,8 @@ import { Form } from 'react-bootstrap';
 import { Switch, Route } from 'react-router-dom';
 import BookForm from './bookForm';
 
+import './../../css/components/newProduct.css';
+
 class NewProduct extends Component {
 	state = {
 		data: {
@@ -10,7 +12,7 @@ class NewProduct extends Component {
 		},
 	};
 
-	handleSubmit = (e) => {
+	handleSubmit = e => {
 		e.preventDefault();
 		this.setState({});
 	};

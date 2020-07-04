@@ -54,7 +54,9 @@ class Login extends CommonForm {
 						<Button className='btn-log' variant='primary' type='submit'>
 							Sign In
 						</Button>
-						{this.renderLoader()}
+						{this.renderLoader('#ef5350', {
+							margin: '3vh auto 0 auto',
+						})}
 					</Form>
 					<div className='separator'>New to LenDen ?</div>
 					<Button
