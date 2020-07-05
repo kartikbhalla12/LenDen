@@ -77,7 +77,7 @@ class DesktopProduct extends CommonProduct {
 							fontSize: '18px',
 						},
 						faExchangeAlt,
-						'#ef5350',
+						'#424242',
 						{
 							marginRight: '10px',
 							fontSize: '18px',
@@ -96,7 +96,7 @@ class DesktopProduct extends CommonProduct {
 						wishlist ? '#ef5350' : '#fff',
 						{
 							marginRight: '10px',
-							fontSize: '20px',
+							fontSize: '25px',
 						}
 					)}
 				</div>

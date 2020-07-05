@@ -125,7 +125,8 @@ class BookForm extends CommonForm {
 					{this.renderProductTextArea(
 						'description',
 						'Description',
-						'Tell us more about your book...'
+						'Tell us more about your book...',
+						'Minimum 5 characters required ' //TODO
 					)}
 					{this.renderImageUploader()}
 					{this.renderLoader('rgb(253, 186, 73)', {

@@ -59,7 +59,7 @@ class DesktopProductPage extends Component {
 									}}
 								/>
 							}>
-							{src.map((item) => {
+							{src.map(item => {
 								return (
 									<Carousel.Item key={item}>
 										<Image
@@ -145,8 +145,10 @@ class DesktopProductPage extends Component {
 							<LinkContainer to='/'>
 								<Breadcrumb.Item>Home</Breadcrumb.Item>
 							</LinkContainer>
-
-							<Breadcrumb.Item active>{_.upperFirst(category)}</Breadcrumb.Item>
+							<LinkContainer to={`/${category}`}>
+								<Breadcrumb.Item>{_.upperFirst(category)}</Breadcrumb.Item>
+							</LinkContainer>
+							<Breadcrumb.Item active>{_.upperFirst(name)}</Breadcrumb.Item>
 						</Breadcrumb>
 						<div
 							style={{

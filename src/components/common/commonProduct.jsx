@@ -19,7 +19,7 @@ class CommonProduct extends Component {
 					)}
 					starCount={5}
 					value={rating}
-					starColor='#ef5350'
+					starColor='rgb(253, 186, 73)'
 					emptyStarColor='#424242'
 				/>
 			</div>
@@ -103,8 +103,12 @@ class CommonProduct extends Component {
 			<div
 				onClick={onClick}
 				style={{
+					display: 'flex',
+					alignItems: 'center',
+					justifyContent: 'center',
+					color: '#424242',
 					cursor: 'pointer',
-					backgroundColor: 'rgba(239,83,80,0.15)',
+					backgroundColor: 'rgba(253, 186, 73, 0.55)',
 					flexBasis: '50%',
 					textAlign: 'center',
 					textTransform: 'uppercase',

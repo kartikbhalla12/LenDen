@@ -40,7 +40,8 @@ class MobileProduct extends CommonProduct {
 						</div>
 						<div onClick={onClick}>{this.renderDescription(desc)}</div>
 
-						<div style={{ display: 'flex', alignItems: 'top' }}>
+						<div
+							style={{ display: 'flex', alignItems: 'top', marginTop: '5px' }}>
 							{this.renderLdc(
 								ldc,
 								{
@@ -48,7 +49,7 @@ class MobileProduct extends CommonProduct {
 									// maxWidth: '100px',
 									color: '#000',
 									fontSize: '18px',
-									margin: '2px 0 5px 0',
+									// margin: '2px 0 5px 0',
 								},
 								{
 									fontSize: '16px',
@@ -83,13 +84,14 @@ class MobileProduct extends CommonProduct {
 								'BARTER',
 								{
 									padding: '8px',
-									fontSize: '14px',
+									fontSize: '17px',
 									marginRight: '4px',
 									borderRadius: '5px',
 									lineHeight: '25px',
+									fontWeight: '500',
 								},
 								faExchangeAlt,
-								'#ef5350',
+								'#424242',
 								{ marginRight: '10px', fontSize: '14px' },
 								'productBarterIcon'
 							)}
