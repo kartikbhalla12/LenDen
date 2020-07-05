@@ -139,7 +139,7 @@ class CommonForm extends Component {
 		);
 	};
 
-	renderProductTextArea = (name, label, placeholder) => {
+	renderProductTextArea = (name, label, placeholder, text) => {
 		const { data } = this.state;
 		return (
 			<Form.Group>
@@ -152,6 +152,7 @@ class CommonForm extends Component {
 					value={data[name]}
 					placeholder={placeholder}
 				/>
+				<Form.Text className='text-muted'>{text}</Form.Text>
 			</Form.Group>
 		);
 	};

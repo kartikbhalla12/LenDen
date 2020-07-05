@@ -77,7 +77,6 @@ class BookForm extends CommonForm {
 						</Form.Label>
 						<Col sm='5'>
 							{this.renderProductInput('title', 'text', 'Enter Title')}
-							{/* <Form.Control type='text' placeholder='Enter Title' /> */}
 						</Col>
 						<Form.Label column sm='1'>
 							MRP
@@ -132,6 +131,7 @@ class BookForm extends CommonForm {
 					{this.renderLoader('rgb(253, 186, 73)', {
 						margin: '3vh auto',
 						width: '30%',
+						backgroundColor: '#f7e6c8',
 					})}
 					{this.renderAlert('', {
 						color: '#424242',
