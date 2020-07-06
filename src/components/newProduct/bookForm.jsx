@@ -46,9 +46,9 @@ class BookForm extends CommonForm {
 	doSubmit = async () => {
 		const { data, pictures } = this.state;
 
-		if (pictures.length < 3) {
-			return this.setState({ error: 'atleast 3 images are required' });
-		}
+		// if (pictures.length < 3) {
+		// 	return this.setState({ error: 'atleast 3 images are required' });
+		// }
 		this.setState({ loading: true });
 
 		const { data: imageData } = await uploadImages(pictures);

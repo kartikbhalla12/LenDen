@@ -165,7 +165,7 @@ class CommonForm extends Component {
 				label='Max file size: 5mb, accepted: jpg, png'
 				onChange={this.onDrop}
 				imgExtension={['.jpg', '.png', '.jpeg']}
-				maxFileSize={5242880}
+				maxFileSize={10485760}
 				fileContainerStyle={{ textAlign: 'left' }}
 				withPreview={true}
 				buttonStyles={{ backgroundColor: 'rgb(253, 186, 73)' }}
