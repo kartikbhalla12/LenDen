@@ -62,7 +62,8 @@ class BookForm extends CommonForm {
 
 	doSubmit = async () => {
 		const { data, pictures } = this.state;
-		this.validateImages();
+		if (pictures.length < 3)
+			return this.setState({ error: 'atleast 3 images are required' });
 
 		this.setState({ loading: true });
 		try {
@@ -89,7 +90,11 @@ class BookForm extends CommonForm {
 			<div
 				style={{
 					margin: '2vh auto 2vh auto',
-					border: '1px solid rgb(253, 186, 73)',
+					// border: '1px solid rgb(253, 186, 73)',
+					// boxShadow: '0 0 0 2px rgba(253, 186, 73, 0.4)',
+					background: '#fff',
+					boxShadow: ' 0 4px 8px 0 rgba(0,0,0,0.2)',
+					borderRadius: '10px',
 					padding: '20px 30px',
 					fontFamily: 'Balsamiq Sans',
 					maxWidth: '1000px',
@@ -112,40 +117,43 @@ class BookForm extends CommonForm {
 					</Form.Group>
 					{this.renderProductSelect(
 						'cover',
-						'Lorem ipsum dolor sit amet consectetur adipisicing elit. At, dolore?',
-						'hard cover',
-						'soft cover'
+						'What is its binding type?',
+						'Paperback',
+						'Hardcover'
 					)}
 					{this.renderProductSelect(
 						'ques1',
-						'Lorem ipsum dolor sit amet consectetur adipisicing elit. At, dolore?',
-						'hard cover',
-						'soft cover'
+						'Are there any ink marks inside the book?',
+						'No Marks',
+						'Personal info markings',
+						'Ink or pencil markings'
 					)}
 					{this.renderProductSelect(
 						'ques2',
-						'Lorem ipsum dolor sit amet consectetur adipisicing elit. At, dolore?',
-						'hard cover',
-						'soft cover'
+						'Are there any visible spots or browning?',
+						'No spots and browning',
+						'Visible browning and spots'
 					)}
 
 					{this.renderProductSelect(
 						'ques3',
-						'Lorem ipsum dolor sit amet consectetur adipisicing elit. At, dolore?',
-						'hard cover',
-						'soft cover'
+						'Are the pages of the book intact?',
+						'Intact',
+						'Light wrinkles',
+						'Heavy breaks'
 					)}
 					{this.renderProductSelect(
 						'ques4',
-						'Lorem ipsum dolor sit amet consectetur adipisicing elit. At, dolore?',
-						'hard cover',
-						'soft cover'
+						'How does the outer condition of the book looks like?',
+						'No tears',
+						'Slight wear and tears',
+						'Visible cracks and worn out edges'
 					)}
 					{this.renderProductSelect(
 						'ques5',
-						'Lorem ipsum dolor sit amet consectetur adipisicing elit. At, dolore?',
-						'hard cover',
-						'soft cover'
+						'Did you get this book repaired earlier?',
+						'No',
+						'Yes'
 					)}
 					{this.renderProductTextArea(
 						'description',

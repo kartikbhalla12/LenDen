@@ -29,12 +29,6 @@ class CommonForm extends Component {
 		if (error) return error.message;
 		return '';
 	};
-	validateImages = () => {
-		const pictures = this.state;
-		if (pictures.length < 3) {
-			return this.setState({ error: 'atleast 3 images are required' });
-		}
-	};
 
 	handleSubmit = e => {
 		e.preventDefault();
@@ -172,7 +166,7 @@ class CommonForm extends Component {
 				onChange={this.onDrop}
 				imgExtension={['.jpg', '.png', '.jpeg']}
 				maxFileSize={10485760}
-				fileContainerStyle={{ textAlign: 'left' }}
+				fileContainerStyle={{ textAlign: 'left', boxShadow: 'none' }}
 				withPreview={true}
 				buttonStyles={{ backgroundColor: 'rgb(253, 186, 73)' }}
 			/>

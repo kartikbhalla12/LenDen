@@ -34,7 +34,7 @@ class NewProduct extends Component {
 			<div
 				className='container'
 				style={{
-					marginTop: '5vh',
+					marginTop: '2vh',
 				}}>
 				<h2
 					style={{
@@ -47,7 +47,7 @@ class NewProduct extends Component {
 				<div
 					style={{
 						width: '80vw',
-						margin: '5vh auto 0 auto',
+						margin: '2vh auto 0 auto',
 						maxWidth: '300px',
 					}}>
 					<Form noValidate className='form' onSubmit={this.handleSubmit}>

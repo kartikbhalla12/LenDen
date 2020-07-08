@@ -40,7 +40,11 @@ class Main extends Component {
 				<Switch>
 					<Route path='/books/:id' component={ProductPage} />
 					<Route path='/books' component={Books} />
-					<ProtectedRoute path='/new' exact component={NewProduct} />
+					<Route //TODO ProtectedRoute
+						path='/new'
+						exact
+						component={NewProduct}
+					/>
 					<Route path='/not-found' component={NotFound} />
 					<ProtectedRoute path='/me' component={Me} />
 					<Route path='/' exact component={Home} />
