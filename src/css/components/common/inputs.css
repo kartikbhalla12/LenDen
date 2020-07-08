@@ -1,0 +1,27 @@
+.input:focus {
+	border: none;
+	box-shadow: 0 0 0 0.2rem rgba(253, 186, 73, 0.4);
+}
+.custom-select:focus {
+	border: none;
+	box-shadow: 0 0 0 0.2rem rgba(253, 186, 73, 0.4);
+	outline: 0;
+}
+textarea:focus {
+	border: none !important;
+	box-shadow: 0 0 0 0.2rem rgba(253, 186, 73, 0.4) !important;
+}
+
+.form-control,
+.custom-select {
+	transition: box-shadow 0.15s ease-in-out;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+}
+
+.btn:focus {
+	box-shadow: none;
+}
+.btn:not(:disabled):not(.disabled):active:focus {
+	box-shadow: none;
+}

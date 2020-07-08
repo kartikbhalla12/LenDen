@@ -3,6 +3,8 @@ import { Form, Button, Row, Col } from 'react-bootstrap';
 import CommonForm from './../common/commonForm';
 import Joi from 'joi-browser';
 import uploadImages from '../../services/imageService';
+import { postBook } from '../../services/newBookService';
+import { getCurrentUser } from '../../services/authService';
 
 const customError = new Error('Every question is required');
 class BookForm extends CommonForm {
@@ -43,20 +45,43 @@ class BookForm extends CommonForm {
 		ques5: Joi.number().min(1).required().error(customError),
 		description: Joi.string().min(5).required().label('Description'), //TODO
 	};
+
+	mapToViewModel = (data, imageData) => ({
+		mrp: data.mrp,
+		title: data.title,
+		binding: data.cover,
+		description: data.description,
+		conditionquestion1: data.ques1,
+		conditionquestion2: data.ques2,
+		conditionquestion3: data.ques3,
+		conditionquestion4: data.ques4,
+		conditionquestion5: data.ques5,
+		productid: imageData.publicProductId,
+		productimageentity: imageData.imagelinks.map(e => ({ imagelink: e })),
+	});
+
 	doSubmit = async () => {
 		const { data, pictures } = this.state;
+		this.validateImages();
 
-		// if (pictures.length < 3) {
-		// 	return this.setState({ error: 'atleast 3 images are required' });
-		// }
 		this.setState({ loading: true });
-
-		const { data: imageData } = await uploadImages(pictures);
-		console.log(imageData);
-
-		// console.log(imageData.imagelinks, imageData.publicProductId);
-		// this.setState({ url });
-		this.setState({ loading: false });
+		try {
+			const { userId } = getCurrentUser();
+			const { data: imageData } = await uploadImages(pictures);
+			const reqBody = this.mapToViewModel(data, imageData);
+			const res = await postBook(userId, reqBody);
+			console.log(res);
+			this.setState({
+				loading: false,
+				success: 'Successfully posted your product!',
+			});
+			setTimeout(() => {
+				window.location.replace('/my-products');
+			}, 2000);
+		} catch (ex) {
+			console.log(ex);
+			this.setState({ loading: false });
+		}
 	};
 
 	render() {

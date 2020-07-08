@@ -1,10 +1,17 @@
 .deleteImage {
-	background: #000 !important;
+	background: rgb(253, 186, 73) !important;
 	text-transform: lowercase;
-	border-radius: 100%;
+	border-radius: 100% !important;
+	font-size: 20px !important;
 }
 
 .uploadPictureContainer {
 	width: 10rem !important;
 	margin: 20px !important;
+	padding: 2px !important;
+}
+
+input:focus {
+	border: none;
+	box-shadow: 0 0 0 0.2rem rgba(253, 186, 73, 0.4);
 }

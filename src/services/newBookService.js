@@ -1,9 +1,8 @@
 import http from './httpService';
-import { getCurrentUser } from './authService';
 import { api } from '../config.json';
 
-const apiEndPoint = `${api}/image-upload`;
+const apiEndPoint = `${api}/products/book`;
 
-export default function uploadImages(body) {
-	return http.post(apiEndPoint, body);
+export function postBook(userId, body) {
+	return http.post(`${apiEndPoint}/${userId}`, body);
 }

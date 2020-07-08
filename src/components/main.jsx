@@ -40,7 +40,7 @@ class Main extends Component {
 				<Switch>
 					<Route path='/books/:id' component={ProductPage} />
 					<Route path='/books' component={Books} />
-					<Route path='/new' component={NewProduct} />
+					<ProtectedRoute path='/new' exact component={NewProduct} />
 					<Route path='/not-found' component={NotFound} />
 					<ProtectedRoute path='/me' component={Me} />
 					<Route path='/' exact component={Home} />
@@ -55,7 +55,7 @@ class Main extends Component {
 		});
 	};
 
-	handleStateChange = (state) => {
+	handleStateChange = state => {
 		this.setState({
 			menuOpen: state.isOpen,
 		});

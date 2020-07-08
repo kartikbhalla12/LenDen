@@ -26,7 +26,7 @@ class DesktopProduct extends CommonProduct {
 					onClick={onClick}
 					style={{ position: 'relative', cursor: 'pointer' }}>
 					{this.renderProductImage(src, {
-						maxHeight: '300px',
+						height: '300px',
 						borderTopLeftRadius: '10px',
 						borderTopRightRadius: '10px',
 					})}

@@ -8,9 +8,13 @@ import './../../css/components/newProduct.css';
 class NewProduct extends Component {
 	state = {
 		data: {
-			category: 0,
+			category: '0',
 		},
 	};
+
+	// componentDidMount = () => {
+	// 	const data = { ...this.state.data };
+	// };
 
 	handleSubmit = e => {
 		e.preventDefault();
@@ -21,7 +25,7 @@ class NewProduct extends Component {
 		const data = { ...this.state.data };
 		data.category = input.value;
 		this.setState({ data });
-		this.props.history.push(`/new/${data.category}`);
+		// this.props.history.push(`/new/${data.category}`);
 	};
 
 	render() {
@@ -71,9 +75,11 @@ class NewProduct extends Component {
 						</Form.Control>
 					</Form>
 				</div>
-				<Switch>
+				{data.category === 'books' && <BookForm />}
+				{/* {data.category === 'gaming' && <BookForm />} */}
+				{/* <Switch>
 					<Route path='/new/books' component={BookForm} />
-				</Switch>
+				</Switch> */}
 			</div>
 		);
 	}

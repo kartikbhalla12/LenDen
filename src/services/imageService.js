@@ -7,8 +7,6 @@ export default async function uploadImages(pictures) {
 
 	pictures.forEach(pic => fd.append('image', pic));
 
-	console.log(fd.getAll('image'));
-
 	return http.post(apiEndPoint, fd, {
 		headers: {},
 	});
