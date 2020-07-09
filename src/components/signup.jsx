@@ -1,5 +1,5 @@
 import React from 'react';
-import '../css/components/sign.css';
+// import '../css/components/sign.css';
 import { Image, Form, Button } from 'react-bootstrap';
 import CommonForm from './common/commonForm';
 import Joi from 'joi-browser';
@@ -50,26 +50,26 @@ class Signup extends CommonForm {
 		return (
 			<div className='mainContainer'>
 				<div className='formBox'>
-					<Image src='/images/demoLogo.png' style={{ maxWidth: '150px' }} />
+					<Image src='images/logo.png' />
 					<h2>Sign Up Today!</h2>
 					<Form noValidate className='form' onSubmit={this.handleSubmit}>
 						{this.renderInput('name', 'Name')}
 						{this.renderInput('email', 'Email Address')}
 						{this.renderInput('password', 'Password')}
-						{this.renderAlert()}
-						{this.renderSuccessAlert()}
-						<Button className='btn-log' variant='dark' type='submit'>
+						{this.renderAlert('error-alert')}
+						{this.renderSuccessAlert('error-success')}
+						<Button variant='none' type='submit'>
 							Sign Up
 						</Button>
-						{this.renderLoader('#ef5350', {
+						{this.renderLoader({
 							margin: '3vh auto 0 auto',
 						})}
 					</Form>
 					<div className='separator'>Already have an account? </div>
 					<Button
-						className='signButton btn-log'
+						className='signButton'
 						onClick={() => this.props.history.push('/login')}
-						variant='dark'
+						variant='none'
 						type='submit'>
 						Log In Here!
 					</Button>

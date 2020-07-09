@@ -124,7 +124,7 @@ class AddressForm extends CommonForm {
 					<Button className='btn-log' variant='primary' type='submit'>
 						Submit
 					</Button>
-					{this.renderLoader('#ef5350', {
+					{this.renderLoader({
 						margin: '3vh auto 0 auto',
 					})}
 				</Form>

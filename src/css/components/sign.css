@@ -5,20 +5,24 @@
 	font-family: raleway;
 	display: flex;
 	height: 100vh;
-	background-color: #212121;
+	/* background-color: #f8f8f8; */
 	align-items: center;
 	text-align: center;
 }
 
 .formBox {
-	width: 80vw;
+	background-color: #fff;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+	padding: 50px;
+	width: 90vw;
 	margin: auto;
-	max-width: 350px;
+	max-width: 400px;
 }
 .formBox > h2 {
 	margin-top: 4vh;
 	font-size: 20px;
-	color: white;
+	color: black;
+	font-weight: 600;
 }
 
 .formBox > hr {
@@ -36,8 +40,8 @@
 	display: flex;
 	align-items: center;
 	text-align: center;
-	color: white;
-	font-family: kalam;
+	color: #000;
+	font-family: 'Balsamiq Sans';
 	font-size: 15px;
 }
 
@@ -45,7 +49,7 @@
 .separator::after {
 	content: '';
 	flex: 1;
-	border-bottom: 1px solid #fff;
+	border-bottom: 1px solid #000;
 }
 .separator::before {
 	margin-right: 0.25em;
@@ -61,7 +65,7 @@
 .btn-log,
 .btn-log:active,
 .btn-log:hover {
-	background-color: #ef5350 !important;
+	background-color: rgb(253, 186, 73) !important;
 	box-shadow: none;
 	border: none;
 }
@@ -79,4 +83,11 @@
 	background-color: rgba(129, 199, 132, 0.4);
 	border: none;
 	font-size: 13px;
+}
+
+@media screen and (max-width: 500px) {
+	.formBox {
+		background-color: transparent;
+		box-shadow: none;
+	}
 }

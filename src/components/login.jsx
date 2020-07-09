@@ -1,5 +1,5 @@
 import React from 'react';
-import '../css/components/sign.css';
+// import '../css/components/sign.css';
 import { Image, Form, Button } from 'react-bootstrap';
 import Joi from 'joi-browser';
 import CommonForm from './common/commonForm';
@@ -45,24 +45,24 @@ class Login extends CommonForm {
 		return (
 			<div className='mainContainer'>
 				<div className='formBox'>
-					<Image src='/images/demoLogo.png' style={{ maxWidth: '150px' }} />
+					<Image src='/images/logo.png' />
 					<h2>Please Sign In</h2>
 					<Form noValidate className='form' onSubmit={this.handleSubmit}>
 						{this.renderInput('email', 'Email Address')}
 						{this.renderInput('password', 'Password')}
-						{this.renderAlert()}
-						<Button className='btn-log' variant='primary' type='submit'>
+						{this.renderAlert('error-alert')}
+						<Button className='btn-log' variant='none' type='submit'>
 							Sign In
 						</Button>
-						{this.renderLoader('#ef5350', {
+						{this.renderLoader({
 							margin: '3vh auto 0 auto',
 						})}
 					</Form>
-					<div className='separator'>New to LenDen ?</div>
+					<div className='separator'>New to LenDen?</div>
 					<Button
-						className='signButton btn-log'
+						className='signButton'
 						onClick={() => this.props.history.push('/signup')}
-						variant='primary'
+						variant='none'
 						type='submit'>
 						Create your LenDen account
 					</Button>

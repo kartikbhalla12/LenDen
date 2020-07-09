@@ -58,34 +58,34 @@ class CommonForm extends Component {
 			</Form.Group>
 		);
 	}
-	renderAlert = (id, style) => {
+	renderAlert = (className, style) => {
 		const { error } = this.state;
 		return (
 			error && (
-				<Alert style={style} id={id} variant='danger'>
+				<Alert style={style} className={className} variant='danger'>
 					{error}
 				</Alert>
 			)
 		);
 	};
 
-	renderSuccessAlert = style => {
+	renderSuccessAlert = (className, style) => {
 		const { success } = this.state;
 		return (
 			success && (
-				<Alert style={style} id='error-success' variant='primary'>
+				<Alert style={style} className={className} variant='primary'>
 					{success}
 				</Alert>
 			)
 		);
 	};
 
-	renderLoader = (color, style) => {
+	renderLoader = style => {
 		return (
 			<BarLoader
 				css={{ display: 'block', ...style }}
 				size={50}
-				color={color}
+				color='rgb(253,186,73)'
 				loading={this.state.loading}
 			/>
 		);

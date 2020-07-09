@@ -5,6 +5,9 @@ $colors: (
 	background: #f8f8f8,
 	backgroundSecondary: #212121,
 	text: #f5f5f5,
+	success: rgb(129, 199, 132),
+	error: rgb(239, 103, 100),
+	white: #fff,
 );
 @function color($colorName) {
 	@return map-get($map: $colors, $key: $colorName);

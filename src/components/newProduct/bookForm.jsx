@@ -162,7 +162,7 @@ class BookForm extends CommonForm {
 						'Minimum 5 characters required ' //TODO
 					)}
 					{this.renderImageUploader()}
-					{this.renderLoader('rgb(253, 186, 73)', {
+					{this.renderLoader({
 						margin: '3vh auto',
 						width: '30%',
 						backgroundColor: '#f7e6c8',

@@ -1,0 +1,88 @@
+@import './colors';
+@import './fonts';
+
+.mainContainer {
+	font-family: font(raleway);
+	display: flex;
+	height: 100vh;
+	align-items: center;
+	text-align: center;
+
+	.formBox {
+		background-color: color(white);
+		box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+		border-radius: 10px;
+		padding: 50px;
+		width: 90vw;
+		margin: auto;
+		max-width: 400px;
+
+		img {
+			max-width: 150px;
+		}
+
+		h2 {
+			margin-top: 4vh;
+			font-size: 20px;
+			color: color(secondary);
+			font-weight: 600;
+		}
+
+		.form {
+			margin-top: 2vh;
+
+			.error-alert {
+				border-radius: 5px;
+				font-family: font(raleway);
+				color: color(secondary);
+				background-color: rgba(color(error), 0.35);
+				font-size: 14px;
+				padding: 0.75rem 1rem;
+				border: none;
+			}
+
+			.error-success {
+				border-radius: 5px;
+				font-family: font(raleway);
+				color: color(secondary);
+				background-color: rgba(color(success), 0.35);
+				font-size: 14px;
+				border: none;
+			}
+		}
+
+		.separator {
+			margin-top: 3vh;
+			display: flex;
+			align-items: center;
+			text-align: center;
+			color: color(secondary);
+			font-family: font(balsamiqSans);
+			font-size: 15px;
+		}
+
+		.separator::before,
+		.separator::after {
+			content: '';
+			flex: 1;
+			border-bottom: 1px solid color(secondary);
+		}
+		.separator::before {
+			margin-right: 0.25em;
+		}
+		.separator::after {
+			margin-left: 0.25em;
+		}
+
+		.signButton {
+			margin-top: 2vh;
+		}
+	}
+}
+
+@media screen and (max-width: 500px) {
+	.formBox {
+		background-color: transparent;
+		box-shadow: none;
+	}
+}
