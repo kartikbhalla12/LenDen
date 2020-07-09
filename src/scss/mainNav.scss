@@ -1,0 +1,131 @@
+@import './colors';
+
+.mainNav {
+	background-color: color(backgroundSecondary);
+}
+
+.nav-link {
+	margin: auto 0.2vw;
+}
+
+.navbar-brand {
+	margin-right: 0px;
+}
+
+#navSearchIcon {
+	font-size: 18px;
+	color: color(text);
+	margin: auto 1.5vw;
+}
+
+.navIcon {
+	font-size: 22px;
+	color: color(text);
+}
+
+#navSearchBox {
+	display: flex;
+	background-color: color(secondary);
+	border-radius: 5px;
+}
+
+#navSearchInput {
+	color: color(text);
+	width: 55vw;
+	margin-right: 12px;
+	background-color: color(secondary);
+	border: none;
+	box-shadow: none;
+}
+#navSearchInput::placeholder {
+	text-align: center;
+}
+#mobileSearchBox {
+	background-color: color(backgroundSecondary);
+	padding: 0.2rem 0.6rem 0.6rem 0.6rem;
+	display: none;
+}
+#mobileSearchBoxItem {
+	background-color: color(secondary) !important;
+	display: flex;
+	width: 93vw;
+	margin: 0 auto;
+	border-radius: 5px;
+}
+
+#mobileSearchIcon {
+	margin: auto 2.5vw;
+	font-size: 18px;
+	color: color(text);
+}
+
+#mobileSearchInput {
+	color: color(text);
+	margin-right: 10px;
+	background-color: color(secondary);
+	border: none;
+	font-size: 16px;
+	box-shadow: none;
+}
+
+#logo {
+	width: 3em;
+	margin: auto 1rem;
+}
+
+#mainNavHeart {
+	color: color(accent);
+}
+
+@media screen and (max-width: 700px) {
+	#navSearchInput {
+		color: color(text);
+		width: 40vw;
+	}
+}
+
+@media screen and (max-width: 500px) {
+	#userImage {
+		display: none;
+	}
+
+	.navbar-dark .navbar-nav .nav-link {
+		margin: auto 0.1vw;
+	}
+
+	#navSearchBox {
+		display: none;
+	}
+
+	#mobileSearchBox {
+		display: block;
+	}
+
+	.navbar {
+		padding: 0.2rem 1rem;
+	}
+}
+
+@media screen and (max-width: 350px) {
+	#logo {
+		width: 2em;
+		margin: auto 5px;
+	}
+	#searchIcon {
+		display: none;
+	}
+	#searchInput::placeholder {
+		font-size: 14px;
+	}
+}
+
+#navSearchInput:-webkit-autofill,
+#navSearchInput:-webkit-autofill:hover,
+#navSearchInput:-webkit-autofill:focus,
+#mobileSearchInput:-webkit-autofill,
+#mobileSearchInput:-webkit-autofill:hover,
+#mobileSearchInput:-webkit-autofill:focus {
+	-webkit-text-fill-color: color(text);
+	-webkit-box-shadow: 0 0 0px 1000px color(secondary) inset;
+	transition: background-color 5000s ease-in-out 0s;
+}

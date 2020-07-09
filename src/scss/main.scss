@@ -1,0 +1,31 @@
+@import './mainNav.scss';
+@import './sideNav.scss';
+
+body {
+	min-height: 100vh;
+	background-color: color('background');
+}
+
+@media (max-width: 1000px) and (min-width: 700px) {
+	.container {
+		max-width: 95vw;
+	}
+}
+
+@media (min-width: 1400px) {
+	.container {
+		max-width: 1350px;
+	}
+}
+
+@media (min-width: 1500px) {
+	.container {
+		max-width: 1450px;
+	}
+}
+
+@media (min-width: 1800px) {
+	.container {
+		max-width: 1750px;
+	}
+}

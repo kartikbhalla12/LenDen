@@ -7,14 +7,13 @@ import {
 	faShoppingCart,
 	faSearch,
 } from '@fortawesome/free-solid-svg-icons';
-import '../../css/components/mainNav.css';
 
 class MainNav extends Component {
 	state = {};
 	render() {
 		return (
 			<div>
-				<Navbar variant='dark' style={{ backgroundColor: '#212121' }}>
+				<Navbar variant='dark' className='mainNav'>
 					<Navbar.Brand
 						onClick={this.props.onBarClick}
 						style={{ cursor: 'pointer' }}>
@@ -32,17 +31,13 @@ class MainNav extends Component {
 					<Nav className='ml-auto'>
 						<Nav.Link href='#deets'>
 							<FontAwesomeIcon
+								id='mainNavHeart'
 								className='navIcon'
 								icon={faHeart}
-								style={{ color: '#f44336' }}
 							/>
 						</Nav.Link>
 						<Nav.Link>
-							<FontAwesomeIcon
-								className='navIcon'
-								icon={faShoppingCart}
-								style={{ color: '#f5f5f5' }}
-							/>
+							<FontAwesomeIcon className='navIcon' icon={faShoppingCart} />
 						</Nav.Link>
 						<Nav.Link id='userImage' onClick={this.props.onUserClick}>
 							<Image

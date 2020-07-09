@@ -1,0 +1,122 @@
+@import './colors';
+@import './fonts';
+
+.bm-burger-button {
+	position: fixed;
+	width: 36px;
+	height: 30px;
+	left: 36px;
+	top: 36px;
+	outline: none;
+}
+
+.bm-burger-bars {
+	background: #373a47;
+}
+
+.bm-burger-bars-hover {
+	background: rgba(color(accent), 0.4);
+}
+
+.bm-cross-button {
+	height: 24px;
+	width: 24px;
+	top: 20px !important;
+	right: 20px !important;
+}
+
+.bm-cross {
+	background: color('background');
+}
+
+.bm-menu-wrap {
+	position: fixed;
+	height: 100%;
+}
+
+.bm-menu {
+	background: color(backgroundSecondary);
+	padding: 2.5em 1.5em 0;
+	font-size: 1.15em;
+}
+
+.bm-item-list {
+	font-family: font(raleway);
+	color: color(text);
+	padding: 0.8em;
+}
+
+.bm-item {
+	display: inline-block;
+	text-decoration: none !important;
+	outline: none;
+	text-transform: uppercase;
+	font-weight: 700;
+}
+
+.bm-item:hover {
+	color: rgba(color(accent), 0.8);
+}
+
+.bm-item span {
+	text-decoration: none;
+}
+
+a.bm-item {
+	padding: 0.6em;
+	display: block;
+	color: color(text);
+	text-align: center;
+}
+
+.bm-cross-button > button {
+	outline: none;
+}
+
+.active {
+	color: color(accent) !important;
+}
+
+#userImageMain {
+	cursor: pointer;
+	max-width: 180px;
+	margin: 0 auto 1vh auto;
+	text-align: center;
+}
+
+#userImageMain:hover {
+	box-shadow: 0 0 20px rgba(color(accent), 0.9);
+	transition: box-shadow 0.3s ease-in-out;
+}
+
+#navAnchor {
+	text-align: center;
+	margin-bottom: 2vh;
+}
+
+#homeAnchor {
+	margin-top: 2vh;
+}
+
+#signOutNav {
+	text-align: center;
+	margin: 2vh 0;
+	background-color: rgba(color(accent), 0.6);
+	padding: 0.4rem 0;
+	color: color(text);
+	cursor: pointer;
+}
+
+#sideNavBell {
+	margin-left: 5px;
+	color: color(accent);
+}
+
+@media screen and (max-width: 500px) {
+	#userImageMain {
+		max-width: 130px;
+	}
+	#navAnchor {
+		margin-bottom: 4vh;
+	}
+}

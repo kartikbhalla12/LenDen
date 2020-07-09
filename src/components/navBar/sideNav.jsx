@@ -1,7 +1,7 @@
 import { slide as Menu } from 'react-burger-menu';
 import React, { Component } from 'react';
 import { Image } from 'react-bootstrap';
-import './../../css/components/sideNav.css';
+// import './../../css/components/sideNav.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBell } from '@fortawesome/free-solid-svg-icons';
 import { NavLink } from 'react-router-dom';
@@ -27,7 +27,7 @@ class SideNav extends Component {
 				customBurgerIcon={false}
 				isOpen={menuOpen}
 				// styles={styles}
-				onStateChange={(state) => onStateChange(state)}>
+				onStateChange={state => onStateChange(state)}>
 				<Image
 					id='userImageMain'
 					src={
@@ -62,10 +62,7 @@ class SideNav extends Component {
 					className='menu-item'
 					onClick={onNavLinkClick}>
 					Notifications
-					<FontAwesomeIcon
-						icon={faBell}
-						style={{ marginLeft: '5px', color: '#ef5350' }}
-					/>
+					<FontAwesomeIcon id='sideNavBell' icon={faBell} />
 				</NavLink>
 				<NavLink to='/wishlist' className='menu-item' onClick={onNavLinkClick}>
 					Wishlist
@@ -108,13 +105,6 @@ class SideNav extends Component {
 				</NavLink>
 
 				{user && (
-					// <NavLink
-					// 	id='signOutNav'
-					// 	to=''
-					// 	className='menu-item'
-					// 	onClick={onNavLinkClick}>
-					// 	Sign Out
-					// </NavLink>
 					<div id='signOutNav' onClick={authService.logout}>
 						SIGN OUT
 					</div>

@@ -1,0 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway&family=Kalam&family=PT+Sans&family=Balsamiq+Sans');
+
+$fonts: (
+	raleway: 'raleway',
+	kalam: 'kalam',
+	ptSans: 'PT Sans',
+	balsamiqSans: 'Balsamiq Sans',
+);
+@function font($fontName) {
+	@return map-get($map: $fonts, $key: $fontName);
+}

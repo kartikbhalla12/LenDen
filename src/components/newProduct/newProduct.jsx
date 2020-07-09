@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { Form } from 'react-bootstrap';
-import { Switch, Route } from 'react-router-dom';
 import BookForm from './bookForm';
 
 import './../../css/components/newProduct.css';
@@ -11,10 +10,6 @@ class NewProduct extends Component {
 			category: '0',
 		},
 	};
-
-	// componentDidMount = () => {
-	// 	const data = { ...this.state.data };
-	// };
 
 	handleSubmit = e => {
 		e.preventDefault();
