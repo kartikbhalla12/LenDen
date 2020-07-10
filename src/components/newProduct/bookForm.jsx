@@ -56,7 +56,7 @@ class BookForm extends CommonForm {
 		conditionquestion3: data.ques3,
 		conditionquestion4: data.ques4,
 		conditionquestion5: data.ques5,
-		productid: imageData.publicProductId,
+		productid: imageData.productid,
 		productimageentity: imageData.imagelinks.map(e => ({ imagelink: e })),
 	});
 

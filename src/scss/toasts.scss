@@ -1,0 +1,31 @@
+.toastContainer {
+	top: 5.5rem;
+	padding: 0;
+
+	.toasty {
+		min-height: 50px;
+		font-family: font(balsamiqSans);
+		border-radius: 4px;
+		text-align: center;
+
+		button:focus {
+			outline: none !important;
+		}
+	}
+}
+
+@media (max-width: 500px) {
+	.toastContainer {
+		max-width: 65vw;
+		margin: 0 auto 0.5vh auto;
+		top: auto;
+		bottom: 0.5rem;
+		// right: 0;
+		// height: 4rem;
+
+		.toasty {
+			min-height: 30px;
+			font-size: 15px;
+		}
+	}
+}
