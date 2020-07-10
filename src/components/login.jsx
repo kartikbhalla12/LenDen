@@ -45,7 +45,7 @@ class Login extends CommonForm {
 		return (
 			<div className='mainContainer'>
 				<div className='formBox'>
-					<Image src='/images/logo.png' />
+					<Image draggable='false' src='/images/logo.png' />
 					<h2>Please Sign In</h2>
 					<Form noValidate className='form' onSubmit={this.handleSubmit}>
 						{this.renderInput('email', 'Email Address')}
