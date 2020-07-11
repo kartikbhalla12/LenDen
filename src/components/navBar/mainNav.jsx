@@ -46,7 +46,7 @@ class MainNav extends Component {
 								}}
 								src={
 									this.props.user
-										? 'http://placekitten.com/g/300/300'
+										? 'https://placekitten.com/g/300/300'
 										: '/images/genericUser.png'
 								}
 								roundedCircle
