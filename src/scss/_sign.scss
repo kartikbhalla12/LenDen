@@ -4,7 +4,7 @@
 .mainContainer {
 	font-family: font(raleway);
 	display: flex;
-	height: 100vh;
+	min-height: 100vh;
 	align-items: center;
 	text-align: center;
 
@@ -14,7 +14,8 @@
 		border-radius: 10px;
 		padding: 50px;
 		width: 90vw;
-		margin: auto;
+		// margin: auto;
+		margin: 2rem auto;
 		max-width: 400px;
 
 		img {
