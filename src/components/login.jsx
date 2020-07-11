@@ -50,7 +50,7 @@ class Login extends CommonForm {
 					<Form noValidate className='form' onSubmit={this.handleSubmit}>
 						{this.renderInput('email', 'Email Address')}
 						{this.renderInput('password', 'Password')}
-						{this.renderAlert('error-alert')}
+						{this.renderAlert()}
 						<Button className='btn-log' variant='none' type='submit'>
 							Sign In
 						</Button>

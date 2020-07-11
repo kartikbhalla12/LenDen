@@ -87,19 +87,8 @@ class BookForm extends CommonForm {
 
 	render() {
 		return (
-			<div
-				style={{
-					margin: '2vh auto 2vh auto',
-					// border: '1px solid rgb(253, 186, 73)',
-					// boxShadow: '0 0 0 2px rgba(253, 186, 73, 0.4)',
-					background: '#fff',
-					boxShadow: ' 0 4px 8px 0 rgba(0,0,0,0.2)',
-					borderRadius: '10px',
-					padding: '20px 30px',
-					fontFamily: 'Balsamiq Sans',
-					maxWidth: '1000px',
-				}}>
-				<h3 style={{ marginBottom: '2vh' }}>Tell us about your book</h3>
+			<div className='productForm'>
+				<h3>Tell us about your book</h3>
 				<Form noValidate className='form' onSubmit={this.handleSubmit}>
 					<Form.Group as={Row}>
 						<Form.Label column sm='1'>
@@ -165,26 +154,10 @@ class BookForm extends CommonForm {
 					{this.renderLoader({
 						margin: '3vh auto',
 						width: '30%',
-						backgroundColor: '#f7e6c8',
 					})}
-					{this.renderAlert('', {
-						color: '#424242',
-						border: 'none',
-						textAlign: 'center',
-					})}
-					{this.renderSuccessAlert({
-						color: '#424242',
-						border: 'none',
-						textAlign: 'center',
-						fontSize: '1rem',
-					})}
-					<Button
-						variant='primary'
-						type='submit'
-						style={{
-							backgroundColor: 'rgb(253, 186, 73)',
-							borderColor: 'transparent',
-						}}>
+					{this.renderAlert()}
+					{this.renderSuccessAlert()}
+					<Button variant='primary' type='submit'>
 						Submit
 					</Button>
 				</Form>

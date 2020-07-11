@@ -1,0 +1,15 @@
+@import '../../core/colors';
+
+.input:focus,
+.custom-select:focus,
+textarea:focus {
+	border: none;
+	box-shadow: 0 0 0 0.2rem rgba(color(accent), 0.4) !important;
+	outline: 0;
+}
+.form-control,
+.custom-select {
+	transition: box-shadow 0.15s ease-in-out;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+}

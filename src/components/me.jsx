@@ -40,7 +40,7 @@ class Me extends Component {
 							flexWrap: 'wrap',
 						}}>
 						<Image
-							src='https://placekitten.com/g/300/300'
+							src='http://placekitten.com/g/300/300'
 							roundedCircle
 							style={{ display: 'block', maxWidth: 200 }}
 						/>

@@ -56,8 +56,8 @@ class Signup extends CommonForm {
 						{this.renderInput('name', 'Name')}
 						{this.renderInput('email', 'Email Address')}
 						{this.renderInput('password', 'Password')}
-						{this.renderAlert('error-alert')}
-						{this.renderSuccessAlert('error-success')}
+						{this.renderAlert()}
+						{this.renderSuccessAlert()}
 						<Button variant='none' type='submit'>
 							Sign Up
 						</Button>

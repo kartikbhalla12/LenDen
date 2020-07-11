@@ -1,8 +1,11 @@
-@import './mainNav.scss';
-@import './sideNav.scss';
-@import './sign.scss';
-@import './btn';
-@import './toasts';
+@import './partials/nav/mainNav.scss';
+@import './partials/nav/sideNav.scss';
+@import './partials/sign.scss';
+@import './partials/common/btn';
+@import './partials/common/alerts';
+@import './partials/common/toasts';
+@import './partials/common/inputs';
+@import './partials/new';
 
 body {
 	min-height: 100vh;

@@ -1,6 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Raleway');
+@import '../../core/colors';
+@import '../../core/fonts';
 
-/* Position and sizing of burger button */
 .bm-burger-button {
 	position: fixed;
 	width: 36px;
@@ -10,17 +10,10 @@
 	outline: none;
 }
 
-/* Color/shape of burger icon bars */
-.bm-burger-bars {
-	background: #373a47;
-}
-
-/* Color/shape of burger icon bars on hover*/
 .bm-burger-bars-hover {
-	background: #a90000;
+	background: rgba(color(accent), 0.4);
 }
 
-/* Position and sizing of clickable cross button */
 .bm-cross-button {
 	height: 24px;
 	width: 24px;
@@ -28,40 +21,27 @@
 	right: 20px !important;
 }
 
-/* Color/shape of close button cross */
 .bm-cross {
-	background: #bdc3c7;
+	background: color('background');
 }
 
-/*
-  Sidebar wrapper styles
-  Note: Beware of modifying this element as it can break the animations - you should not need to touch it in most cases
-  */
 .bm-menu-wrap {
 	position: fixed;
 	height: 100%;
 }
 
-/* General sidebar styles */
 .bm-menu {
-	background: #212121;
+	background: color(backgroundSecondary);
 	padding: 2.5em 1.5em 0;
 	font-size: 1.15em;
 }
 
-/* Morph shape necessary with bubble or elastic */
-.bm-morph-shape {
-	fill: #373a47;
-}
-
-/* Wrapper for item list */
 .bm-item-list {
-	font-family: raleway;
-	color: #b8b7ad;
+	font-family: font(raleway);
+	color: color(text);
 	padding: 0.8em;
 }
 
-/* Individual item */
 .bm-item {
 	display: inline-block;
 	text-decoration: none !important;
@@ -71,21 +51,17 @@
 }
 
 .bm-item:hover {
-	color: #ef5350;
+	color: rgba(color(accent), 0.8);
 }
 
 .bm-item span {
 	text-decoration: none;
 }
 
-/* Styling of overlay */
-.bm-overlay {
-	background: rgba(0, 0, 0, 0.3);
-}
-a[class*='bm-item'] {
+a.bm-item {
 	padding: 0.6em;
 	display: block;
-	color: #fafafa;
+	color: color(text);
 	text-align: center;
 }
 
@@ -94,7 +70,7 @@ a[class*='bm-item'] {
 }
 
 .active {
-	color: #ef5350;
+	color: color(accent) !important;
 }
 
 #userImageMain {
@@ -105,7 +81,7 @@ a[class*='bm-item'] {
 }
 
 #userImageMain:hover {
-	box-shadow: 0 0 20px rgba(239, 83, 80, 0.9);
+	box-shadow: 0 0 20px rgba(color(accent), 0.9);
 	transition: box-shadow 0.3s ease-in-out;
 }
 
@@ -121,10 +97,15 @@ a[class*='bm-item'] {
 #signOutNav {
 	text-align: center;
 	margin: 2vh 0;
-	background-color: rgba(239, 103, 100, 0.5);
+	background-color: rgba(color(accent), 0.6);
 	padding: 0.4rem 0;
-	color: white;
+	color: color(text);
 	cursor: pointer;
+}
+
+#sideNavBell {
+	margin-left: 5px;
+	color: color(accent);
 }
 
 @media screen and (max-width: 500px) {

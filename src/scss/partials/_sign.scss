@@ -1,5 +1,5 @@
-@import './colors';
-@import './fonts';
+@import './core/colors';
+@import './core/fonts';
 
 .mainContainer {
 	font-family: font(raleway);
@@ -31,25 +31,6 @@
 
 		.form {
 			margin-top: 2vh;
-
-			.error-alert {
-				border-radius: 5px;
-				font-family: font(raleway);
-				color: color(secondary);
-				background-color: rgba(color(error), 0.35);
-				font-size: 14px;
-				padding: 0.75rem 1rem;
-				border: none;
-			}
-
-			.error-success {
-				border-radius: 5px;
-				font-family: font(raleway);
-				color: color(secondary);
-				background-color: rgba(color(success), 0.35);
-				font-size: 14px;
-				border: none;
-			}
 		}
 
 		.separator {

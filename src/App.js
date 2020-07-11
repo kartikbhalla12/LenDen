@@ -3,7 +3,7 @@ import { ToastContainer, Flip } from 'react-toastify';
 import 'react-toastify/scss/main.scss';
 // import './App.css';
 import './scss/main.scss';
-import './css/components/common/inputs.css';
+// import './css/components/common/inputs.css';
 import { Switch, Route } from 'react-router-dom';
 import Main from './components/main';
 import Login from './components/login';

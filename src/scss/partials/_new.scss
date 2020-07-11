@@ -1,0 +1,60 @@
+@import '../core/fonts';
+@import '../core/colors';
+
+#newProductContainer {
+	margin-top: 2vh;
+	max-width: 1000px;
+
+	h2 {
+		text-align: center;
+		font-family: font(balsamiqSans);
+	}
+
+	#categoryForm {
+		width: 80vw;
+		margin: 2vh auto 0 auto;
+		max-width: 300px;
+
+		h5 {
+			text-align: center;
+			font-family: font(balsamiqSans);
+			font-weight: 400;
+		}
+
+		.custom-select {
+			font-family: font(balsamiqSans);
+		}
+	}
+
+	.productForm {
+		margin: 2vh auto;
+		background-color: color(white);
+		box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+		border-radius: 10px;
+		padding: 20px 30px;
+		font-family: font(balsamiqSans);
+
+		h3 {
+			margin-bottom: 2vh;
+		}
+
+		.error-alert,
+		.success-alert {
+			text-align: center;
+			font-size: 1rem;
+		}
+
+		.deleteImage {
+			background: rgb(253, 186, 73) !important;
+			text-transform: lowercase;
+			border-radius: 100% !important;
+			font-size: 20px !important;
+		}
+
+		.uploadPictureContainer {
+			width: 10rem !important;
+			margin: 20px !important;
+			padding: 2px !important;
+		}
+	}
+}

@@ -1,0 +1,15 @@
+@import '../../core/fonts';
+@import '../../core/colors';
+
+.btn,
+.btn:active,
+.btn:hover,
+.btn:focus,
+.btn:not(:disabled):not(.disabled):active:focus {
+	color: color(text);
+	font-family: font(balsamiqSans);
+	background-color: color(accent) !important;
+	box-shadow: none;
+	border: none;
+	border-radius: 5px;
+}
