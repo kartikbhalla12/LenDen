@@ -31,14 +31,7 @@ class NewProduct extends Component {
 					noValidate
 					className='form'
 					onSubmit={this.handleSubmit}>
-					<h5
-						style={{
-							textAlign: 'center',
-							fontFamily: 'Balsamiq Sans',
-							fontWeight: '400',
-						}}>
-						Choose a Category
-					</h5>
+					<h5>Choose a Category</h5>
 					<Form.Control
 						as='select'
 						className='my-1 mr-sm-2'
