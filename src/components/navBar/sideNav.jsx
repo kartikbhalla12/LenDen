@@ -32,7 +32,7 @@ class SideNav extends Component {
 					id='userImageMain'
 					src={
 						user
-							? 'http://placekitten.com/g/300/300'
+							? 'https://placekitten.com/g/300/300'
 							: '/images/genericUser.png'
 					}
 					roundedCircle

@@ -40,7 +40,7 @@ class Me extends Component {
 							flexWrap: 'wrap',
 						}}>
 						<Image
-							src='http://placekitten.com/g/300/300'
+							src='https://placekitten.com/g/300/300'
 							roundedCircle
 							style={{ display: 'block', maxWidth: 200 }}
 						/>
@@ -58,7 +58,7 @@ class Me extends Component {
 					<Route
 						path='/me'
 						exact
-						render={(props) => (
+						render={props => (
 							<UserDetails
 								user={this.state.user}
 								address={this.state.address}
@@ -68,9 +68,7 @@ class Me extends Component {
 					/>
 					<Route
 						path='/me/address'
-						render={(props) => (
-							<AddressForm user={this.state.user} {...props} />
-						)}
+						render={props => <AddressForm user={this.state.user} {...props} />}
 					/>
 				</div>
 

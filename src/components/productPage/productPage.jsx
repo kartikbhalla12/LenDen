@@ -8,9 +8,9 @@ class ProductPage extends Component {
 			name: 'Kitten hgasf  asfghd a sdhf hf dahs  dfsah dsa',
 			category: 'books',
 			src: [
-				'http://placekitten.com/350/450',
-				'http://placekitten.com/350/350',
-				'http://placekitten.com/350/850',
+				'https://placekitten.com/350/450',
+				'https://placekitten.com/350/350',
+				'https://placekitten.com/350/850',
 			],
 			rating: 4,
 			ldc: 240,

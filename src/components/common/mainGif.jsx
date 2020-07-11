@@ -11,8 +11,8 @@ class MainGif extends Component {
 	handleGif = () => {
 		const src =
 			window.innerWidth > 600
-				? 'http://placekitten.com/2000/350'
-				: 'http://placekitten.com/1200/450';
+				? 'https://placekitten.com/2000/350'
+				: 'https://placekitten.com/1200/450';
 		this.setState({ src });
 	};
 
