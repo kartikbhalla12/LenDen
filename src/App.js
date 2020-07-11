@@ -27,13 +27,13 @@ class App extends Component {
 					pauseOnHover
 					className='toastContainer'
 				/>
-				<div>
+				<React.Fragment>
 					<Switch>
 						<Route path='/login' component={Login} />
 						<Route path='/signup' component={Signup} />
 						<Route path='/' component={Main} />
 					</Switch>
-				</div>
+				</React.Fragment>
 			</React.Fragment>
 		);
 	}

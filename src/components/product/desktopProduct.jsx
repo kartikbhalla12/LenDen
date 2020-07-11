@@ -16,21 +16,10 @@ class DesktopProduct extends CommonProduct {
 		const { name, desc, src, rating, ldc, wishlist } = this.props.product;
 		const { onClick } = this.props;
 		return (
-			<div
-				style={{
-					width: '280px',
-					height: '450px',
-					margin: '10px',
-				}}>
-				<div
-					onClick={onClick}
-					style={{ position: 'relative', cursor: 'pointer' }}>
-					{this.renderProductImage(src, {
-						height: '300px',
-						borderTopLeftRadius: '10px',
-						borderTopRightRadius: '10px',
-					})}
-					<div style={{ position: 'absolute', top: '10px', right: '15px' }}>
+			<div className='desktopProductContainer'>
+				<div className='desktopProductImageContainer' onClick={onClick}>
+					{this.renderProductImage(src, {})}
+					<div className='desktopStarRatingContainer'>
 						{this.renderStarRating(
 							rating,
 							{},
@@ -40,64 +29,31 @@ class DesktopProduct extends CommonProduct {
 							}
 						)}
 					</div>
-					{this.renderLdc(
-						ldc,
-						{
-							position: 'absolute',
-							bottom: 0,
-							padding: '5px 10px',
-							backgroundColor: 'rgba(0,0,0,0.4)',
-							borderTopRightRadius: '10px',
-							color: '#fff',
-							fontSize: '16px',
-						},
-						{
-							color: '#fff',
-						}
-					)}
+					{this.renderLdc(ldc, {}, {})}
 				</div>
-				<div style={{ cursor: 'pointer' }} onClick={onClick}>
-					{this.renderProductName(name, {
-						maxWidth: 'inherit',
-						margin: '8px 0',
-					})}
-					{this.renderDescription(desc, {
-						marginBottom: '10px',
-					})}
+				<div className='desktopProductDetailContainer' onClick={onClick}>
+					{this.renderProductName(name)}
+					{this.renderDescription(desc)}
 				</div>
 
-				<div style={{ display: 'flex' }}>
+				<div className='desktopProductActions'>
 					{this.renderButton(
 						() => {},
 						'BARTER',
-						{
-							borderBottomLeftRadius: '10px',
-							margin: '0 5px 0 0',
-							padding: '10px',
-							fontSize: '18px',
-						},
+						'barter',
+						{},
 						faExchangeAlt,
-						'#424242',
-						{
-							marginRight: '10px',
-							fontSize: '18px',
-						}
+						'',
+						{}
 					)}
 					{this.renderButton(
 						() => {},
 						'',
-						{
-							borderBottomRightRadius: '10px',
-							margin: '0 0 0 5px',
-							padding: '10px',
-							fontSize: '18px',
-						},
+						'wishlist',
+						{},
 						faHeart,
 						wishlist ? '#ef5350' : '#fff',
-						{
-							marginRight: '10px',
-							fontSize: '25px',
-						}
+						{}
 					)}
 				</div>
 			</div>

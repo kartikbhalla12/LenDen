@@ -11,57 +11,26 @@ class MobileProduct extends CommonProduct {
 		const { onClick } = this.props;
 		return (
 			<div>
-				<div
-					style={{
-						display: 'flex',
-						alignItems: 'center',
-						height: 150,
-						margin: '1rem 0',
-					}}>
-					<div onClick={onClick} style={{ flexBasis: '30%' }}>
-						{this.renderProductImage(src, {
-							height: 150,
-							borderRadius: '5px',
-						})}
+				<div className='mobileProductContainer'>
+					<div className='mobileProductImageContainer' onClick={onClick}>
+						{this.renderProductImage(src)}
 					</div>
-					<div
-						style={{
-							flexBasis: '75%',
-							marginLeft: '10px',
-							height: '150px',
-							position: 'relative',
-						}}>
-						<div
-							onClick={onClick}
-							style={{ alignItems: 'top', marginBottom: '10px' }}>
-							{this.renderProductName(name, {
-								maxWidth: '60vw',
-							})}
+					<div className='mobileProductDetailContainer'>
+						<div className='mobileProductNameContainer' onClick={onClick}>
+							{this.renderProductName(name)}
 						</div>
-						<div onClick={onClick}>{this.renderDescription(desc)}</div>
-
 						<div
-							style={{ display: 'flex', alignItems: 'top', marginTop: '5px' }}>
-							{this.renderLdc(
-								ldc,
-								{
-									flexBasis: '40%',
-									// maxWidth: '100px',
-									color: '#000',
-									fontSize: '18px',
-									// margin: '2px 0 5px 0',
-								},
-								{
-									fontSize: '16px',
-								}
-							)}
+							className='mobileProductDescriptionContainer'
+							onClick={onClick}>
+							{this.renderDescription(desc)}
+						</div>
+
+						<div className='mobileProductMixedContainer'>
+							{this.renderLdc(ldc, {}, {})}
 
 							{this.renderStarRating(
 								rating,
-								{
-									flexBasis: '60%',
-									textAlign: 'right',
-								},
+								{},
 								{
 									marginRight: '3px',
 									fontSize: '15px',
@@ -69,30 +38,17 @@ class MobileProduct extends CommonProduct {
 							)}
 						</div>
 
-						<div
-							style={{
-								display: 'flex',
-								position: 'absolute',
-								left: 0,
-								bottom: 0,
-								right: 0,
-							}}>
+						<div className='mobileProductActions'>
 							{this.renderButton(
 								() => {
 									console.log('btn');
 								},
 								'BARTER',
-								{
-									padding: '8px',
-									fontSize: '17px',
-									marginRight: '4px',
-									borderRadius: '5px',
-									lineHeight: '25px',
-									fontWeight: '500',
-								},
+								'barter',
+								{},
 								faExchangeAlt,
-								'#424242',
-								{ marginRight: '10px', fontSize: '14px' },
+								'',
+								{},
 								'productBarterIcon'
 							)}
 
@@ -101,16 +57,11 @@ class MobileProduct extends CommonProduct {
 									console.log('btn');
 								},
 								'',
-								{
-									padding: '8px',
-									fontSize: '16px',
-									marginLeft: '4px',
-									borderRadius: '5px',
-									lineHeight: '25px',
-								},
+								'wishlist',
+								{},
 								faHeart,
 								wishlist ? '#ef5350' : '#fff',
-								{ fontSize: '20px' }
+								{}
 							)}
 						</div>
 					</div>

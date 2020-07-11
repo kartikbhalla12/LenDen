@@ -9,9 +9,8 @@ class CommonProduct extends Component {
 
 	renderStarRating(rating, style, iconStyle) {
 		return (
-			<div style={style}>
+			<div className='productStarRating' style={style}>
 				<StarRating
-					// style={{ position: 'absolute' }}
 					name='rate2'
 					editing={false}
 					renderStarIcon={() => (
@@ -29,12 +28,10 @@ class CommonProduct extends Component {
 	renderProductImage(src, style) {
 		return (
 			<Image
+				className='productImage'
 				fluid
 				src={src}
 				style={{
-					width: '100%',
-					objectFit: 'cover',
-					maxWidth: 'inherit',
 					...style,
 				}}
 			/>
@@ -44,14 +41,9 @@ class CommonProduct extends Component {
 	renderProductName(name, style) {
 		return (
 			<div
+				className='productName'
 				style={{
-					textAlign: 'left',
-					fontSize: '20px',
-					fontFamily: 'Balsamiq Sans',
-					whiteSpace: 'nowrap',
-					overflow: 'hidden ',
-					textOverflow: 'ellipsis',
-					...style,
+					...style, //TODO remove
 				}}>
 				{name}
 			</div>
@@ -61,9 +53,9 @@ class CommonProduct extends Component {
 	renderLdc(value, style, iconStyle) {
 		return (
 			<div
+				className='productLdc'
 				style={{
-					fontFamily: 'Balsamiq Sans',
-					...style,
+					...style, //TODO remove
 				}}>
 				<FontAwesomeIcon
 					className='navIcon'
@@ -82,38 +74,31 @@ class CommonProduct extends Component {
 	renderDescription(desc, style) {
 		return (
 			<div
+				className='productDescription'
 				style={{
-					marginTop: '-10px',
-					color: 'gray',
-					fontSize: 14,
-					overflow: 'hidden',
-					textOverflow: 'ellipsis',
-					WebkitLineClamp: '2',
-					display: '-webkit-box',
-					WebkitBoxOrient: 'vertical',
-					...style,
+					...style, //TODO remove
 				}}>
 				{desc}
 			</div>
 		);
 	}
 
-	renderButton(onClick, name, style, icon, iconColor, iconStyle, id = '') {
+	renderButton(
+		onClick,
+		name,
+		className,
+		style,
+		icon,
+		iconColor,
+		iconStyle,
+		id = ''
+	) {
 		return (
 			<div
+				className={className}
 				onClick={onClick}
 				style={{
-					display: 'flex',
-					alignItems: 'center',
-					justifyContent: 'center',
-					color: '#424242',
-					cursor: 'pointer',
-					backgroundColor: 'rgba(253, 186, 73, 0.55)',
-					flexBasis: '50%',
-					textAlign: 'center',
-					textTransform: 'uppercase',
-					fontFamily: 'Balsamiq Sans',
-					...style,
+					...style, //TODO remove
 				}}>
 				<FontAwesomeIcon
 					className='navIcon'

@@ -1,0 +1,104 @@
+@import './default';
+
+//TODO @import core
+
+.mobileProductContainer {
+	display: flex;
+	align-items: center;
+	height: 150px;
+	margin: 1rem auto;
+
+	.mobileProductImageContainer {
+		flex-basis: 30%;
+
+		.productImage {
+			@extend %defaultProductImage;
+			height: 150px;
+			border-radius: 5px;
+		}
+	}
+
+	.mobileProductDetailContainer {
+		flex-basis: 75%;
+		margin-left: 10px;
+		height: 150px;
+		position: relative;
+
+		.mobileProductNameContainer {
+			align-items: top;
+			margin-bottom: 10px;
+
+			.productName {
+				@extend %defaultProductName;
+				max-width: 60vw;
+			}
+		}
+
+		.mobileProductDescriptionContainer {
+			.productDescription {
+				@extend %defaultProductDescription;
+				font-size: 15px;
+			}
+		}
+
+		.mobileProductMixedContainer {
+			display: flex;
+			align-items: top;
+			margin-top: 5px;
+
+			.productLdc {
+				@extend %defaultProductLdc;
+				flex-basis: 40%;
+				color: #000;
+				font-size: 18px;
+
+				svg {
+					color: #424242;
+					font-size: '16px';
+				}
+			}
+
+			.productStarRating {
+				flex-basis: 60%;
+				text-align: right;
+			}
+		}
+
+		.mobileProductActions {
+			display: flex;
+			position: absolute;
+			left: 0;
+			bottom: 0;
+			right: 0;
+
+			.barter {
+				@extend %defaultButton;
+				padding: 8px;
+				font-size: 17px;
+				margin-right: 4px;
+				border-radius: 5px;
+				line-height: 25px;
+				font-weight: 500;
+
+				svg {
+					color: #424242;
+					margin-right: 10px;
+					font-size: 14px;
+				}
+			}
+
+			.wishlist {
+				@extend %defaultButton;
+				padding: 8px;
+				font-size: 16px;
+				margin-left: 4px;
+				border-radius: 5px;
+				line-height: 25px;
+
+				svg {
+					font-size: 20px;
+				}
+			}
+		}
+	}
+}

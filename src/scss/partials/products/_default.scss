@@ -1,0 +1,47 @@
+%defaultProductLdc {
+	font-family: Balsamiq Sans;
+
+	svg {
+		margin-right: 5px;
+		font-size: 16px;
+	}
+}
+
+%defaultProductImage {
+	width: 100%;
+	object-fit: cover;
+	max-width: inherit;
+}
+
+%defaultProductName {
+	text-align: left;
+	font-size: 20px;
+	font-family: Balsamiq Sans;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+%defaultProductDescription {
+	margin-top: -10px;
+	color: gray;
+	font-size: 14;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	-webkit-line-clamp: 2;
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
+}
+
+%defaultButton {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	color: #424242;
+	cursor: pointer;
+	background-color: rgba(253, 186, 73, 0.55);
+	flex-basis: 50%;
+	text-align: center;
+	text-transform: uppercase;
+	font-family: Balsamiq Sans;
+}
