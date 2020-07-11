@@ -30,6 +30,7 @@ class Main extends Component {
 					onStateChange={this.handleStateChange}
 					onUserClick={this.handleUserClick}
 					onNavLinkClick={this.handleNavLinkClick}
+					onSwipeLeft={this.handleSwipeLeft}
 					user={user}
 				/>
 				<MainNav
@@ -62,6 +63,12 @@ class Main extends Component {
 	handleStateChange = state => {
 		this.setState({
 			menuOpen: state.isOpen,
+		});
+	};
+
+	handleSwipeLeft = () => {
+		this.setState({
+			menuOpen: false,
 		});
 	};
 

@@ -6,6 +6,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBell } from '@fortawesome/free-solid-svg-icons';
 import { NavLink } from 'react-router-dom';
 import * as authService from './../../services/authService';
+import Swipe from 'react-easy-swipe';
 
 class SideNav extends Component {
 	state = {};
@@ -20,96 +21,102 @@ class SideNav extends Component {
 			onUserClick,
 			onNavLinkClick,
 			onStateChange,
+			onSwipeLeft,
 		} = this.props;
 		return (
 			//customBurgerIcon={false} customCrossIcon={false}
-			<Menu
-				customBurgerIcon={false}
-				isOpen={menuOpen}
-				// styles={styles}
-				onStateChange={state => onStateChange(state)}>
-				<Image
-					id='userImageMain'
-					src={
-						user
-							? 'https://placekitten.com/g/300/300'
-							: '/images/genericUser.png'
-					}
-					roundedCircle
-					onClick={onUserClick}
-				/>
-				{!user && (
-					<NavLink
-						id='navAnchor'
-						to='/login'
-						className='menu-item'
-						onClick={onNavLinkClick}>
-						Sign In
-					</NavLink>
-				)}
-				{user && (
-					<NavLink
-						id='navAnchor'
-						to='/me'
-						className='menu-item'
-						onClick={onNavLinkClick}>
-						My Account
-					</NavLink>
-				)}
+			<Swipe onSwipeLeft={onSwipeLeft}>
+				<Menu
+					customBurgerIcon={false}
+					isOpen={menuOpen}
+					// styles={styles}
+					onStateChange={state => onStateChange(state)}>
+					<Image
+						id='userImageMain'
+						src={
+							user
+								? 'https://placekitten.com/g/300/300'
+								: '/images/genericUser.png'
+						}
+						roundedCircle
+						onClick={onUserClick}
+					/>
+					{!user && (
+						<NavLink
+							id='navAnchor'
+							to='/login'
+							className='menu-item'
+							onClick={onNavLinkClick}>
+							Sign In
+						</NavLink>
+					)}
+					{user && (
+						<NavLink
+							id='navAnchor'
+							to='/me'
+							className='menu-item'
+							onClick={onNavLinkClick}>
+							My Account
+						</NavLink>
+					)}
 
-				<NavLink
-					to='/notifications'
-					className='menu-item'
-					onClick={onNavLinkClick}>
-					Notifications
-					<FontAwesomeIcon id='sideNavBell' icon={faBell} />
-				</NavLink>
-				<NavLink to='/wishlist' className='menu-item' onClick={onNavLinkClick}>
-					Wishlist
-					{/* <FontAwesomeIcon
+					<NavLink
+						to='/notifications'
+						className='menu-item'
+						onClick={onNavLinkClick}>
+						Notifications
+						<FontAwesomeIcon id='sideNavBell' icon={faBell} />
+					</NavLink>
+					<NavLink
+						to='/wishlist'
+						className='menu-item'
+						onClick={onNavLinkClick}>
+						Wishlist
+						{/* <FontAwesomeIcon
 						icon={faHeart}
 						style={{ marginLeft: '5px', color: '#ef5350' }}
 					/> */}
-				</NavLink>
-				<NavLink
-					to='/my-products'
-					className='menu-item'
-					onClick={onNavLinkClick}>
-					My Products
-				</NavLink>
-				<NavLink
-					id='homeAnchor'
-					to='/'
-					exact
-					className='menu-item'
-					onClick={onNavLinkClick}>
-					Home
-				</NavLink>
-				<NavLink to='/books' className='menu-item' onClick={onNavLinkClick}>
-					Books
-				</NavLink>
-				<NavLink to='/gaming' className='menu-item' onClick={onNavLinkClick}>
-					Gaming
-				</NavLink>
-				<NavLink to='/mobiles' className='menu-item' onClick={onNavLinkClick}>
-					Mobiles
-				</NavLink>
-				<NavLink to='/blog' className='menu-item' onClick={onNavLinkClick}>
-					Blog
-				</NavLink>
-				<NavLink to='/contact' className='menu-item' onClick={onNavLinkClick}>
-					Contact Us
-				</NavLink>
-				<NavLink to='/about' className='menu-item' onClick={onNavLinkClick}>
-					About Us
-				</NavLink>
+					</NavLink>
+					<NavLink
+						to='/my-products'
+						className='menu-item'
+						onClick={onNavLinkClick}>
+						My Products
+					</NavLink>
+					<NavLink
+						id='homeAnchor'
+						to='/'
+						exact
+						className='menu-item'
+						onClick={onNavLinkClick}>
+						Home
+					</NavLink>
+					<NavLink to='/books' className='menu-item' onClick={onNavLinkClick}>
+						Books
+					</NavLink>
+					<NavLink to='/gaming' className='menu-item' onClick={onNavLinkClick}>
+						Gaming
+					</NavLink>
+					<NavLink to='/mobiles' className='menu-item' onClick={onNavLinkClick}>
+						Mobiles
+					</NavLink>
+					<NavLink to='/blog' className='menu-item' onClick={onNavLinkClick}>
+						Blog
+					</NavLink>
+					<NavLink to='/contact' className='menu-item' onClick={onNavLinkClick}>
+						Contact Us
+					</NavLink>
+					<NavLink to='/about' className='menu-item' onClick={onNavLinkClick}>
+						About Us
+					</NavLink>
 
-				{user && (
-					<div id='signOutNav' onClick={authService.logout}>
-						SIGN OUT
-					</div>
-				)}
-			</Menu>
+					{user && (
+						<div id='signOutNav' onClick={authService.logout}>
+							SIGN OUT
+						</div>
+					)}
+				</Menu>
+			</Swipe>
 		);
 	}
 }
