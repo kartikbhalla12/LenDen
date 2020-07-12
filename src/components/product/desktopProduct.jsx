@@ -18,18 +18,14 @@ class DesktopProduct extends CommonProduct {
 		return (
 			<div className='desktopProductContainer'>
 				<div className='desktopProductImageContainer' onClick={onClick}>
-					{this.renderProductImage(src, {})}
+					{this.renderProductImage(src)}
 					<div className='desktopStarRatingContainer'>
-						{this.renderStarRating(
-							rating,
-							{},
-							{
-								marginLeft: '5px',
-								fontSize: '19px',
-							}
-						)}
+						{this.renderStarRating(rating, {
+							marginLeft: '5px',
+							fontSize: '19px',
+						})}
 					</div>
-					{this.renderLdc(ldc, {}, {})}
+					{this.renderLdc(ldc)}
 				</div>
 				<div className='desktopProductDetailContainer' onClick={onClick}>
 					{this.renderProductName(name)}
@@ -37,23 +33,13 @@ class DesktopProduct extends CommonProduct {
 				</div>
 
 				<div className='desktopProductActions'>
-					{this.renderButton(
-						() => {},
-						'BARTER',
-						'barter',
-						{},
-						faExchangeAlt,
-						'',
-						{}
-					)}
+					{this.renderButton(() => {}, 'BARTER', 'barter', faExchangeAlt, '')}
 					{this.renderButton(
 						() => {},
 						'',
 						'wishlist',
-						{},
 						faHeart,
-						wishlist ? '#ef5350' : '#fff',
-						{}
+						wishlist ? '#ef5350' : '#fff'
 					)}
 				</div>
 			</div>

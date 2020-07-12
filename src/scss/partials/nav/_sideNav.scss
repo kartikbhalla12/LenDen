@@ -1,5 +1,4 @@
-@import '../../core/colors';
-@import '../../core/fonts';
+@import '../../core';
 
 .bm-burger-button {
 	position: fixed;
@@ -37,7 +36,7 @@
 }
 
 .bm-item-list {
-	font-family: font(raleway);
+	font-family: font(primary);
 	color: color(text);
 	padding: 0.8em;
 }
@@ -78,6 +77,10 @@ a.bm-item {
 	max-width: 180px;
 	margin: 0 auto 1vh auto;
 	text-align: center;
+
+	@media screen and (max-width: breakpoint(mobileXL)) {
+		max-width: 130px;
+	}
 }
 
 #userImageMain:hover {
@@ -88,6 +91,10 @@ a.bm-item {
 #navAnchor {
 	text-align: center;
 	margin-bottom: 2vh;
+
+	@media screen and (max-width: breakpoint(mobileXL)) {
+		margin-bottom: 4vh;
+	}
 }
 
 #homeAnchor {
@@ -106,13 +113,4 @@ a.bm-item {
 #sideNavBell {
 	margin-left: 5px;
 	color: color(accent);
-}
-
-@media screen and (max-width: 500px) {
-	#userImageMain {
-		max-width: 130px;
-	}
-	#navAnchor {
-		margin-bottom: 4vh;
-	}
 }

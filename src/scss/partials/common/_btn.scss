@@ -1,5 +1,4 @@
-@import '../../core/fonts';
-@import '../../core/colors';
+@import '../../core';
 
 .btn,
 .btn:active,
@@ -7,7 +6,7 @@
 .btn:focus,
 .btn:not(:disabled):not(.disabled):active:focus {
 	color: color(text);
-	font-family: font(balsamiqSans);
+	font-family: font(secondary);
 	background-color: color(accent) !important;
 	box-shadow: none;
 	border: none;

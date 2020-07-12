@@ -1,6 +1,5 @@
 import React from 'react';
 import { faExchangeAlt, faHeart } from '@fortawesome/free-solid-svg-icons';
-import '../../css/components/mobileProduct.css';
 import CommonProduct from '../common/commonProduct';
 
 class MobileProduct extends CommonProduct {
@@ -26,16 +25,12 @@ class MobileProduct extends CommonProduct {
 						</div>
 
 						<div className='mobileProductMixedContainer'>
-							{this.renderLdc(ldc, {}, {})}
+							{this.renderLdc(ldc)}
 
-							{this.renderStarRating(
-								rating,
-								{},
-								{
-									marginRight: '3px',
-									fontSize: '15px',
-								}
-							)}
+							{this.renderStarRating(rating, {
+								marginRight: '3px',
+								fontSize: '15px',
+							})}
 						</div>
 
 						<div className='mobileProductActions'>
@@ -45,11 +40,7 @@ class MobileProduct extends CommonProduct {
 								},
 								'BARTER',
 								'barter',
-								{},
-								faExchangeAlt,
-								'',
-								{},
-								'productBarterIcon'
+								faExchangeAlt
 							)}
 
 							{this.renderButton(
@@ -58,10 +49,8 @@ class MobileProduct extends CommonProduct {
 								},
 								'',
 								'wishlist',
-								{},
 								faHeart,
-								wishlist ? '#ef5350' : '#fff',
-								{}
+								wishlist ? '#ef5350' : '#fff'
 							)}
 						</div>
 					</div>

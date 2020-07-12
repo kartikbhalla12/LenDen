@@ -1,0 +1,8 @@
+$breakpoints: (
+	tablet: 700px,
+	mobileXL: 500px,
+	mobileS: 350px,
+);
+@function breakpoint($device) {
+	@return map-get($map: $breakpoints, $key: $device);
+}

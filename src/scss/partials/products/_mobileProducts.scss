@@ -1,6 +1,6 @@
 @import './default';
 
-//TODO @import core
+@import '../../core';
 
 .mobileProductContainer {
 	display: flex;
@@ -48,18 +48,18 @@
 
 			.productLdc {
 				@extend %defaultProductLdc;
-				flex-basis: 40%;
-				color: #000;
+				flex-basis: 35%;
+				color: color(secondary);
 				font-size: 18px;
 
 				svg {
-					color: #424242;
+					color: color(secondary);
 					font-size: '16px';
 				}
 			}
 
 			.productStarRating {
-				flex-basis: 60%;
+				flex-basis: 65%;
 				text-align: right;
 			}
 		}
@@ -81,9 +81,13 @@
 				font-weight: 500;
 
 				svg {
-					color: #424242;
+					color: color(secondary);
 					margin-right: 10px;
 					font-size: 14px;
+
+					@media screen and (max-width: breakpoint(mobileS)) {
+						display: none;
+					}
 				}
 			}
 

@@ -1,12 +1,21 @@
-@import '../../core/colors';
+@import '../../core';
 
 .mainNav {
 	background-color: color(backgroundSecondary);
+
+	@media screen and (max-width: breakpoint(mobileXL)) {
+		padding: 0.2rem 1rem;
+	}
 
 	.navbar-brand {
 		#logo {
 			width: 3em;
 			margin: auto 1rem;
+
+			@media screen and (max-width: breakpoint(mobileS)) {
+				width: 2em;
+				margin: auto 5px;
+			}
 		}
 	}
 
@@ -14,6 +23,10 @@
 		display: flex;
 		background-color: color(secondary);
 		border-radius: 5px;
+
+		@media screen and (max-width: breakpoint(mobileXL)) {
+			display: none;
+		}
 
 		#navSearchIcon {
 			font-size: 18px;
@@ -28,6 +41,11 @@
 			background-color: color(secondary);
 			border: none;
 			box-shadow: none;
+
+			@media screen and (max-width: breakpoint(tablet)) {
+				color: color(text);
+				width: 40vw;
+			}
 		}
 		#navSearchInput::placeholder {
 			text-align: center;
@@ -45,6 +63,10 @@
 
 .nav-link {
 	margin: auto 0.2vw;
+
+	@media screen and (max-width: breakpoint(mobileXL)) {
+		margin: auto 0.1vw;
+	}
 }
 
 .navbar-brand {
@@ -56,10 +78,21 @@
 	color: color(text);
 }
 
+#userImage {
+	@media screen and (max-width: breakpoint(mobileXL)) {
+		display: none;
+	}
+}
+
 #mobileSearchBox {
 	background-color: color(backgroundSecondary);
 	padding: 0.2rem 0.6rem 0.6rem 0.6rem;
 	display: none;
+
+	@media screen and (max-width: breakpoint(mobileXL)) {
+		display: block;
+		margin: -1px;
+	}
 
 	#mobileSearchBoxItem {
 		background-color: color(secondary) !important;
@@ -72,6 +105,10 @@
 			margin: auto 2.5vw;
 			font-size: 18px;
 			color: color(text);
+
+			@media screen and (max-width: breakpoint(mobileS)) {
+				display: none;
+			}
 		}
 
 		#mobileSearchInput {
@@ -81,6 +118,10 @@
 			border: none;
 			font-size: 16px;
 			box-shadow: none;
+
+			@media screen and (max-width: breakpoint(mobileS)) {
+				font-size: 14px;
+			}
 		}
 
 		#mobileSearchInput:-webkit-autofill,
@@ -95,58 +136,4 @@
 
 #mainNavHeart {
 	color: color(accent);
-}
-
-@media screen and (max-width: 700px) {
-	.mainNav {
-		#navSearchBox {
-			#navSearchInput {
-				color: color(text);
-				width: 40vw;
-			}
-		}
-	}
-}
-
-@media screen and (max-width: 500px) {
-	#userImage {
-		display: none;
-	}
-
-	.nav-link {
-		margin: auto 0.1vw;
-	}
-
-	.mainNav {
-		padding: 0.2rem 1rem;
-		#navSearchBox {
-			display: none;
-		}
-	}
-
-	#mobileSearchBox {
-		display: block;
-	}
-}
-
-@media screen and (max-width: 350px) {
-	.mainNav {
-		.navbar-brand {
-			#logo {
-				width: 2em;
-				margin: auto 5px;
-			}
-		}
-	}
-
-	#mobileSearchBox {
-		#mobileSearchBoxItem {
-			#mobileSearchIcon {
-				display: none;
-			}
-			#mobileSearchInput::placeholder {
-				font-size: 14px;
-			}
-		}
-	}
 }

@@ -7,9 +7,9 @@ import { Image } from 'react-bootstrap';
 class CommonProduct extends Component {
 	state = {};
 
-	renderStarRating(rating, style, iconStyle) {
+	renderStarRating(rating, iconStyle) {
 		return (
-			<div className='productStarRating' style={style}>
+			<div className='productStarRating'>
 				<StarRating
 					name='rate2'
 					editing={false}
@@ -25,88 +25,35 @@ class CommonProduct extends Component {
 		);
 	}
 
-	renderProductImage(src, style) {
-		return (
-			<Image
-				className='productImage'
-				fluid
-				src={src}
-				style={{
-					...style,
-				}}
-			/>
-		);
+	renderProductImage(src) {
+		return <Image className='productImage' fluid src={src} />;
 	}
 
-	renderProductName(name, style) {
-		return (
-			<div
-				className='productName'
-				style={{
-					...style, //TODO remove
-				}}>
-				{name}
-			</div>
-		);
+	renderProductName(name) {
+		return <div className='productName'>{name}</div>;
 	}
 
-	renderLdc(value, style, iconStyle) {
+	renderLdc(value) {
 		return (
-			<div
-				className='productLdc'
-				style={{
-					...style, //TODO remove
-				}}>
-				<FontAwesomeIcon
-					className='navIcon'
-					icon={faWallet}
-					style={{
-						marginRight: '5px',
-						fontSize: '16px',
-						...iconStyle,
-					}}
-				/>
+			<div className='productLdc'>
+				<FontAwesomeIcon className='navIcon' icon={faWallet} />
 				{value}
 			</div>
 		);
 	}
 
-	renderDescription(desc, style) {
-		return (
-			<div
-				className='productDescription'
-				style={{
-					...style, //TODO remove
-				}}>
-				{desc}
-			</div>
-		);
+	renderDescription(desc) {
+		return <div className='productDescription'>{desc}</div>;
 	}
 
-	renderButton(
-		onClick,
-		name,
-		className,
-		style,
-		icon,
-		iconColor,
-		iconStyle,
-		id = ''
-	) {
+	renderButton(onClick, name, className, icon, iconColor) {
 		return (
-			<div
-				className={className}
-				onClick={onClick}
-				style={{
-					...style, //TODO remove
-				}}>
+			<div className={className} onClick={onClick}>
 				<FontAwesomeIcon
 					className='navIcon'
-					id={id}
 					icon={icon}
 					style={{
 						color: iconColor,
-						...iconStyle,
 					}}
 				/>
 				{name}

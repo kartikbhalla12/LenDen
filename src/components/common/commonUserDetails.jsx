@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Button } from 'react-bootstrap';
 import _ from 'lodash';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import BarLoader from 'react-spinners/BarLoader';
 
 class CommonUserDetails extends Component {
 	state = {};
@@ -35,7 +36,7 @@ class CommonUserDetails extends Component {
 		);
 	};
 
-	renderButton = (btnName) => {
+	renderButton = btnName => {
 		return (
 			<Button
 				className='btn-log'
@@ -46,7 +47,7 @@ class CommonUserDetails extends Component {
 		);
 	};
 
-	renderTextAddress = (address) => {
+	renderTextAddress = address => {
 		return `${_.startCase(address.housenumber)}, ${
 			address.streetname
 		}, ${_.startCase(address.city)},  ${_.startCase(
@@ -73,6 +74,15 @@ class CommonUserDetails extends Component {
 			</div>
 		);
 	};
+
+	renderLoader = style => (
+		<BarLoader
+			css={{ display: 'block', ...style }}
+			size={50}
+			color='rgb(253,186,73)'
+			loading={this.state.loading}
+		/>
+	);
 }
 
 export default CommonUserDetails;

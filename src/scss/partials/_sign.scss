@@ -1,8 +1,7 @@
-@import './core/colors';
-@import './core/fonts';
+@import '../core';
 
 .mainContainer {
-	font-family: font(raleway);
+	font-family: font(primary);
 	display: flex;
 	min-height: 100vh;
 	align-items: center;
@@ -17,6 +16,15 @@
 		// margin: auto;
 		margin: 2rem auto;
 		max-width: 400px;
+
+		@media screen and (max-width: 500px) {
+			background-color: transparent;
+			box-shadow: none;
+		}
+
+		@media screen and (max-width: 370px) {
+			padding: 10px;
+		}
 
 		img {
 			max-width: 150px;
@@ -39,7 +47,7 @@
 			align-items: center;
 			text-align: center;
 			color: color(secondary);
-			font-family: font(balsamiqSans);
+			font-family: font(secondary);
 			font-size: 15px;
 		}
 
@@ -58,23 +66,6 @@
 
 		.signButton {
 			margin-top: 2vh;
-		}
-	}
-}
-
-@media screen and (max-width: 500px) {
-	.mainContainer {
-		.formBox {
-			background-color: transparent;
-			box-shadow: none;
-		}
-	}
-}
-
-@media screen and (max-width: 300px) {
-	.mainContainer {
-		.formBox {
-			padding: 10px;
 		}
 	}
 }

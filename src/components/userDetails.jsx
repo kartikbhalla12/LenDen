@@ -8,12 +8,16 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 
 class UserDetails extends CommonUserDetails {
-	state = {};
+	state = {
+		loading: true,
+	};
 	render() {
 		const { user, address } = this.props;
 
 		return (
 			<div
+				//TODO move address here
+
 				style={{
 					backgroundColor: 'rgba(33,33,33,0.1)',
 					padding: '20px',
@@ -38,6 +42,7 @@ class UserDetails extends CommonUserDetails {
 						}}>
 						{this.renderDetail('NAME', _.startCase(user.name))}
 						{this.renderDetail('EMAIL', user.sub)}
+						{/* {!address && this.renderLoader()} //TODO render loader while address loads */}
 						{address && this.renderDetail('MOBILE', address.mobilenumber)}
 						{address
 							? this.renderDetail('ADDRESS', this.renderTextAddress(address))
