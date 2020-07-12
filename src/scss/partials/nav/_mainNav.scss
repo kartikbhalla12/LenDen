@@ -1,5 +1,3 @@
-@import '../../core';
-
 .mainNav {
 	background-color: color(backgroundSecondary);
 
@@ -86,12 +84,12 @@
 
 #mobileSearchBox {
 	background-color: color(backgroundSecondary);
-	padding: 0.2rem 0.6rem 0.6rem 0.6rem;
+	padding: 0.2rem 0.6rem 1rem 0.6rem;
 	display: none;
 
 	@media screen and (max-width: breakpoint(mobileXL)) {
 		display: block;
-		margin: -1px;
+		margin-top: -1px;
 	}
 
 	#mobileSearchBoxItem {

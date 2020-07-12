@@ -1,6 +1,9 @@
+@import './core';
+
 @import './partials/common';
 @import './partials/nav';
 @import './partials/products';
+@import './partials/productPage';
 @import './partials/sign';
 @import './partials/new';
 
@@ -9,26 +12,20 @@ body {
 	background-color: color('background');
 }
 
-@media (max-width: 1000px) and (min-width: 700px) {
-	.container {
+.container {
+	@media (max-width: 1000px) and (min-width: 700px) {
 		max-width: 95vw;
 	}
-}
 
-@media (min-width: 1400px) {
-	.container {
+	@media (min-width: 1400px) {
 		max-width: 1350px;
 	}
-}
 
-@media (min-width: 1500px) {
-	.container {
+	@media (min-width: 1500px) {
 		max-width: 1450px;
 	}
-}
 
-@media (min-width: 1800px) {
-	.container {
+	@media (min-width: 1800px) {
 		max-width: 1750px;
 	}
 }

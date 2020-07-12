@@ -1,7 +1,3 @@
-@import './default';
-
-@import '../../core';
-
 .mobileProductContainer {
 	display: flex;
 	align-items: center;
@@ -37,7 +33,7 @@
 		.mobileProductDescriptionContainer {
 			.productDescription {
 				@extend %defaultProductDescription;
-				font-size: 15px;
+				font-size: 14px;
 			}
 		}
 

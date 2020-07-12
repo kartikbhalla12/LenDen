@@ -1,8 +1,13 @@
 import React, { Component } from 'react';
 import StarRating from 'react-star-rating-component';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faStar, faWallet } from '@fortawesome/free-solid-svg-icons';
-import { Image } from 'react-bootstrap';
+import {
+	faStar,
+	faWallet,
+	faAngleDoubleRight,
+	faAngleDoubleLeft,
+} from '@fortawesome/free-solid-svg-icons';
+import { Image, Carousel } from 'react-bootstrap';
 
 class CommonProduct extends Component {
 	state = {};
@@ -60,6 +65,27 @@ class CommonProduct extends Component {
 			</div>
 		);
 	}
+
+	renderCarousel = src => (
+		<Carousel
+			className='productCarousel'
+			wrap={false}
+			interval={null}
+			nextIcon={
+				<FontAwesomeIcon className='navIcon' icon={faAngleDoubleRight} />
+			}
+			prevIcon={
+				<FontAwesomeIcon className='navIcon' icon={faAngleDoubleLeft} />
+			}>
+			{src.map(item => {
+				return (
+					<Carousel.Item key={item}>
+						<Image fluid src={item} />
+					</Carousel.Item>
+				);
+			})}
+		</Carousel>
+	);
 }
 
 export default CommonProduct;
