@@ -1,0 +1,123 @@
+.desktopProductPageContainer {
+	display: flex;
+	margin-top: 10px;
+	justify-content: center;
+
+	.desktopProductPageLeftContainer {
+		flex-basis: 40%;
+		position: relative;
+
+		.desktopProductPageImageContainer {
+			position: absolute;
+			right: 0;
+			width: 60%;
+
+			@media screen and (max-width: 1800px) {
+				width: 70%;
+			}
+			@media screen and (max-width: 1500px) {
+				width: 80%;
+			}
+			@media screen and (max-width: 1400px) {
+				width: 90%;
+			}
+			@media screen and (max-width: 1200px) {
+				width: 100%;
+			}
+
+			.productCarousel {
+				@extend %defaultProductPageCarousel;
+				.carousel-inner {
+					img {
+						height: 500px;
+					}
+				}
+			}
+
+			.desktopProductPageActions {
+				@extend %defaultProductPageActions;
+				margin-top: 10px;
+
+				.barter {
+					@extend %defaultProductPageButton;
+					margin-right: 5px;
+					border-radius: 5px;
+					font-size: 20px;
+
+					@media screen and (max-width: 800px) {
+						font-size: 16px;
+					}
+
+					svg {
+						font-size: 20px;
+						margin-right: 5px;
+						@media screen and (max-width: 800px) {
+							font-size: 16px;
+						}
+					}
+				}
+
+				.wishlist {
+					@extend %defaultProductPageButton;
+					padding: 12px;
+					font-size: 18px;
+					background-color: rgba(color(secondary), 0.2);
+					margin-left: 5px;
+					border-radius: 5px;
+
+					svg {
+						font-size: 30px;
+					}
+				}
+			}
+		}
+	}
+
+	.desktopProductPageRightContainer {
+		flex-basis: 60%;
+		margin-left: 20px;
+
+		div {
+			max-width: 750px;
+
+			.breadcrumb-item {
+				text-decoration: none;
+				color: color(primary);
+				font-family: font(primary);
+				font-style: italic;
+				font-weight: 700;
+				font-size: 14px;
+			}
+
+			.breadcrumb-item.active {
+				text-decoration: none;
+				color: color(secondary);
+			}
+
+			.breadcrumb-item a {
+				text-decoration: none;
+				color: color(primary);
+			}
+
+			.breadcrumb-item + .breadcrumb-item::before {
+				display: inline-block;
+				padding-right: 0.5rem;
+				content: '>';
+			}
+
+			.productName {
+				@extend %defaultProductPageName;
+				font-size: 25px;
+			}
+
+			.productLdc {
+				@extend %defaultProductPageLdc;
+				font-size: 30px;
+			}
+			.productDescription {
+				@extend %defaultProductPageDescription;
+				margin-top: 10px;
+			}
+		}
+	}
+}

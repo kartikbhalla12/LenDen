@@ -16,11 +16,11 @@ class MobileProductPage extends CommonProduct {
 		} = this.props.product;
 		return (
 			<React.Fragment>
-				<div className='container productPageContainer'>
+				<div className='container mobileProductPageContainer'>
 					{this.renderCarousel(src)}
 					{this.renderProductName(name)}
 
-					<div className='productPageMixedContainer'>
+					<div className='mobileProductPageMixedContainer'>
 						{this.renderLdc(ldc)}
 
 						{this.renderStarRating(rating, {
@@ -31,7 +31,7 @@ class MobileProductPage extends CommonProduct {
 					</div>
 					{this.renderDescription(desc)}
 				</div>
-				<div className='productPageActions'>
+				<div className='mobileProductPageActions'>
 					{this.renderButton(() => {}, 'BARTER', 'barter', faExchangeAlt)}
 
 					{this.renderButton(

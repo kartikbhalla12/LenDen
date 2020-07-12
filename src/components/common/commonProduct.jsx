@@ -7,7 +7,9 @@ import {
 	faAngleDoubleRight,
 	faAngleDoubleLeft,
 } from '@fortawesome/free-solid-svg-icons';
-import { Image, Carousel } from 'react-bootstrap';
+import { Image, Carousel, Breadcrumb } from 'react-bootstrap';
+import { LinkContainer } from 'react-router-bootstrap';
+import _ from 'lodash';
 
 class CommonProduct extends Component {
 	state = {};
@@ -85,6 +87,27 @@ class CommonProduct extends Component {
 				);
 			})}
 		</Carousel>
+	);
+
+	renderBreadCrumb = (category, name) => (
+		<Breadcrumb
+			listProps={{
+				style: {
+					backgroundColor: 'transparent',
+					fontSize: '15px',
+					fontWeight: '500',
+					marginBottom: '1vh',
+					padding: 0,
+				},
+			}}>
+			<LinkContainer to='/'>
+				<Breadcrumb.Item>Home</Breadcrumb.Item>
+			</LinkContainer>
+			<LinkContainer to={`/${category}`}>
+				<Breadcrumb.Item>{_.upperFirst(category)}</Breadcrumb.Item>
+			</LinkContainer>
+			<Breadcrumb.Item active>{_.upperFirst(name)}</Breadcrumb.Item>
+		</Breadcrumb>
 	);
 }
 

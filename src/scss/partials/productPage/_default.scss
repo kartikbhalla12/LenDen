@@ -1,0 +1,65 @@
+%defaultProductPageCarousel {
+	ol {
+		.active {
+			background-color: color(accent);
+		}
+	}
+	a {
+		svg {
+			color: color(accent);
+			font-size: 30px;
+		}
+	}
+	.carousel-inner {
+		border-radius: 5px;
+
+		.carousel-item {
+			img {
+				display: block;
+				width: 100%;
+				object-fit: cover;
+				max-width: inherit;
+			}
+		}
+	}
+}
+
+%defaultProductPageName {
+	font-family: font(secondary);
+	color: color(secondary);
+	font-weight: 400;
+}
+
+%defaultProductPageLdc {
+	font-family: font(secondary);
+
+	svg {
+		color: color(backgroundSecondary);
+		margin-right: 10px;
+	}
+}
+
+%defaultProductPageDescription {
+	color: color(primary);
+	font-style: italic;
+}
+
+%defaultProductPageActions {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+%defaultProductPageButton {
+	padding: 0.8rem;
+	flex-basis: 50%;
+	text-align: center;
+	cursor: pointer;
+	font-family: font(secondary);
+	color: color(secondary);
+	background-color: rgba(color(accent), 0.95);
+
+	svg {
+		color: color(secondary);
+	}
+}

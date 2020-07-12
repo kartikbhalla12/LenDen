@@ -1,52 +1,29 @@
-.productPageContainer {
+.mobileProductPageContainer {
 	margin-top: 10px;
 	padding: 0 10px;
 
 	.productCarousel {
-		ol {
-			.active {
-				background-color: color(accent);
-			}
-		}
-		a {
-			svg {
-				color: color(accent);
-				font-size: 30px;
-			}
-		}
+		@extend %defaultProductPageCarousel;
 		.carousel-inner {
-			.carousel-item {
-				img {
-					display: block;
-					width: 100%;
-					height: 40vh;
-					object-fit: cover;
-					max-width: inherit;
-				}
+			img {
+				height: 40vh;
 			}
 		}
 	}
 
 	.productName {
+		@extend %defaultProductPageName;
 		margin-top: 10px;
-		font-family: font(secondary);
-		color: color(secondary);
-		font-weight: 400;
 		font-size: 20px;
 	}
 
-	.productPageMixedContainer {
+	.mobileProductPageMixedContainer {
 		display: flex;
 
 		.productLdc {
+			@extend %defaultProductPageLdc;
 			flex-basis: 40%;
-			font-family: font(secondary);
 			font-size: 27px;
-
-			svg {
-				color: color(backgroundSecondary);
-				margin-right: 10px;
-			}
 		}
 
 		.productStarRating {
@@ -56,54 +33,39 @@
 	}
 
 	.productDescription {
-		color: color(primary);
-		font-style: italic;
+		@extend %defaultProductPageDescription;
 	}
 }
 
-.productPageActions {
+.mobileProductPageActions {
+	@extend %defaultProductPageActions;
 	background-color: color(white);
-	display: flex;
 	position: sticky;
 	width: 100%;
 	bottom: 0;
 	left: 0;
-	justify-content: center;
-	align-items: center;
 	background-color: color(background);
 	box-shadow: 0 4px 12px 5px rgba(0, 0, 0, 0.2);
 
 	.barter {
-		padding: 0.8rem;
-		flex-basis: 50%;
-		text-align: center;
-		cursor: pointer;
-		font-family: font(secondary);
-		color: color(secondary);
+		@extend %defaultProductPageButton;
 		font-size: 18px;
-		background-color: rgba(color(accent), 0.95);
 
 		svg {
 			font-size: 18px;
-			color: color(secondary);
 			margin: auto 0;
 			margin-right: 10px;
 		}
 	}
 
 	.wishlist {
-		// padding: 0.5rem;
-		flex-basis: 50%;
-		text-align: center;
-		cursor: pointer;
-		font-family: font(secondary);
-		color: color(secondary);
+		@extend %defaultProductPageButton;
+		padding: 0;
 		font-size: 18px;
-		// background-color: color(text);
+		background-color: color(background);
 
 		svg {
 			font-size: 32px;
-			color: color(secondary);
 			margin: auto 0;
 			margin-right: 10px;
 		}
