@@ -14,7 +14,7 @@ class Books extends Component {
 				id: 'PuiQCdqR2v7Pn0mKLz73TAYWUntOlB',
 				name: 'Kitten hgasf  asfghd a sdhf hf dahs  dfsah dsa',
 				category: 'books',
-				src: 'http://placekitten.com/350/450',
+				src: 'https://placekitten.com/350/450',
 				rating: 4,
 				ldc: 240,
 				wishlist: true,
@@ -26,9 +26,10 @@ class Books extends Component {
 			toes for`,
 			},
 			{
+				id: '',
 				name: 'Kitten hgasf  asfghd a sdhf hf dahs  dfsah dsa',
 				category: 'books',
-				src: 'http://placekitten.com/350/450',
+				src: 'https://placekitten.com/350/450',
 				rating: 4,
 				ldc: 240,
 				wishlist: true,
@@ -40,10 +41,11 @@ class Books extends Component {
 			toes for`,
 			},
 			{
+				id: '2',
 				name: 'Kitten hgasf  asfghd a sdhf hf dahs  dfsah dsa',
 				category: 'books',
-				src: 'http://placekitten.com/350/450',
-				rating: 4,
+				src: 'https://placekitten.com/350/450',
+				rating: 4.5,
 				ldc: 240,
 				wishlist: false,
 				desc: `Open the door, let me out, let me out, let me-out, let me-aow, let
@@ -54,9 +56,10 @@ class Books extends Component {
 			toes for`,
 			},
 			{
+				id: '3',
 				name: 'Kitten hgasf  asfghd a sdhf hf dahs  dfsah dsa',
 				category: 'books',
-				src: 'http://placekitten.com/350/450',
+				src: 'https://placekitten.com/350/450',
 				rating: 4,
 				ldc: 240,
 				wishlist: true,
@@ -72,7 +75,7 @@ class Books extends Component {
 	};
 	render() {
 		const { books } = this.state;
-		console.log(books);
+		// console.log(books);
 		return (
 			<div
 				className='container'
@@ -83,9 +86,9 @@ class Books extends Component {
 					justifyContent: 'center',
 				}}>
 				{books.map(book => {
-					console.log(this);
 					return (
 						<Product
+							key={book.id}
 							details={book}
 							onClick={() => this.props.history.push(`/books/${book.id}`)}
 						/>

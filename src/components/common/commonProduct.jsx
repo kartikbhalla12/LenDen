@@ -1,12 +1,16 @@
 import React, { Component } from 'react';
-import StarRating from 'react-star-rating-component';
+import StarRating from 'react-star-rating-controlled-component';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
 	faStar,
 	faWallet,
 	faAngleDoubleRight,
 	faAngleDoubleLeft,
+	faStarHalfAlt,
 } from '@fortawesome/free-solid-svg-icons';
+
+import // faStar
+'@fortawesome/free-regular-svg-icons';
 import { Image, Carousel, Breadcrumb } from 'react-bootstrap';
 import { LinkContainer } from 'react-router-bootstrap';
 import _ from 'lodash';
@@ -23,10 +27,16 @@ class CommonProduct extends Component {
 					renderStarIcon={() => (
 						<FontAwesomeIcon icon={faStar} style={iconStyle} />
 					)}
+					renderStarIconHalf={() => (
+						<FontAwesomeIcon
+							icon={faStarHalfAlt}
+							style={{ color: 'rgb(253, 186, 73)', ...iconStyle }}
+						/>
+					)}
 					starCount={5}
 					value={rating}
 					starColor='rgb(253, 186, 73)'
-					emptyStarColor='#424242'
+					emptyStarColor='#616161'
 				/>
 			</div>
 		);

@@ -34,6 +34,8 @@
 
 	.productDescription {
 		@extend %defaultProductPageDescription;
+
+		margin-bottom: 10vh;
 	}
 }
 
@@ -65,7 +67,7 @@
 		background-color: color(background);
 
 		svg {
-			font-size: 32px;
+			font-size: 25px;
 			margin: auto 0;
 			margin-right: 10px;
 		}

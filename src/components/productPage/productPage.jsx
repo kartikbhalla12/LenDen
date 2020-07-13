@@ -29,6 +29,7 @@ class ProductPage extends Component {
 			rating: data.rating,
 			ldc: data.ldc,
 			desc: data.description,
+			wishlist: data.wishlist,
 		};
 	};
 

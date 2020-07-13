@@ -12,7 +12,7 @@ axios.interceptors.response.use(null, error => {
 		// alert('unexpected error');
 		toast.error('An unexpected error occurred!', {
 			// position: 'bottom-center',
-			autoClose: 5000,
+			autoClose: 10000,
 			className: 'toasty',
 			hideProgressBar: false,
 			closeOnClick: true,
