@@ -82,7 +82,7 @@ class CommonProduct extends Component {
 			{src.map(item => {
 				return (
 					<Carousel.Item key={item}>
-						<Image fluid src={item} />
+						<Image fluid src={`data:image;base64,${item}`} />
 					</Carousel.Item>
 				);
 			})}

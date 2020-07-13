@@ -19,19 +19,9 @@ class Product extends Component {
 	render() {
 		const { details } = this.props;
 		return this.state.isMobile ? (
-			<MobileProduct
-				product={details}
-				onClick={() => {
-					console.log('heh');
-				}}
-			/>
+			<MobileProduct product={details} onClick={this.props.onClick} />
 		) : (
-			<DesktopProduct
-				product={details}
-				onClick={() => {
-					console.log('heh');
-				}}
-			/>
+			<DesktopProduct product={details} onClick={this.props.onClick} />
 		);
 	}
 }

@@ -11,6 +11,7 @@ class Books extends Component {
 		// const books = await getBooks();
 		let books = [
 			{
+				id: 'PuiQCdqR2v7Pn0mKLz73TAYWUntOlB',
 				name: 'Kitten hgasf  asfghd a sdhf hf dahs  dfsah dsa',
 				category: 'books',
 				src: 'http://placekitten.com/350/450',
@@ -86,7 +87,7 @@ class Books extends Component {
 					return (
 						<Product
 							details={book}
-							onClick={() => this.props.history.push('/')}
+							onClick={() => this.props.history.push(`/books/${book.id}`)}
 						/>
 					);
 				})}
