@@ -26,7 +26,7 @@ class DesktopProductPage extends CommonProduct {
 								'',
 								'wishlist',
 								faHeart,
-								wishlist ? '#fff' : 'rgb(253, 186, 73)'
+								wishlist ? 'rgb(253, 186, 73)' : '#fff'
 							)}
 						</div>
 					</div>

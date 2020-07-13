@@ -44,7 +44,7 @@ class Books extends Component {
 				src: 'http://placekitten.com/350/450',
 				rating: 4,
 				ldc: 240,
-				wishlist: true,
+				wishlist: false,
 				desc: `Open the door, let me out, let me out, let me-out, let me-aow, let
 			meaow, meaow! have my breakfast spaghetti yarn attack the dog then
 			pretend like nothing happened. Instantly break out into full speed
@@ -81,9 +81,15 @@ class Books extends Component {
 					// marginTop: '1vh',
 					justifyContent: 'center',
 				}}>
-				{books.map(book => (
-					<Product details={book} />
-				))}
+				{books.map(book => {
+					console.log(this);
+					return (
+						<Product
+							details={book}
+							onClick={() => this.props.history.push('/')}
+						/>
+					);
+				})}
 			</div>
 		);
 	}

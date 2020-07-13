@@ -71,14 +71,14 @@ class BookForm extends CommonForm {
 			const { data: imageData } = await uploadImages(pictures);
 			const reqBody = this.mapToViewModel(data, imageData);
 			const res = await postBook(userId, reqBody);
-			console.log(res);
+			console.log(reqBody, res);
 			this.setState({
 				loading: false,
 				success: 'Successfully posted your product!',
 			});
-			setTimeout(() => {
-				window.location.replace('/my-products');
-			}, 2000);
+			// setTimeout(() => {
+			// 	window.location.replace('/my-products');
+			// }, 2000);
 		} catch (ex) {
 			console.log(ex);
 			this.setState({ loading: false });

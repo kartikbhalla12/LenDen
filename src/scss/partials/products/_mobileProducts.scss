@@ -89,6 +89,7 @@
 
 			.wishlist {
 				@extend %defaultButton;
+				background-color: rgba(color(primary), 0.1);
 				padding: 8px;
 				font-size: 16px;
 				margin-left: 4px;

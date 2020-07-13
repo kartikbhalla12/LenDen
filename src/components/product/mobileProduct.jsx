@@ -50,7 +50,7 @@ class MobileProduct extends CommonProduct {
 								'',
 								'wishlist',
 								faHeart,
-								wishlist ? '#ef5350' : '#fff'
+								wishlist ? '#fdba49' : '#fff'
 							)}
 						</div>
 					</div>
