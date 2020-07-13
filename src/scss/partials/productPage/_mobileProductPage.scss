@@ -1,5 +1,4 @@
 .mobileProductPageContainer {
-	height: 100vh;
 	margin-top: 10px;
 	padding: 0 10px;
 
@@ -41,7 +40,7 @@
 .mobileProductPageActions {
 	@extend %defaultProductPageActions;
 	background-color: color(white);
-	position: sticky;
+	position: fixed;
 	width: 100%;
 	bottom: 0;
 	left: 0;
