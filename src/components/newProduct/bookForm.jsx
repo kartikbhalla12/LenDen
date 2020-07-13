@@ -76,6 +76,8 @@ class BookForm extends CommonForm {
 				loading: false,
 				success: 'Successfully posted your product!',
 			});
+
+			//TODO
 			// setTimeout(() => {
 			// 	window.location.replace('/my-products');
 			// }, 2000);

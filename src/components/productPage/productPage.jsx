@@ -38,12 +38,17 @@ class ProductPage extends Component {
 		window.addEventListener('resize', this.handleProduct);
 
 		const { id } = this.props.match.params;
-		const { data: productInfo } = await getProductInfo(id);
-
-		this.setState({
-			product: this.mapToViewModel(productInfo),
-			loading: false,
-		});
+		try {
+			const { data: productInfo } = await getProductInfo(id);
+			this.setState({
+				product: this.mapToViewModel(productInfo),
+				loading: false,
+			});
+		} catch (ex) {
+			if (ex.response.status === 404) {
+				this.props.history.replace('/not-found');
+			}
+		}
 	};
 	handleProduct = () => {
 		const isMobile = window.innerWidth > 700 ? false : true;

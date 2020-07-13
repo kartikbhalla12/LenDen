@@ -26,7 +26,7 @@ class Books extends Component {
 			toes for`,
 			},
 			{
-				id: '',
+				id: '1',
 				name: 'Kitten hgasf  asfghd a sdhf hf dahs  dfsah dsa',
 				category: 'books',
 				src: 'https://placekitten.com/350/450',
