@@ -18,7 +18,15 @@ class MainNav extends Component {
 						onClick={this.props.onBarClick}
 						style={{ cursor: 'pointer' }}>
 						<FontAwesomeIcon icon={faBars} />
-						<Image id='logo' src='/images/demoLogo.png' />
+						{/* <div
+							style={{
+								marginLeft: '10px',
+								display: 'inline-block',
+								backgroundColor: 'white',
+								borderRadius: '100%',
+							}}> */}
+						<Image id='logo' src='/images/navLogo.png' />
+						{/* </div> */}
 					</Navbar.Brand>
 					<Nav className='ml-auto' id='navSearchBox'>
 						<FontAwesomeIcon id='navSearchIcon' icon={faSearch} />

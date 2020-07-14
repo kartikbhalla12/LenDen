@@ -10,7 +10,8 @@ class NotFound extends Component {
 				<div className='notFoundInnerContainer'>
 					<Image src='images/logo.png' />
 					<p>
-						There's nothing here, Go back to <Link to='/'>Home</Link> ?
+						Oops, there's nothing here, <br />
+						Go back to <Link to='/'>Home</Link> ?
 					</p>
 				</div>
 			</div>
