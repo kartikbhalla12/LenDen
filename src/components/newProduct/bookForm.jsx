@@ -10,15 +10,15 @@ const customError = new Error('Every question is required');
 class BookForm extends CommonForm {
 	state = {
 		data: {
-			title: 'dasdsada',
-			mrp: 231,
-			cover: 2,
-			ques1: 1,
-			ques2: 2,
-			ques3: 1,
-			ques4: 1,
-			ques5: 2,
-			description: 'asda',
+			title: '',
+			mrp: '',
+			cover: 0,
+			ques1: 0,
+			ques2: 0,
+			ques3: 0,
+			ques4: 0,
+			ques5: 0,
+			description: '',
 		},
 		loading: false,
 		pictures: [],
@@ -67,12 +67,12 @@ class BookForm extends CommonForm {
 
 		this.setState({ loading: true });
 
-		const compressedPictures = await this.compressPictures(pictures);
-		console.log(compressedPictures);
+		// const compressedPictures = await this.compressPictures(pictures);
+		// console.log(compressedPictures);
 
 		try {
 			const { userId } = getCurrentUser();
-			const { data: imageData } = await uploadImages(compressedPictures);
+			const { data: imageData } = await uploadImages(pictures);
 			const reqBody = this.mapToViewModel(data, imageData);
 			const res = await postBook(userId, reqBody);
 			console.log(reqBody, res);
@@ -92,6 +92,7 @@ class BookForm extends CommonForm {
 	};
 
 	render() {
+		const { uploading } = this.state;
 		return (
 			<div className='productForm'>
 				<h3>Tell us about your book</h3>
@@ -163,7 +164,8 @@ class BookForm extends CommonForm {
 					})}
 					{this.renderAlert()}
 					{this.renderSuccessAlert()}
-					<Button variant='primary' type='submit'>
+					{this.renderUploadingAlert()}
+					<Button variant='primary' disabled={uploading} type='submit'>
 						Submit
 					</Button>
 				</Form>

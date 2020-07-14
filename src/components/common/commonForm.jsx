@@ -10,6 +10,7 @@ class CommonForm extends Component {
 		data: {},
 		error: '',
 		success: '',
+		uploading: '',
 	};
 
 	handleChange = ({ currentTarget: input }) => {
@@ -18,9 +19,15 @@ class CommonForm extends Component {
 
 		this.setState({ data });
 	};
-	onDrop = pictures => {
+	onDrop = async pictures => {
+		this.setState({ uploading: true });
+
+		const compressedPictures = await this.compressPictures(pictures);
+		console.log(compressedPictures);
+
 		this.setState({
-			pictures: pictures,
+			pictures: compressedPictures,
+			uploading: false,
 		});
 	};
 
@@ -186,6 +193,11 @@ class CommonForm extends Component {
 				buttonStyles={{ backgroundColor: 'rgb(253, 186, 73)' }}
 			/>
 		);
+	};
+
+	renderUploadingAlert = () => {
+		const { uploading } = this.state;
+		return uploading && <div style={{ textAlign: 'center' }}>Uploading...</div>;
 	};
 }
 
