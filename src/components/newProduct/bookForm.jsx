@@ -10,15 +10,15 @@ const customError = new Error('Every question is required');
 class BookForm extends CommonForm {
 	state = {
 		data: {
-			title: '',
-			mrp: '',
-			cover: 0,
-			ques1: 0,
-			ques2: 0,
-			ques3: 0,
-			ques4: 0,
-			ques5: 0,
-			description: '',
+			title: 'dasdsada',
+			mrp: 231,
+			cover: 2,
+			ques1: 1,
+			ques2: 2,
+			ques3: 1,
+			ques4: 1,
+			ques5: 2,
+			description: 'asda',
 		},
 		loading: false,
 		pictures: [],
@@ -66,9 +66,13 @@ class BookForm extends CommonForm {
 			return this.setState({ error: 'atleast 3 images are required' });
 
 		this.setState({ loading: true });
+
+		const compressedPictures = await this.compressPictures(pictures);
+		console.log(compressedPictures);
+
 		try {
 			const { userId } = getCurrentUser();
-			const { data: imageData } = await uploadImages(pictures);
+			const { data: imageData } = await uploadImages(compressedPictures);
 			const reqBody = this.mapToViewModel(data, imageData);
 			const res = await postBook(userId, reqBody);
 			console.log(reqBody, res);

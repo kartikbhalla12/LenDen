@@ -3,6 +3,7 @@ import Joi from 'joi-browser';
 import { Form, Alert } from 'react-bootstrap';
 import BarLoader from 'react-spinners/BarLoader';
 import ImageUploader from 'react-images-upload';
+import imageCompression from 'browser-image-compression';
 
 class CommonForm extends Component {
 	state = {
@@ -17,10 +18,27 @@ class CommonForm extends Component {
 
 		this.setState({ data });
 	};
-	onDrop = picture => {
+	onDrop = pictures => {
 		this.setState({
-			pictures: picture,
+			pictures: pictures,
 		});
+	};
+
+	compressPictures = pictures => {
+		function returnPromise(pictures) {
+			let compressedPictures = [];
+			const options = {
+				maxSizeMB: 0.2,
+				maxWidthOrHeight: 1920,
+				useWebWorker: true,
+			};
+			pictures.forEach(picture =>
+				compressedPictures.push(imageCompression(picture, options))
+			);
+			return compressedPictures;
+		}
+
+		return Promise.all([...returnPromise(pictures)]);
 	};
 
 	validate = () => {
