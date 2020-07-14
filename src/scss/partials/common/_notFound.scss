@@ -1,0 +1,29 @@
+.notFoundContainer {
+	display: block;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+
+	.notFoundInnerContainer {
+		text-align: center;
+		width: 90vw;
+		max-width: 600;
+
+		img {
+			max-width: 200px;
+			margin-bottom: 3vh;
+		}
+		p {
+			font-style: italic;
+			font-size: 25px;
+			font-weight: 700;
+			font-family: font(primary);
+
+			a {
+				color: color(accent);
+				text-decoration: none;
+			}
+		}
+	}
+}
