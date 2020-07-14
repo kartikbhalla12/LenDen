@@ -25,20 +25,17 @@ class CommonForm extends Component {
 	};
 
 	compressPictures = pictures => {
-		function returnPromise(pictures) {
-			let compressedPictures = [];
-			const options = {
-				maxSizeMB: 0.2,
-				maxWidthOrHeight: 1920,
-				useWebWorker: true,
-			};
-			pictures.forEach(picture =>
-				compressedPictures.push(imageCompression(picture, options))
-			);
-			return compressedPictures;
-		}
+		let compressedPictures = [];
+		const options = {
+			maxSizeMB: 0.2,
+			maxWidthOrHeight: 1920,
+			useWebWorker: true,
+		};
+		pictures.forEach(picture =>
+			compressedPictures.push(imageCompression(picture, options))
+		);
 
-		return Promise.all([...returnPromise(pictures)]);
+		return Promise.all([...compressedPictures]);
 	};
 
 	validate = () => {
