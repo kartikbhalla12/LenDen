@@ -7,6 +7,7 @@ import {
 	faShoppingCart,
 	faSearch,
 } from '@fortawesome/free-solid-svg-icons';
+import { withRouter } from 'react-router-dom';
 
 class MainNav extends Component {
 	state = {};
@@ -18,16 +19,12 @@ class MainNav extends Component {
 						onClick={this.props.onBarClick}
 						style={{ cursor: 'pointer' }}>
 						<FontAwesomeIcon icon={faBars} />
-						{/* <div
-							style={{
-								marginLeft: '10px',
-								display: 'inline-block',
-								backgroundColor: 'white',
-								borderRadius: '100%',
-							}}> */}
-						<Image id='logo' src='/images/navLogo.png' />
-						{/* </div> */}
 					</Navbar.Brand>
+					<Image
+						onClick={() => this.props.history.push('/')}
+						id='logo'
+						src='/images/navLogo.png'
+					/>
 					<Nav className='ml-auto' id='navSearchBox'>
 						<FontAwesomeIcon id='navSearchIcon' icon={faSearch} />
 						<Form.Control
@@ -77,4 +74,4 @@ class MainNav extends Component {
 	}
 }
 
-export default MainNav;
+export default withRouter(MainNav);

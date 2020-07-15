@@ -17,6 +17,7 @@ class Signup extends CommonForm {
 		error: '',
 		success: '',
 		loading: false,
+		passType: 'password',
 	};
 
 	schema = {

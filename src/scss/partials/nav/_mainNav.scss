@@ -5,15 +5,14 @@
 		padding: 0.2rem 1rem;
 	}
 
-	.navbar-brand {
-		#logo {
-			width: 4em;
-			margin: auto 1rem;
+	#logo {
+		width: 5em;
+		margin: auto 1rem;
+		cursor: pointer;
 
-			@media screen and (max-width: breakpoint(mobileS)) {
-				width: 2em;
-				margin: auto 5px;
-			}
+		@media screen and (max-width: breakpoint(mobileS)) {
+			width: 2em;
+			margin: auto 5px;
 		}
 	}
 

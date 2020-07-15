@@ -40,6 +40,8 @@ class ProductPage extends Component {
 		const { id } = this.props.match.params;
 		try {
 			const { data: productInfo } = await getProductInfo(id);
+			console.log(productInfo);
+
 			this.setState({
 				product: this.mapToViewModel(productInfo),
 				loading: false,

@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
 import Joi from 'joi-browser';
-import { Form, Alert } from 'react-bootstrap';
+import { Form, Alert, InputGroup } from 'react-bootstrap';
 import BarLoader from 'react-spinners/BarLoader';
 import ImageUploader from 'react-images-upload';
 import imageCompression from 'browser-image-compression';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faEye, faEyeSlash } from '@fortawesome/free-regular-svg-icons';
 
 class CommonForm extends Component {
 	state = {
@@ -66,6 +68,8 @@ class CommonForm extends Component {
 	};
 
 	renderInput(name, placeholder) {
+		if (name === 'password') return this.renderPassInput(placeholder);
+
 		const { data } = this.state;
 		return (
 			<Form.Group controlId={name}>
@@ -80,6 +84,40 @@ class CommonForm extends Component {
 			</Form.Group>
 		);
 	}
+
+	renderPassInput(placeholder) {
+		const { data, passType } = this.state;
+		const name = 'password';
+		return (
+			<InputGroup className='mb-3'>
+				<Form.Control
+					className='input'
+					name={name}
+					type={this.state.passType}
+					placeholder={placeholder}
+					value={data[name]}
+					onChange={this.handleChange}
+				/>
+
+				<InputGroup.Append>
+					<InputGroup.Text
+						className='inputGroupText'
+						onClick={() => {
+							const { passType } = this.state;
+							if (passType === 'password')
+								return this.setState({ passType: 'text' });
+							if (passType === 'text')
+								return this.setState({ passType: 'password' });
+						}}
+						onMouseDown={e => e.preventDefault()}>
+						{passType === 'password' && <FontAwesomeIcon icon={faEye} />}
+						{passType === 'text' && <FontAwesomeIcon icon={faEyeSlash} />}
+					</InputGroup.Text>
+				</InputGroup.Append>
+			</InputGroup>
+		);
+	}
+
 	renderAlert = style => {
 		const { error } = this.state;
 		return (

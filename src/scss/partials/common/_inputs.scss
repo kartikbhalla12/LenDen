@@ -3,6 +3,7 @@
 textarea:focus {
 	border: none;
 	box-shadow: 0 0 0 0.2rem rgba(color(accent), 0.4) !important;
+	// box-shadow: none !important;
 	outline: 0;
 }
 .form-control,
@@ -10,4 +11,36 @@ textarea:focus {
 	transition: box-shadow 0.15s ease-in-out;
 	-webkit-appearance: none;
 	-moz-appearance: none;
+}
+
+.inputGroupText {
+	cursor: pointer;
+	color: color(primary);
+	background-color: color(white);
+}
+
+.input-group {
+	input {
+		border-right: none;
+	}
+}
+
+.input-group:focus-within {
+	border-radius: 0.25rem;
+	box-shadow: 0 0 0 0.2rem rgba(color(accent), 0.4) !important;
+	outline: none;
+	.input {
+		border-right: none;
+	}
+
+	.input:focus {
+		box-shadow: none !important;
+		border-right: none;
+	}
+
+	.input-group-append {
+		.input-group-text {
+			border: none;
+		}
+	}
 }

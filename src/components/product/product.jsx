@@ -7,10 +7,15 @@ class Product extends Component {
 	state = {
 		isMobile: false,
 	};
+	abortController = new AbortController();
 
 	componentDidMount = () => {
 		this.handleProduct();
 		window.addEventListener('resize', this.handleProduct);
+	};
+
+	componentWillUnmount = () => {
+		this.abortController.abort(); //TODO test
 	};
 	handleProduct = () => {
 		const isMobile = window.innerWidth > 700 ? false : true;
