@@ -105,9 +105,12 @@ class CommonForm extends Component {
 						onClick={() => {
 							const { passType } = this.state;
 							if (passType === 'password')
-								return this.setState({ passType: 'text' });
+								return setTimeout(() => this.setState({ passType: 'text' }));
+
 							if (passType === 'text')
-								return this.setState({ passType: 'password' });
+								return setTimeout(() =>
+									this.setState({ passType: 'password' })
+								);
 						}}
 						onMouseDown={e => e.preventDefault()}>
 						{passType === 'password' && <FontAwesomeIcon icon={faEye} />}

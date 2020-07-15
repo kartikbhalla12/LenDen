@@ -72,4 +72,8 @@
 			margin-right: 10px;
 		}
 	}
+
+	.disabled {
+		@extend %defaultProductPageButtonDisabled;
+	}
 }

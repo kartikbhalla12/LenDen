@@ -3,6 +3,7 @@ import DesktopProductPage from './desktopProductPage';
 import MobileProductPage from './mobileProductPage';
 import { getProductInfo } from './../../services/productPageService';
 import PageLoader from './../common/pageLoader';
+import * as authService from '../../services/authService';
 class ProductPage extends Component {
 	state = {
 		product: {
@@ -30,6 +31,7 @@ class ProductPage extends Component {
 			ldc: data.ldc,
 			desc: data.description,
 			wishlist: data.wishlist,
+			canBarter: !authService.getCurrentUser() ? true : data.barternow,
 		};
 	};
 
@@ -56,13 +58,25 @@ class ProductPage extends Component {
 		const isMobile = window.innerWidth > 700 ? false : true;
 		this.setState({ isMobile });
 	};
+
+	handleBarter = () => {
+		const { canBarter } = this.state.product;
+		if (canBarter) console.log('heh');
+	};
+
 	render() {
 		return this.state.loading ? (
 			<PageLoader />
 		) : this.state.isMobile ? (
-			<MobileProductPage product={this.state.product} />
+			<MobileProductPage
+				product={this.state.product}
+				onBarter={this.handleBarter}
+			/>
 		) : (
-			<DesktopProductPage product={this.state.product} />
+			<DesktopProductPage
+				product={this.state.product}
+				onBarter={this.handleBarter}
+			/>
 		);
 	}
 }

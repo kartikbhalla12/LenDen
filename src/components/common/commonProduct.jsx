@@ -64,6 +64,8 @@ class CommonProduct extends Component {
 	}
 
 	renderButton(onClick, name, className, icon, iconColor) {
+		// console.log(onClick);
+		// onClick();
 		return (
 			<div className={className} onClick={onClick}>
 				<FontAwesomeIcon

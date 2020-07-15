@@ -13,14 +13,21 @@ class DesktopProductPage extends CommonProduct {
 			ldc,
 			desc,
 			wishlist,
+			canBarter,
 		} = this.props.product;
+		const { onBarter } = this.props;
 		return (
 			<div className='container desktopProductPageContainer'>
 				<div className='desktopProductPageLeftContainer'>
 					<div className='desktopProductPageImageContainer'>
 						{this.renderCarousel(src)}
 						<div className='desktopProductPageActions'>
-							{this.renderButton(() => {}, 'BARTER', 'barter', faExchangeAlt)}
+							{this.renderButton(
+								onBarter,
+								'BARTER',
+								`barter ${canBarter ? '' : 'disabled'}`,
+								faExchangeAlt
+							)}
 							{this.renderButton(
 								() => {},
 								'',

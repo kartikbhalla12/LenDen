@@ -13,7 +13,9 @@ class MobileProductPage extends CommonProduct {
 			ldc,
 			desc,
 			wishlist,
+			canBarter,
 		} = this.props.product;
+		const { onBarter } = this.props;
 		return (
 			<React.Fragment>
 				<div className='container mobileProductPageContainer'>
@@ -32,7 +34,12 @@ class MobileProductPage extends CommonProduct {
 					{this.renderDescription(desc)}
 				</div>
 				<div className='mobileProductPageActions'>
-					{this.renderButton(() => {}, 'BARTER', 'barter', faExchangeAlt)}
+					{this.renderButton(
+						onBarter,
+						'BARTER',
+						`barter ${canBarter ? '' : 'disabled'}`,
+						faExchangeAlt
+					)}
 
 					{this.renderButton(
 						() => {},

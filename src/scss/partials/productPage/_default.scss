@@ -63,3 +63,13 @@
 		color: color(secondary);
 	}
 }
+
+%defaultProductPageButtonDisabled {
+	background-color: rgba(color(primary), 0.45);
+	color: color(primary);
+	cursor: not-allowed;
+
+	svg {
+		color: color(primary);
+	}
+}
