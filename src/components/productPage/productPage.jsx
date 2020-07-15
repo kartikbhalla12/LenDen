@@ -15,7 +15,7 @@ class ProductPage extends Component {
 			wishlist: true,
 			desc: '',
 		},
-		loading: true,
+		loadingPage: true,
 	};
 
 	mapToViewModel = data => {
@@ -65,7 +65,7 @@ class ProductPage extends Component {
 	};
 
 	render() {
-		return this.state.loading ? (
+		return this.state.loadingPage ? (
 			<PageLoader />
 		) : this.state.isMobile ? (
 			<MobileProductPage

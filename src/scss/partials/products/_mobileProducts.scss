@@ -37,67 +37,74 @@
 			}
 		}
 
-		.mobileProductMixedContainer {
-			display: flex;
-			align-items: top;
-			margin-top: 5px;
-
-			.productLdc {
-				@extend %defaultProductLdc;
-				flex-basis: 35%;
-				color: color(secondary);
-				font-size: 18px;
-
-				svg {
-					color: color(secondary);
-					font-size: '16px';
-				}
-			}
-
-			.productStarRating {
-				flex-basis: 65%;
-				text-align: right;
-			}
-		}
-
-		.mobileProductActions {
-			display: flex;
+		.mobileProductInnerContainer {
 			position: absolute;
 			left: 0;
 			bottom: 0;
 			right: 0;
+			.mobileProductMixedContainer {
+				text-align: left;
+				display: flex;
+				align-items: top;
+				margin-top: 5px;
 
-			.barter {
-				@extend %defaultButton;
-				padding: 8px;
-				font-size: 17px;
-				margin-right: 4px;
-				border-radius: 5px;
-				line-height: 25px;
-				font-weight: 500;
-
-				svg {
+				.productLdc {
+					@extend %defaultProductLdc;
+					flex-basis: 35%;
 					color: color(secondary);
-					margin-right: 10px;
-					font-size: 14px;
+					font-size: 18px;
 
-					@media screen and (max-width: breakpoint(mobileS)) {
-						display: none;
+					svg {
+						color: color(secondary);
+						font-size: '16px';
 					}
+				}
+
+				.productStarRating {
+					flex-basis: 65%;
+					text-align: right;
 				}
 			}
 
-			.wishlist {
-				@extend %defaultButton;
-				background-color: rgba(color(primary), 0.1);
-				padding: 8px;
-				font-size: 16px;
-				margin-left: 4px;
-				border-radius: 5px;
-				line-height: 25px;
+			.mobileProductActions {
+				display: flex;
+				// position: absolute;
+				// left: 0;
+				// bottom: 0;
+				// right: 0;
 
-				svg {
-					font-size: 20px;
+				.barter {
+					@extend %defaultButton;
+					padding: 8px;
+					font-size: 17px;
+					margin-right: 4px;
+					border-radius: 5px;
+					line-height: 25px;
+					font-weight: 500;
+
+					svg {
+						color: color(secondary);
+						margin-right: 10px;
+						font-size: 14px;
+
+						@media screen and (max-width: breakpoint(mobileS)) {
+							display: none;
+						}
+					}
+				}
+
+				.wishlist {
+					@extend %defaultButton;
+					background-color: rgba(color(primary), 0.1);
+					padding: 8px;
+					font-size: 16px;
+					margin-left: 4px;
+					border-radius: 5px;
+					line-height: 25px;
+
+					svg {
+						font-size: 20px;
+					}
 				}
 			}
 		}

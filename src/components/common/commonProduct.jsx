@@ -43,7 +43,9 @@ class CommonProduct extends Component {
 	}
 
 	renderProductImage(src) {
-		return <Image className='productImage' fluid src={src} />;
+		return (
+			<Image className='productImage' fluid src={`data:image;base64,${src}`} />
+		);
 	}
 
 	renderProductName(name) {

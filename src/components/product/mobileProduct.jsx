@@ -23,35 +23,36 @@ class MobileProduct extends CommonProduct {
 							onClick={onClick}>
 							{this.renderDescription(desc)}
 						</div>
+						<div className='mobileProductInnerContainer'>
+							<div className='mobileProductMixedContainer'>
+								{this.renderLdc(ldc)}
 
-						<div className='mobileProductMixedContainer'>
-							{this.renderLdc(ldc)}
+								{this.renderStarRating(rating, {
+									marginRight: '3px',
+									fontSize: '15px',
+								})}
+							</div>
 
-							{this.renderStarRating(rating, {
-								marginRight: '3px',
-								fontSize: '15px',
-							})}
-						</div>
+							<div className='mobileProductActions'>
+								{this.renderButton(
+									() => {
+										console.log('btn');
+									},
+									'BARTER',
+									'barter',
+									faExchangeAlt
+								)}
 
-						<div className='mobileProductActions'>
-							{this.renderButton(
-								() => {
-									console.log('btn');
-								},
-								'BARTER',
-								'barter',
-								faExchangeAlt
-							)}
-
-							{this.renderButton(
-								() => {
-									console.log('btn');
-								},
-								'',
-								'wishlist',
-								faHeart,
-								wishlist ? '#fdba49' : '#fff'
-							)}
+								{this.renderButton(
+									() => {
+										console.log('btn');
+									},
+									'',
+									'wishlist',
+									faHeart,
+									wishlist ? '#fdba49' : '#fff'
+								)}
+							</div>
 						</div>
 					</div>
 				</div>
