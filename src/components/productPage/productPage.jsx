@@ -46,7 +46,7 @@ class ProductPage extends Component {
 
 			this.setState({
 				product: this.mapToViewModel(productInfo),
-				loading: false,
+				loadingPage: false,
 			});
 		} catch (ex) {
 			if (ex.response.status === 404) {
