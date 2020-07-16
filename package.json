@@ -29,7 +29,7 @@
 		"react-router-dom": "^5.2.0",
 		"react-scripts": "3.4.1",
 		"react-spinners": "^0.8.3",
-		"react-star-rating-component-new": "^1.0.5",
+		"react-star-rating-component-new": "^1.0.6",
 		"react-star-rating-controlled-component": "^1.0.1",
 		"react-toastify": "^6.0.8"
 	},
