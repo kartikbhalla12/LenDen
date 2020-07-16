@@ -13,8 +13,17 @@ class DesktopProduct extends CommonProduct {
 	// };
 
 	render() {
-		const { name, desc, src, rating, ldc, wishlist } = this.props.product;
-		const { onClick } = this.props;
+		const {
+			id,
+			name,
+			desc,
+			src,
+			rating,
+			ldc,
+			wishlist,
+			canBarter,
+		} = this.props.product;
+		const { onClick, onBarter } = this.props;
 		return (
 			<div className='desktopProductContainer'>
 				<div className='desktopProductImageContainer' onClick={onClick}>
@@ -30,7 +39,13 @@ class DesktopProduct extends CommonProduct {
 				</div>
 
 				<div className='desktopProductActions'>
-					{this.renderButton(() => {}, 'BARTER', 'barter', faExchangeAlt, '')}
+					{this.renderButton(
+						() => (canBarter ? onBarter(id) : ''),
+						'BARTER',
+						`barter ${canBarter ? '' : 'disabled'}`,
+						faExchangeAlt,
+						''
+					)}
 					{this.renderButton(
 						() => {},
 						'',

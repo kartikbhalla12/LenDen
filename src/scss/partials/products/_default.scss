@@ -46,3 +46,13 @@
 	text-transform: uppercase;
 	font-family: font(secondary);
 }
+
+%defaultProductButtonDisabled {
+	background-color: rgba(color(accent), 0.45);
+	color: rgba(color(primary), 0.8);
+	cursor: not-allowed;
+
+	svg {
+		color: rgba(color(primary), 0.8) !important;
+	}
+}

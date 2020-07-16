@@ -6,6 +6,7 @@ class DesktopProductPage extends CommonProduct {
 	state = {};
 	render() {
 		const {
+			id,
 			src,
 			category,
 			name,
@@ -23,7 +24,7 @@ class DesktopProductPage extends CommonProduct {
 						{this.renderCarousel(src)}
 						<div className='desktopProductPageActions'>
 							{this.renderButton(
-								onBarter,
+								() => (canBarter ? onBarter(id) : ''),
 								'BARTER',
 								`barter ${canBarter ? '' : 'disabled'}`,
 								faExchangeAlt

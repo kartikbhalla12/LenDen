@@ -1,0 +1,14 @@
+.productsContainer {
+	text-align: center;
+	margin-bottom: 2vh;
+	.productsInnerContainer {
+		display: flex;
+		flex-wrap: wrap;
+		margin-top: 1vh;
+		justify-content: center;
+	}
+
+	.btn {
+		margin-top: 2vh;
+	}
+}

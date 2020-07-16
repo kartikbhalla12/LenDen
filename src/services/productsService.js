@@ -6,8 +6,9 @@ const apiEndPoint = `${api}/products/product`;
 const user = getCurrentUser();
 let userId = user ? user.userId : null;
 
-export function getBooks(page, limit) {
+export function getProducts(category, page, limit) {
 	return http.post(`${apiEndPoint}/?page=${page}&limit=${limit}`, {
 		userid: userId,
+		categorytype: category,
 	});
 }

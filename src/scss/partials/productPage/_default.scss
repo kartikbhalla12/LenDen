@@ -65,11 +65,11 @@
 }
 
 %defaultProductPageButtonDisabled {
-	background-color: rgba(color(primary), 0.45);
-	color: color(primary);
+	background-color: rgba(color(accent), 0.45);
+	color: rgba(color(primary), 0.8);
 	cursor: not-allowed;
 
 	svg {
-		color: color(primary);
+		color: rgba(color(primary), 0.8);
 	}
 }

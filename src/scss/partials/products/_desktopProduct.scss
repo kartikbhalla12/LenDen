@@ -89,5 +89,9 @@
 				font-size: 25px;
 			}
 		}
+
+		.disabled {
+			@extend %defaultProductButtonDisabled;
+		}
 	}
 }
