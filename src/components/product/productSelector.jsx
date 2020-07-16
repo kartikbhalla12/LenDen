@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import DesktopProduct from './desktopProduct';
 import MobileProduct from './mobileProduct';
 
-class Product extends Component {
+class ProductSelector extends Component {
 	state = {
 		isMobile: false,
 	};
@@ -24,11 +24,19 @@ class Product extends Component {
 	render() {
 		const { details } = this.props;
 		return this.state.isMobile ? (
-			<MobileProduct product={details} onClick={this.props.onClick} />
+			<MobileProduct
+				product={details}
+				onClick={this.props.onClick}
+				onBarter={this.props.onBarter}
+			/>
 		) : (
-			<DesktopProduct product={details} onClick={this.props.onClick} />
+			<DesktopProduct
+				product={details}
+				onClick={this.props.onClick}
+				onBarter={this.props.onBarter}
+			/>
 		);
 	}
 }
 
-export default Product;
+export default ProductSelector;

@@ -6,6 +6,7 @@ class MobileProductPage extends CommonProduct {
 	state = {};
 	render() {
 		const {
+			id,
 			src,
 			category,
 			name,
@@ -31,7 +32,7 @@ class MobileProductPage extends CommonProduct {
 				</div>
 				<div className='mobileProductPageActions'>
 					{this.renderButton(
-						onBarter,
+						() => (canBarter ? onBarter(id) : ''),
 						'BARTER',
 						`barter ${canBarter ? '' : 'disabled'}`,
 						faExchangeAlt

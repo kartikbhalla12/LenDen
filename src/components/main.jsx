@@ -5,11 +5,11 @@ import { Switch, Route, Redirect } from 'react-router-dom';
 import ProtectedRoute from './common/protectedRoute';
 import Home from './home';
 import Me from './me';
-import Books from './books';
 import * as authService from '../services/authService';
 import ProductPage from './productPage/productPage';
 import NotFound from './common/notFound';
 import NewProduct from './newProduct/newProduct';
+import Products from './product/products';
 
 class Main extends Component {
 	state = {
@@ -19,6 +19,10 @@ class Main extends Component {
 	componentDidMount = async () => {
 		const user = await authService.getCurrentUser();
 		this.setState({ user });
+	};
+
+	handleBarter = id => {
+		console.log('heh' + id);
 	};
 
 	render() {
@@ -39,8 +43,22 @@ class Main extends Component {
 					user={user}
 				/>
 				<Switch>
-					<Route path='/books/:id' component={ProductPage} />
-					<Route path='/books' component={Books} />
+					<Route
+						path='/books/:id'
+						render={props => (
+							<ProductPage
+								category='books'
+								onBarter={this.handleBarter}
+								{...props}
+							/>
+						)}
+					/>
+					<Route
+						path='/books'
+						render={props => (
+							<Products onBarter={this.handleBarter} {...props} />
+						)}
+					/>
 					<ProtectedRoute path='/new' exact component={NewProduct} />
 					<Route path='/not-found' component={NotFound} />
 					<ProtectedRoute path='/me' component={Me} />

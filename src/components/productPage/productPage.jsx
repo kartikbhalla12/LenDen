@@ -45,7 +45,7 @@ class ProductPage extends Component {
 			console.log(productInfo);
 
 			this.setState({
-				product: this.mapToViewModel(productInfo),
+				product: { id, ...this.mapToViewModel(productInfo) },
 				loadingPage: false,
 			});
 		} catch (ex) {
@@ -59,11 +59,6 @@ class ProductPage extends Component {
 		this.setState({ isMobile });
 	};
 
-	handleBarter = () => {
-		const { canBarter } = this.state.product;
-		if (canBarter) console.log('heh');
-	};
-
 	render() {
 		return this.state.loadingPage ? (
 			<PageLoader />
@@ -75,7 +70,7 @@ class ProductPage extends Component {
 		) : (
 			<DesktopProductPage
 				product={this.state.product}
-				onBarter={this.handleBarter}
+				onBarter={this.props.onBarter}
 			/>
 		);
 	}
