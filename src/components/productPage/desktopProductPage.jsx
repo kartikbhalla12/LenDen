@@ -42,11 +42,7 @@ class DesktopProductPage extends CommonProduct {
 					<div style={{ maxWidth: 750 }}>
 						{this.renderBreadCrumb(category, name)}
 						{this.renderProductName(name)}
-						{this.renderStarRating(rating, {
-							fontSize: '20px',
-							marginRight: '5px',
-							marginTop: '10px',
-						})}
+						{this.renderStarRating(rating)}
 						{this.renderLdc(ldc)}
 						{this.renderDescription(desc)}
 					</div>

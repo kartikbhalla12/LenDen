@@ -25,11 +25,7 @@ class MobileProductPage extends CommonProduct {
 					<div className='mobileProductPageMixedContainer'>
 						{this.renderLdc(ldc)}
 
-						{this.renderStarRating(rating, {
-							fontSize: '20px',
-							marginRight: '5px',
-							marginTop: '10px',
-						})}
+						{this.renderStarRating(rating)}
 					</div>
 					{this.renderDescription(desc)}
 				</div>

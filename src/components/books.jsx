@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import Product from './product/product';
 import { getBooks } from '../services/bookService';
 import * as authService from '../services/authService';
@@ -19,7 +19,7 @@ class Books extends CommonForm {
 	//TODO EXTRACT CODE
 
 	mapToViewModel = data => ({
-		id: 'dsadas',
+		id: data.productid,
 		name: data.title,
 		category: data.categorytype,
 		desc: data.description,
@@ -86,7 +86,7 @@ class Books extends CommonForm {
 					style={{
 						display: 'flex',
 						flexWrap: 'wrap',
-						// marginTop: '1vh',
+						marginTop: '1vh',
 						justifyContent: 'center',
 					}}>
 					{books.map(book => {

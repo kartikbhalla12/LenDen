@@ -113,6 +113,16 @@
 				font-size: 25px;
 			}
 
+			.productStarRating {
+				.dv-star-rating {
+					svg {
+						font-size: 20px;
+						margin-right: 5px;
+						margin-top: 10px;
+					}
+				}
+			}
+
 			.productLdc {
 				@extend %defaultProductPageLdc;
 				font-size: 30px;

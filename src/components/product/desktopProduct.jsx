@@ -20,10 +20,7 @@ class DesktopProduct extends CommonProduct {
 				<div className='desktopProductImageContainer' onClick={onClick}>
 					{this.renderProductImage(src)}
 					<div className='desktopStarRatingContainer'>
-						{this.renderStarRating(rating, {
-							marginLeft: '5px',
-							fontSize: '19px',
-						})}
+						{this.renderStarRating(rating)}
 					</div>
 					{this.renderLdc(ldc)}
 				</div>

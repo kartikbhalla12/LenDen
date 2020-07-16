@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import StarRating from 'react-star-rating-controlled-component';
+import StarRating from 'react-star-rating-component-new';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
 	faStar,
@@ -9,8 +9,7 @@ import {
 	faStarHalfAlt,
 } from '@fortawesome/free-solid-svg-icons';
 
-import // faStar
-'@fortawesome/free-regular-svg-icons';
+import { faStar as faStarEmpty } from '@fortawesome/free-regular-svg-icons';
 import { Image, Carousel, Breadcrumb } from 'react-bootstrap';
 import { LinkContainer } from 'react-router-bootstrap';
 import _ from 'lodash';
@@ -22,21 +21,13 @@ class CommonProduct extends Component {
 		return (
 			<div className='productStarRating'>
 				<StarRating
-					name='rate2'
+					name='productRating'
 					editing={false}
-					renderStarIcon={() => (
-						<FontAwesomeIcon icon={faStar} style={iconStyle} />
-					)}
-					renderStarIconHalf={() => (
-						<FontAwesomeIcon
-							icon={faStarHalfAlt}
-							style={{ color: 'rgb(253, 186, 73)', ...iconStyle }}
-						/>
-					)}
+					renderStarIcon={() => <FontAwesomeIcon icon={faStar} />}
+					renderStarIconHalf={() => <FontAwesomeIcon icon={faStarHalfAlt} />}
+					renderEmptyStarIcon={() => <FontAwesomeIcon icon={faStarEmpty} />}
 					starCount={5}
 					value={rating}
-					starColor='rgb(253, 186, 73)'
-					emptyStarColor='#616161'
 				/>
 			</div>
 		);

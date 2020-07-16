@@ -63,6 +63,13 @@
 				.productStarRating {
 					flex-basis: 65%;
 					text-align: right;
+
+					.dv-star-rating {
+						svg {
+							font-size: 15px;
+							margin-right: 3px;
+						}
+					}
 				}
 			}
 

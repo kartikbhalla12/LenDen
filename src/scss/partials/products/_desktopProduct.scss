@@ -18,6 +18,15 @@
 			position: absolute;
 			top: 10px;
 			right: 15px;
+
+			.productStarRating {
+				.dv-star-rating {
+					svg {
+						font-size: 19px;
+						margin-left: 5px;
+					}
+				}
+			}
 		}
 
 		.productLdc {
