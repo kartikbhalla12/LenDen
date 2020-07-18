@@ -51,6 +51,7 @@ class Signup extends CommonForm {
 		return (
 			<div className='mainContainer'>
 				<div className='formBox'>
+					<div className='homeIconContainer'>{this.renderHomeButton()}</div>
 					<Image draggable='false' src='images/logo.png' />
 					<h2>Sign Up Today!</h2>
 					<Form noValidate className='form' onSubmit={this.handleSubmit}>

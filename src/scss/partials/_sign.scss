@@ -14,14 +14,33 @@
 		// margin: auto;
 		margin: 2rem auto;
 		max-width: 400px;
+		position: relative;
 
 		@media screen and (max-width: 500px) {
 			background-color: transparent;
 			box-shadow: none;
+			position: unset;
 		}
 
 		@media screen and (max-width: 370px) {
 			padding: 10px;
+		}
+
+		.homeIconContainer {
+			position: absolute;
+			cursor: pointer;
+			top: 15px;
+			left: 15px;
+
+			@media screen and (max-width: 500px) {
+				top: 20px;
+				left: 20px;
+			}
+
+			svg {
+				font-size: 30px;
+				color: color(accent);
+			}
 		}
 
 		img {

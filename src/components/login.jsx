@@ -46,6 +46,7 @@ class Login extends CommonForm {
 		return (
 			<div className='mainContainer'>
 				<div className='formBox'>
+					<div className='homeIconContainer'>{this.renderHomeButton()}</div>
 					<Image draggable='false' src='/images/logo.png' />
 					<h2>Please Sign In</h2>
 					<Form noValidate className='form' onSubmit={this.handleSubmit}>

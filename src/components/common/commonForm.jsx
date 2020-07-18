@@ -5,6 +5,7 @@ import BarLoader from 'react-spinners/BarLoader';
 import ImageUploader from 'react-images-upload';
 import imageCompression from 'browser-image-compression';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faAngleDoubleLeft } from '@fortawesome/free-solid-svg-icons';
 import { faEye, faEyeSlash } from '@fortawesome/free-regular-svg-icons';
 
 class CommonForm extends Component {
@@ -240,6 +241,13 @@ class CommonForm extends Component {
 		const { uploading } = this.state;
 		return uploading && <div style={{ textAlign: 'center' }}>Uploading...</div>;
 	};
+
+	renderHomeButton = () => (
+		<FontAwesomeIcon
+			onClick={() => this.props.history.goBack()}
+			icon={faAngleDoubleLeft}
+		/>
+	);
 }
 
 export default CommonForm;
