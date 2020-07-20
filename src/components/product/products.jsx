@@ -19,11 +19,11 @@ class Products extends CommonForm {
 	mapToViewModel = data => ({
 		id: data.productid,
 		name: data.title,
-		category: data.categorytype,
+		category: data.producttype.toLowerCase(),
 		desc: data.description,
 		ldc: data.ldc,
 		rating: data.rating,
-		src: data.images[0].image,
+		src: data.image,
 		wishlist: data.wishlist,
 		canBarter: !authService.getCurrentUser() ? true : data.barternow,
 	});
@@ -86,7 +86,7 @@ class Products extends CommonForm {
 								key={product.id}
 								details={product}
 								onClick={() =>
-									this.props.history.push(`/products/${product.id}`)
+									this.props.history.push(`/${product.category}/${product.id}`)
 								}
 								onBarter={this.props.onBarter}
 							/>
