@@ -20,7 +20,8 @@
 			font-weight: 700;
 			font-family: font(primary);
 
-			a {
+			span {
+				cursor: pointer;
 				color: color(accent);
 				text-decoration: none;
 			}

@@ -59,6 +59,10 @@ class ProductPage extends Component {
 		this.setState({ isMobile });
 	};
 
+	componentWillUnmount = () => {
+		window.removeEventListener('resize', this.handleProduct);
+	};
+
 	render() {
 		return this.state.loadingPage ? (
 			<PageLoader />

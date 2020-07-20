@@ -11,7 +11,7 @@ class NotFound extends Component {
 					<Image src='images/logo.png' />
 					<p>
 						Oops, there's nothing here, <br />
-						Go back to <Link to='/'>Home</Link> ?
+						<span onClick={() => this.props.history.goBack()}>Go back? </span>
 					</p>
 				</div>
 			</div>
