@@ -15,6 +15,9 @@ class MainGif extends Component {
 				: 'https://placekitten.com/1200/450';
 		this.setState({ src });
 	};
+	componentWillUnmount = () => {
+		window.removeEventListener('resize', this.handleGif);
+	};
 
 	render() {
 		return (
