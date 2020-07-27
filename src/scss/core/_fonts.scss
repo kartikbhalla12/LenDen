@@ -2,51 +2,41 @@
 
 @font-face {
 	font-family: 'Cera Pro';
-	src: url('./../fonts/CeraPro-Regular.eot');
-	src: local('Cera Pro Regular'), local('CeraPro-Regular'),
-		url('./../fonts/CeraPro-Regular.eot?#iefix') format('embedded-opentype'),
-		url('./../fonts/CeraPro-Regular.woff') format('woff'),
-		url('./../fonts/CeraPro-Regular.ttf') format('truetype');
 	font-weight: normal;
 	font-style: normal;
+	font-display: swap; /* Read next point */
+	unicode-range: U+000-5FF; /* Download only latin glyphs */
+	src: url('/fonts/CeraPro-Regular.woff') format('woff');
 }
 @font-face {
 	font-family: 'Cera Pro';
-	src: url('../fonts/CeraPro-Medium.eot');
-	src: local('Cera Pro Medium'), local('CeraPro-Medium'),
-		url('../fonts/CeraPro-Medium.eot?#iefix') format('embedded-opentype'),
-		url('../fonts/CeraPro-Medium.woff') format('woff'),
-		url('../fonts/CeraPro-Medium.ttf') format('truetype');
-
 	font-weight: 500;
 	font-style: normal;
+	font-display: swap; /* Read next point */
+	unicode-range: U+000-5FF; /* Download only latin glyphs */
+	src: url('/fonts/CeraPro-Medium.woff') format('woff');
 }
+
 @font-face {
 	font-family: 'Cera Pro';
-	src: url('../fonts/CeraPro-Bold.eot');
-	src: local('Cera Pro Bold'), local('CeraPro-Bold'),
-		url('../fonts/CeraPro-Bold.eot?#iefix') format('embedded-opentype'),
-		url('../fonts/CeraPro-Bold.woff') format('woff'),
-		url('../fonts/CeraPro-Bold.ttf') format('truetype');
 	font-weight: bold;
 	font-style: normal;
+	font-display: swap; /* Read next point */
+	unicode-range: U+000-5FF; /* Download only latin glyphs */
+	src: url('/fonts/CeraPro-Bold.woff') format('woff');
 }
 @font-face {
 	font-family: 'Cera Pro';
-	src: url('../fonts/CeraPro-Black.eot');
-	src: local('Cera Pro Black'), local('CeraPro-Black'),
-		url('../fonts/CeraPro-Black.eot?#iefix') format('embedded-opentype'),
-		url('../fonts/CeraPro-Black.woff') format('woff'),
-		url('../fonts/CeraPro-Black.ttf') format('truetype');
 	font-weight: 900;
 	font-style: normal;
+	font-display: swap; /* Read next point */
+	unicode-range: U+000-5FF; /* Download only latin glyphs */
+	src: url('/fonts/CeraPro-Black.woff') format('woff');
 }
 
 $fonts: (
 	primary: 'raleway',
-	secondary: #{'Cera Pro',
-	'Segoe UI',
-	'Roboto'},
+	secondary: 'Cera Pro',
 	kalam: 'kalam',
 	ptSans: 'PT Sans',
 );
