@@ -43,7 +43,7 @@ class CommonProduct extends Component {
 
 	renderLdc(value) {
 		return (
-			<div className='productLdc'>
+			<div className='productLdc' style={{ color: 'white' }}>
 				<FontAwesomeIcon className='navIcon' icon={faWallet} />
 				{value}
 			</div>

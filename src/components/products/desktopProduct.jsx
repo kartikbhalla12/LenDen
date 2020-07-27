@@ -15,7 +15,6 @@ class DesktopProduct extends CommonProduct {
 			wishlist,
 			canBarter,
 		} = this.props.product;
-		console.log(id, name, desc, rating, ldc, wishlist, canBarter);
 		const { onClick, onBarter } = this.props;
 		return (
 			<div className='desktopProductContainer'>
@@ -24,11 +23,7 @@ class DesktopProduct extends CommonProduct {
 					<div className='desktopStarRatingContainer'>
 						{this.renderStarRating(rating)}
 					</div>
-					<div className='productLdc'>
-						{/* <FontAwesomeIcon className='navIcon' icon={faWallet} /> */}
-						{ldc}
-					</div>
-					{/* {this.renderLdc(ldc)} */}
+					{this.renderLdc(ldc)}
 				</div>
 				<div className='desktopProductDetailContainer' onClick={onClick}>
 					{this.renderProductName(name)}
