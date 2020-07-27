@@ -15,6 +15,7 @@ class DesktopProduct extends CommonProduct {
 			wishlist,
 			canBarter,
 		} = this.props.product;
+		console.log(id, name, desc, src, rating, ldc, wishlist, canBarter);
 		const { onClick, onBarter } = this.props;
 		return (
 			<div className='desktopProductContainer'>

@@ -92,8 +92,8 @@ export const getProducts = () => async (dispatch, getState) => {
 			onSuccess: productsReceived.type,
 		})
 	);
-	setTimeout(() => dispatch(loadingStatusChanged(false)), 0);
-	// dispatch(loadingStatusChanged(false));
+	// setTimeout(() => dispatch(loadingStatusChanged(false)), 0);
+	dispatch(loadingStatusChanged(false));
 };
 
 export const changeButtonStatus = value => buttonStatusChanged(value);
