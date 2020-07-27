@@ -239,7 +239,11 @@ class CommonForm extends Component {
 
 	renderUploadingAlert = () => {
 		const { uploading } = this.state;
-		return uploading && <div style={{ textAlign: 'center' }}>Uploading...</div>;
+		return (
+			uploading && (
+				<div style={{ textAlign: 'center' }}>Preparing to upload...</div>
+			)
+		);
 	};
 
 	renderHomeButton = () => (

@@ -25,7 +25,7 @@ class ProductPage extends Component {
 		});
 		return {
 			name: data.title,
-			category: data.categorytype,
+			category: data.producttype,
 			src: images,
 			rating: data.rating,
 			ldc: data.ldc,

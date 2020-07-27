@@ -5,13 +5,6 @@ import { faHeart, faExchangeAlt } from '@fortawesome/free-solid-svg-icons';
 class DesktopProduct extends CommonProduct {
 	state = {};
 
-	// addToWishlist = () => {
-	// 	const { product } = this.state;
-	// 	if (product.wishlist === '#fff') product.wishlist = '#ef5350';
-	// 	else product.wishlist = '#fff';
-	// 	this.setState({ product });
-	// };
-
 	render() {
 		const {
 			id,

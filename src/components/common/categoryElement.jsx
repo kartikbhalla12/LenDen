@@ -6,16 +6,18 @@ import { withRouter } from 'react-router-dom';
 class CategoryElement extends Component {
 	state = {};
 
-	handleClick = () => {
-		const { categoryTitle, history } = this.props;
-		const path = `/${categoryTitle.toLowerCase()}`;
-		history.push(path);
-	};
+	// handleClick = () => {
+	// 	const { categoryTitle, history } = this.props;
+	// 	const path = `/${categoryTitle.toLowerCase()}`;
+	// 	history.push(path);
+	// };
 
 	render() {
 		const { categoryTitle, categoryMessage, src } = this.props;
 		return (
-			<div className='category' onClick={this.handleClick}>
+			<div
+				className='category'
+				onClick={this.props.history.push(`/${categoryTitle.toLowerCase()}`)}>
 				<div className='imageBox'>
 					<Image
 						style={{
