@@ -28,7 +28,7 @@
 
 	/* width */
 	::-webkit-scrollbar {
-		width: 10px;
+		width: 8px;
 
 		@media screen and (max-width: 500px) {
 			width: 5px;
@@ -62,7 +62,6 @@
 }
 
 .bm-item-list {
-	font-family: font(primary);
 	color: color(text);
 	padding: 0.8em;
 }
@@ -72,7 +71,10 @@
 	text-decoration: none !important;
 	outline: none;
 	text-transform: uppercase;
-	font-weight: 700;
+
+	font-family: font(secondary);
+	font-weight: 500;
+	font-size: 20px;
 }
 
 .bm-item:hover {
@@ -84,7 +86,7 @@
 }
 
 a.bm-item {
-	padding: 0.6em;
+	padding: 0.5em;
 	display: block;
 	color: color(text);
 	text-align: center;
@@ -116,11 +118,11 @@ a.bm-item {
 
 #navAnchor {
 	text-align: center;
-	margin-bottom: 2vh;
+	margin-top: 2vh;
 
-	@media screen and (max-width: breakpoint(mobileXL)) {
-		margin-bottom: 4vh;
-	}
+	// @media screen and (max-width: breakpoint(mobileXL)) {
+	// 	margin-top: 4vh;
+	// }
 }
 
 #homeAnchor {

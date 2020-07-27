@@ -1,124 +1,100 @@
-import { slide as Menu } from 'react-burger-menu';
-import React, { Component } from 'react';
+import React from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { action as toggleMenu } from 'redux-burger-menu';
 import { Image } from 'react-bootstrap';
-// import './../../css/components/sideNav.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { slide as Menu } from 'react-burger-menu';
 import { faBell } from '@fortawesome/free-solid-svg-icons';
 import { NavLink } from 'react-router-dom';
-import * as authService from './../../services/authService';
-import Swipe from 'react-easy-swipe';
 
-class SideNav extends Component {
-	state = {};
-	showSettings(event) {
-		event.preventDefault();
-	}
+import { logOutUser } from '../../app/auth/login';
+// import Swipe from 'react-easy-swipe';
 
-	render() {
-		const {
-			user,
-			menuOpen,
-			onUserClick,
-			onNavLinkClick,
-			onStateChange,
-			onSwipeLeft,
-		} = this.props;
-		return (
-			//customBurgerIcon={false} customCrossIcon={false}
-			<Swipe onSwipeLeft={onSwipeLeft}>
-				<Menu
-					customBurgerIcon={false}
-					isOpen={menuOpen}
-					// styles={styles}
-					onStateChange={state => onStateChange(state)}>
-					<Image
-						id='userImageMain'
-						src={
-							user
-								? 'https://placekitten.com/g/300/300'
-								: '/images/genericUser.png'
-						}
-						roundedCircle
-						onClick={onUserClick}
-					/>
-					{!user && (
-						<NavLink
-							id='navAnchor'
-							to='/login'
-							className='menu-item'
-							onClick={onNavLinkClick}>
-							Sign In
-						</NavLink>
+const SideNav = () => {
+	const dispatch = useDispatch();
+	const burgerMenu = useSelector(state => state.entities.burgerMenu.isOpen);
+	const user = useSelector(state => state.auth.user);
+
+	const navLinks = [
+		// {
+		// 	to: '/notifications',
+		// 	name: 'Notifications',
+		// 	icon: { id: 'sideNavBell', icon: faBell },
+		// },
+		// { to: '/wishlist', name: 'Wishlist' },
+		{ to: '/my-products', name: 'My Products' },
+		{
+			to: '/',
+			name: 'Home',
+			exact: true,
+			id: 'homeAnchor',
+		},
+		{ to: '/books', name: 'Books' },
+		{ to: '/gaming', name: 'Gaming' },
+		{ to: '/mobile', name: 'Mobile' },
+		{ to: '/blog', name: 'Blog' },
+		{ to: '/contact', name: 'About Us' },
+		{ to: '/about', name: 'Contact Us' },
+	];
+
+	return (
+		<Menu
+			customBurgerIcon={false}
+			isOpen={burgerMenu}
+			onStateChange={state => {
+				if (burgerMenu !== state.isOpen) dispatch(toggleMenu(state.isOpen));
+			}}>
+			<Image
+				id='userImageMain'
+				src={
+					user.userId
+						? 'https://placekitten.com/g/300/300'
+						: '/images/genericUser.png'
+				}
+				roundedCircle
+				// onClick={onUserClick}
+			/>
+			{!user.userId && (
+				<NavLink
+					id='navAnchor'
+					to='/login'
+					className='menu-item'
+					onClick={() => dispatch(toggleMenu(false))}>
+					Sign In
+				</NavLink>
+			)}
+			{user.userId && (
+				<NavLink
+					id='navAnchor'
+					to='/me'
+					className='menu-item'
+					onClick={() => dispatch(toggleMenu(false))}>
+					My Account
+				</NavLink>
+			)}
+
+			{navLinks.map((navLink, index) => (
+				<NavLink
+					key={index}
+					to={navLink.to}
+					className='menu-item'
+					onClick={() => dispatch(toggleMenu(false))}
+					exact={navLink.exact ? true : false}
+					id={navLink.id}>
+					{navLink.name}
+					{navLink.icon && (
+						<FontAwesomeIcon id={navLink.icon.id} icon={navLink.icon.icon} />
 					)}
-					{user && (
-						<NavLink
-							id='navAnchor'
-							to='/me'
-							className='menu-item'
-							onClick={onNavLinkClick}>
-							My Account
-						</NavLink>
-					)}
+				</NavLink>
+			))}
 
-					<NavLink
-						to='/notifications'
-						className='menu-item'
-						onClick={onNavLinkClick}>
-						Notifications
-						<FontAwesomeIcon id='sideNavBell' icon={faBell} />
-					</NavLink>
-					<NavLink
-						to='/wishlist'
-						className='menu-item'
-						onClick={onNavLinkClick}>
-						Wishlist
-						{/* <FontAwesomeIcon
-						icon={faHeart}
-						style={{ marginLeft: '5px', color: '#ef5350' }}
-					/> */}
-					</NavLink>
-					<NavLink
-						to='/my-products'
-						className='menu-item'
-						onClick={onNavLinkClick}>
-						My Products
-					</NavLink>
-					<NavLink
-						id='homeAnchor'
-						to='/'
-						exact
-						className='menu-item'
-						onClick={onNavLinkClick}>
-						Home
-					</NavLink>
-					<NavLink to='/books' className='menu-item' onClick={onNavLinkClick}>
-						Books
-					</NavLink>
-					<NavLink to='/gaming' className='menu-item' onClick={onNavLinkClick}>
-						Gaming
-					</NavLink>
-					<NavLink to='/mobiles' className='menu-item' onClick={onNavLinkClick}>
-						Mobiles
-					</NavLink>
-					<NavLink to='/blog' className='menu-item' onClick={onNavLinkClick}>
-						Blog
-					</NavLink>
-					<NavLink to='/contact' className='menu-item' onClick={onNavLinkClick}>
-						Contact Us
-					</NavLink>
-					<NavLink to='/about' className='menu-item' onClick={onNavLinkClick}>
-						About Us
-					</NavLink>
-
-					{user && (
-						<div id='signOutNav' onClick={authService.logout}>
-							SIGN OUT
-						</div>
-					)}
-				</Menu>
-			</Swipe>
-		);
-	}
-}
+			{user.userId && (
+				<div id='signOutNav' onClick={() => dispatch(logOutUser())}>
+					SIGN OUT
+				</div>
+			)}
+		</Menu>
+	);
+};
 
 export default SideNav;

@@ -11,8 +11,6 @@ import { faEye, faEyeSlash } from '@fortawesome/free-regular-svg-icons';
 class CommonForm extends Component {
 	state = {
 		data: {},
-		error: '',
-		success: '',
 		uploading: '',
 	};
 
@@ -23,21 +21,18 @@ class CommonForm extends Component {
 		this.setState({ data });
 	};
 	onDrop = async pictures => {
-		this.setState({ uploading: true });
-
+		this.props.prepareUpload(true);
 		const compressedPictures = await this.compressPictures(pictures);
-		console.log(compressedPictures);
-
 		this.setState({
-			pictures: compressedPictures,
-			uploading: false,
+			images: compressedPictures,
 		});
+		this.props.prepareUpload(false);
 	};
 
 	compressPictures = pictures => {
 		let compressedPictures = [];
 		const options = {
-			maxSizeMB: 0.2,
+			maxSizeMB: 0.1,
 			maxWidthOrHeight: 1920,
 			useWebWorker: true,
 		};
@@ -57,12 +52,8 @@ class CommonForm extends Component {
 
 	handleSubmit = e => {
 		e.preventDefault();
-		this.setState({
-			success: '',
-			error: '',
-		});
 		const error = this.validate();
-		this.setState({ error });
+		this.props.updateError(error);
 		if (error) return;
 
 		this.doSubmit();
@@ -87,14 +78,16 @@ class CommonForm extends Component {
 	}
 
 	renderPassInput(placeholder) {
-		const { data, passType } = this.state;
+		const { data } = this.state;
+		const { passType } = this.props;
+		const { updatePassType } = this.props;
 		const name = 'password';
 		return (
 			<InputGroup className='mb-3'>
 				<Form.Control
-					className='input'
+					className={`input ${passType === 'password' ? 'letterSpace' : ''}`}
 					name={name}
-					type={this.state.passType}
+					type={passType}
 					placeholder={placeholder}
 					value={data[name]}
 					onChange={this.handleChange}
@@ -103,15 +96,12 @@ class CommonForm extends Component {
 				<InputGroup.Append>
 					<InputGroup.Text
 						className='inputGroupText'
-						onClick={() => {
-							const { passType } = this.state;
+						onClick={async () => {
 							if (passType === 'password')
-								return setTimeout(() => this.setState({ passType: 'text' }));
+								return setTimeout(() => updatePassType('text'));
 
 							if (passType === 'text')
-								return setTimeout(() =>
-									this.setState({ passType: 'password' })
-								);
+								return setTimeout(() => updatePassType('password'));
 						}}
 						onMouseDown={e => e.preventDefault()}>
 						{passType === 'password' && <FontAwesomeIcon icon={faEye} />}
@@ -123,7 +113,7 @@ class CommonForm extends Component {
 	}
 
 	renderAlert = style => {
-		const { error } = this.state;
+		const error = this.props.error;
 		return (
 			error && (
 				<Alert style={style} className='error-alert' variant='danger'>
@@ -134,7 +124,7 @@ class CommonForm extends Component {
 	};
 
 	renderSuccessAlert = style => {
-		const { success } = this.state;
+		const success = this.props.success;
 		return (
 			success && (
 				<Alert style={style} className='success-alert' variant='primary'>
@@ -150,7 +140,7 @@ class CommonForm extends Component {
 				css={{ display: 'block', ...style }}
 				size={50}
 				color='rgb(253,186,73)'
-				loading={this.state.loading}
+				loading={this.props.loading}
 			/>
 		);
 	};
@@ -181,7 +171,7 @@ class CommonForm extends Component {
 	renderProductSelect = (name, label, ...rest) => {
 		const { data } = this.state;
 		return (
-			<Form.Group>
+			<Form.Group key={name}>
 				<Form.Label>{label}</Form.Label>
 				<Form.Control
 					name={name}
@@ -238,18 +228,20 @@ class CommonForm extends Component {
 	};
 
 	renderUploadingAlert = () => {
-		const { uploading } = this.state;
+		const { preparing } = this.props;
 		return (
-			uploading && (
+			preparing && (
 				<div style={{ textAlign: 'center' }}>Preparing to upload...</div>
 			)
 		);
 	};
 
 	renderHomeButton = () => (
-		<FontAwesomeIcon
+		<img
+			className='icon'
 			onClick={() => this.props.history.goBack()}
-			icon={faAngleDoubleLeft}
+			src='/icons/back.svg'
+			alt=''
 		/>
 	);
 }

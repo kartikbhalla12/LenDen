@@ -44,3 +44,11 @@ textarea:focus {
 		}
 	}
 }
+
+.letterSpace {
+	letter-spacing: 2px;
+}
+
+.input::placeholder {
+	letter-spacing: 0px !important;
+}

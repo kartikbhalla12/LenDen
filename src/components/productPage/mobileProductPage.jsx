@@ -1,6 +1,6 @@
 import React from 'react';
 import { faHeart, faExchangeAlt } from '@fortawesome/free-solid-svg-icons';
-import CommonProduct from './../common/commonProduct';
+import CommonProduct from '../common/commonProduct';
 
 class MobileProductPage extends CommonProduct {
 	state = {};

@@ -15,9 +15,7 @@ import { LinkContainer } from 'react-router-bootstrap';
 import _ from 'lodash';
 
 class CommonProduct extends Component {
-	state = {};
-
-	renderStarRating(rating, iconStyle) {
+	renderStarRating(rating) {
 		return (
 			<div className='productStarRating'>
 				<StarRating
@@ -57,8 +55,6 @@ class CommonProduct extends Component {
 	}
 
 	renderButton(onClick, name, className, icon, iconColor) {
-		// console.log(onClick);
-		// onClick();
 		return (
 			<div className={className} onClick={onClick}>
 				<FontAwesomeIcon
@@ -84,9 +80,9 @@ class CommonProduct extends Component {
 			prevIcon={
 				<FontAwesomeIcon className='navIcon' icon={faAngleDoubleLeft} />
 			}>
-			{src.map(item => {
+			{src.map((item, index) => {
 				return (
-					<Carousel.Item key={item}>
+					<Carousel.Item key={index}>
 						<Image fluid src={`data:image;base64,${item}`} />
 					</Carousel.Item>
 				);

@@ -5,6 +5,7 @@
 	h2 {
 		text-align: center;
 		font-family: font(secondary);
+		font-weight: 500;
 	}
 
 	#categoryForm {
@@ -15,7 +16,7 @@
 		h5 {
 			text-align: center;
 			font-family: font(secondary);
-			font-weight: 400;
+			font-weight: 500;
 		}
 
 		.custom-select {
@@ -27,9 +28,10 @@
 		margin: 2vh auto;
 		background-color: color(white);
 		box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-		border-radius: 10px;
+		border-radius: 3px;
 		padding: 20px 30px;
 		font-family: font(secondary);
+		font-weight: 500;
 
 		h3 {
 			margin-bottom: 2vh;

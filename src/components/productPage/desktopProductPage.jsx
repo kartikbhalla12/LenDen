@@ -1,5 +1,5 @@
 import React from 'react';
-import CommonProduct from './../common/commonProduct';
+import CommonProduct from '../common/commonProduct';
 import { faHeart, faExchangeAlt } from '@fortawesome/free-solid-svg-icons';
 
 class DesktopProductPage extends CommonProduct {

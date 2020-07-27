@@ -2,11 +2,15 @@ import React from 'react';
 import { Form, Button, Row, Col } from 'react-bootstrap';
 import CommonForm from './../common/commonForm';
 import Joi from 'joi-browser';
-import uploadImages from '../../services/imageService';
-import { postBook } from '../../services/newBookService';
-import { getCurrentUser } from '../../services/authService';
+import { connect } from 'react-redux';
+import {
+	updateError,
+	prepareUpload,
+	postBook,
+} from './../../app/entities/newProduct';
 
 const customError = new Error('Every question is required');
+
 class BookForm extends CommonForm {
 	state = {
 		data: {
@@ -20,11 +24,45 @@ class BookForm extends CommonForm {
 			ques5: 0,
 			description: '',
 		},
-		loading: false,
-		pictures: [],
-		error: '',
-		success: '',
+		images: [],
 	};
+
+	questions = [
+		{
+			name: 'cover',
+			question: 'What is its binding type?',
+			options: ['Paperback', 'Hardcover'],
+		},
+		{
+			name: 'ques1',
+			question: 'Are there any ink marks inside the book?',
+			options: ['No marks', 'Personal info markings', 'Ink or pencil markings'],
+		},
+		{
+			name: 'ques2',
+			question: 'Are there any visible spots or browning?',
+			options: ['No spots and browning', 'Visible browning and spots'],
+		},
+		{
+			name: 'ques3',
+			question: 'Are the pages of the book intact?',
+			options: ['Intact', 'Light wrinkles', 'Heavy breaks'],
+		},
+		{
+			name: 'ques4',
+			question: 'How does the outer condition of the book looks like?',
+			options: [
+				'No tears',
+				'Slight wear and tears',
+				'Visible cracks and worn out edges',
+			],
+		},
+		{
+			name: 'ques5',
+			question: 'Did you get this book repaired earlier?',
+			options: ['No', 'Yes'],
+		},
+	];
 
 	schema = {
 		title: Joi.string().required().min(5),
@@ -46,53 +84,12 @@ class BookForm extends CommonForm {
 		description: Joi.string().min(5).required().label('Description'), //TODO
 	};
 
-	mapToViewModel = (data, imageData) => ({
-		mrp: data.mrp,
-		title: data.title,
-		binding: data.cover,
-		description: data.description,
-		conditionquestion1: data.ques1,
-		conditionquestion2: data.ques2,
-		conditionquestion3: data.ques3,
-		conditionquestion4: data.ques4,
-		conditionquestion5: data.ques5,
-		productid: imageData.productid,
-		productimageentity: imageData.imagelinks.map(e => ({ imagelink: e })),
-	});
-
-	doSubmit = async () => {
-		const { data, pictures } = this.state;
-		if (pictures.length < 3)
-			return this.setState({ error: 'atleast 3 images are required' });
-
-		this.setState({ loading: true });
-
-		// const compressedPictures = await this.compressPictures(pictures);
-		// console.log(compressedPictures);
-
-		try {
-			const { userId } = getCurrentUser();
-			const { data: imageData } = await uploadImages(pictures);
-			const reqBody = this.mapToViewModel(data, imageData);
-			const res = await postBook(userId, reqBody);
-			console.log(reqBody, res);
-			this.setState({
-				loading: false,
-				success: 'Successfully posted your product!',
-			});
-
-			//TODO
-			// setTimeout(() => {
-			// 	window.location.replace('/my-products');
-			// }, 2000);
-		} catch (ex) {
-			console.log(ex);
-			this.setState({ loading: false });
-		}
+	doSubmit = () => {
+		const { data, images } = this.state;
+		this.props.postBook(data, images);
 	};
 
 	render() {
-		const { uploading } = this.state;
 		return (
 			<div className='productForm'>
 				<h3>Tell us about your book</h3>
@@ -111,46 +108,11 @@ class BookForm extends CommonForm {
 							{this.renderProductInput('mrp', 'number', 'Enter Price')}
 						</Col>
 					</Form.Group>
-					{this.renderProductSelect(
-						'cover',
-						'What is its binding type?',
-						'Paperback',
-						'Hardcover'
-					)}
-					{this.renderProductSelect(
-						'ques1',
-						'Are there any ink marks inside the book?',
-						'No Marks',
-						'Personal info markings',
-						'Ink or pencil markings'
-					)}
-					{this.renderProductSelect(
-						'ques2',
-						'Are there any visible spots or browning?',
-						'No spots and browning',
-						'Visible browning and spots'
+
+					{this.questions.map(ques =>
+						this.renderProductSelect(ques.name, ques.question, ...ques.options)
 					)}
 
-					{this.renderProductSelect(
-						'ques3',
-						'Are the pages of the book intact?',
-						'Intact',
-						'Light wrinkles',
-						'Heavy breaks'
-					)}
-					{this.renderProductSelect(
-						'ques4',
-						'How does the outer condition of the book looks like?',
-						'No tears',
-						'Slight wear and tears',
-						'Visible cracks and worn out edges'
-					)}
-					{this.renderProductSelect(
-						'ques5',
-						'Did you get this book repaired earlier?',
-						'No',
-						'Yes'
-					)}
 					{this.renderProductTextArea(
 						'description',
 						'Description',
@@ -165,7 +127,10 @@ class BookForm extends CommonForm {
 					{this.renderAlert()}
 					{this.renderSuccessAlert()}
 					{this.renderUploadingAlert()}
-					<Button variant='primary' disabled={uploading} type='submit'>
+					<Button
+						variant='primary'
+						disabled={this.props.preparing}
+						type='submit'>
 						Submit
 					</Button>
 				</Form>
@@ -173,5 +138,27 @@ class BookForm extends CommonForm {
 		);
 	}
 }
+const mapStateToProps = state => {
+	const {
+		error,
+		success,
+		loading,
+		preparing,
+		images,
+	} = state.entities.newProduct;
+	return {
+		error,
+		success,
+		loading,
+		preparing,
+		images,
+	};
+};
 
-export default BookForm;
+const mapDispatchToProps = dispatch => ({
+	updateError: error => dispatch(updateError(error)),
+	prepareUpload: value => dispatch(prepareUpload(value)),
+	postBook: (data, images) => dispatch(postBook(data, images)),
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(BookForm);

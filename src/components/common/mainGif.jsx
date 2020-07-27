@@ -1,38 +1,39 @@
-import React, { Component } from 'react';
+import React, { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { updateDeviceType } from '../../app/entities/common';
 import { Image } from 'react-bootstrap';
 
-class MainGif extends Component {
-	state = { src: '' };
+const MainGif = () => {
+	const dispatch = useDispatch();
 
-	componentDidMount = () => {
-		this.handleGif();
-		window.addEventListener('resize', this.handleGif);
-	};
-	handleGif = () => {
-		const src =
-			window.innerWidth > 600
-				? 'https://placekitten.com/2000/350'
-				: 'https://placekitten.com/1200/450';
-		this.setState({ src });
-	};
-	componentWillUnmount = () => {
-		window.removeEventListener('resize', this.handleGif);
-	};
+	const { isMobile } = useSelector(state => state.entities.common);
+	dispatch(updateDeviceType());
 
-	render() {
-		return (
-			<Image //GIF Placeholder
-				src={this.state.src}
-				style={{
-					margin: '0 auto 0.4vh auto',
-					width: 'inherit',
-					maxWidth: '100%',
-					display: 'block',
-					maxHeight: '40vh',
-				}}
-			/>
-		);
-	}
-}
+	useEffect(() => {
+		window.addEventListener('resize', () => dispatch(updateDeviceType()));
+
+		return () => {
+			window.removeEventListener('resize', () => dispatch(updateDeviceType()));
+		};
+	}, []);
+
+	return (
+		<Image //GIF Placeholder
+			src={
+				isMobile
+					? 'https://placekitten.com/1200/450'
+					: 'https://placekitten.com/2000/450'
+			}
+			style={{
+				objectFit: 'cover',
+				// margin: '0 auto 0.4vh auto',
+				width: 'inherit',
+				maxWidth: '100%',
+				display: 'block',
+				// maxHeight: '40vh',
+			}}
+		/>
+	);
+};
 
 export default MainGif;

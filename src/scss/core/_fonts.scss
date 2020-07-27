@@ -1,11 +1,54 @@
 @import url('https://fonts.googleapis.com/css2?family=Raleway&family=Kalam&family=PT+Sans&family=Balsamiq+Sans');
 
+@font-face {
+	font-family: 'Cera Pro';
+	src: url('./../fonts/CeraPro-Regular.eot');
+	src: local('Cera Pro Regular'), local('CeraPro-Regular'),
+		url('./../fonts/CeraPro-Regular.eot?#iefix') format('embedded-opentype'),
+		url('./../fonts/CeraPro-Regular.woff') format('woff'),
+		url('./../fonts/CeraPro-Regular.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'Cera Pro';
+	src: url('../fonts/CeraPro-Medium.eot');
+	src: local('Cera Pro Medium'), local('CeraPro-Medium'),
+		url('../fonts/CeraPro-Medium.eot?#iefix') format('embedded-opentype'),
+		url('../fonts/CeraPro-Medium.woff') format('woff'),
+		url('../fonts/CeraPro-Medium.ttf') format('truetype');
+
+	font-weight: 500;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'Cera Pro';
+	src: url('../fonts/CeraPro-Bold.eot');
+	src: local('Cera Pro Bold'), local('CeraPro-Bold'),
+		url('../fonts/CeraPro-Bold.eot?#iefix') format('embedded-opentype'),
+		url('../fonts/CeraPro-Bold.woff') format('woff'),
+		url('../fonts/CeraPro-Bold.ttf') format('truetype');
+	font-weight: bold;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'Cera Pro';
+	src: url('../fonts/CeraPro-Black.eot');
+	src: local('Cera Pro Black'), local('CeraPro-Black'),
+		url('../fonts/CeraPro-Black.eot?#iefix') format('embedded-opentype'),
+		url('../fonts/CeraPro-Black.woff') format('woff'),
+		url('../fonts/CeraPro-Black.ttf') format('truetype');
+	font-weight: 900;
+	font-style: normal;
+}
+
 $fonts: (
 	primary: 'raleway',
-	secondary: 'Balsamiq Sans',
+	secondary: 'Cera Pro',
 	kalam: 'kalam',
 	ptSans: 'PT Sans',
 );
+
 @function font($fontName) {
 	@return map-get($map: $fonts, $key: $fontName);
 }

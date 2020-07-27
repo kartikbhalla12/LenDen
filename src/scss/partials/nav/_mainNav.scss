@@ -1,136 +1,203 @@
-.mainNav {
-	background-color: color(backgroundSecondary);
+.mainNavBarGroup {
+	position: sticky;
+	top: 0;
+	z-index: 100;
 
-	@media screen and (max-width: breakpoint(mobileXL)) {
-		padding: 0.2rem 1rem;
-	}
-
-	#logo {
-		width: 4em;
-		margin: auto 0.5rem;
-		cursor: pointer;
-
-		@media screen and (max-width: breakpoint(mobileS)) {
-			width: 2em;
-			margin: auto 5px;
-		}
-	}
-
-	#navSearchBox {
-		display: flex;
-		background-color: color(secondary);
-		border-radius: 5px;
+	.mainNav {
+		background-color: color(backgroundSecondary);
 
 		@media screen and (max-width: breakpoint(mobileXL)) {
-			display: none;
+			padding: 0.2rem 1rem;
 		}
 
-		#navSearchIcon {
-			font-size: 18px;
-			color: color(text);
-			margin: auto 1.5vw;
-		}
+		#logo {
+			width: 4em;
+			margin: auto 1.5rem;
+			cursor: pointer;
 
-		#navSearchInput {
-			color: color(text);
-			width: 55vw;
-			margin-right: 12px;
-			background-color: color(secondary);
-			border: none;
-			box-shadow: none;
-
-			@media screen and (max-width: breakpoint(tablet)) {
-				color: color(text);
-				width: 40vw;
+			@media screen and (max-width: 870px) {
+				margin: auto 1rem;
 			}
-		}
-		#navSearchInput::placeholder {
-			text-align: center;
-		}
-
-		#navSearchInput:-webkit-autofill,
-		#navSearchInput:-webkit-autofill:hover,
-		#navSearchInput:-webkit-autofill:focus {
-			-webkit-text-fill-color: color(text);
-			-webkit-box-shadow: 0 0 0px 1000px color(secondary) inset;
-			transition: background-color 5000s ease-in-out 0s;
-		}
-	}
-}
-
-.nav-link {
-	margin: auto 0.2vw;
-
-	@media screen and (max-width: breakpoint(mobileXL)) {
-		margin: auto 0.1vw;
-	}
-}
-
-.navbar-brand {
-	margin-right: 0px;
-}
-
-.navIcon {
-	font-size: 22px;
-	color: color(text);
-}
-
-#userImage {
-	@media screen and (max-width: breakpoint(mobileXL)) {
-		display: none;
-	}
-}
-
-#mobileSearchBox {
-	background-color: color(backgroundSecondary);
-	padding: 0.2rem 0.6rem 1rem 0.6rem;
-	display: none;
-
-	@media screen and (max-width: breakpoint(mobileXL)) {
-		display: block;
-		margin-top: -1px;
-	}
-
-	#mobileSearchBoxItem {
-		background-color: color(secondary) !important;
-		display: flex;
-		width: 93vw;
-		margin: 0 auto;
-		border-radius: 5px;
-
-		#mobileSearchIcon {
-			margin: auto 2.5vw;
-			font-size: 18px;
-			color: color(text);
 
 			@media screen and (max-width: breakpoint(mobileS)) {
+				width: 2em;
+				margin: auto 5px;
+			}
+		}
+
+		.category {
+			text-transform: uppercase;
+			font-family: font(secondary);
+			font-weight: 500;
+			// color: color(white);
+			font-size: 16px;
+			color: color(text);
+			text-decoration: none;
+
+			@media screen and (max-width: 870px) {
 				display: none;
 			}
 		}
+		.active {
+			color: color(accent);
+		}
 
-		#mobileSearchInput {
-			color: color(text);
-			margin-right: 10px;
-			background-color: color(secondary);
-			border: none;
-			font-size: 16px;
-			box-shadow: none;
-
-			@media screen and (max-width: breakpoint(mobileS)) {
-				font-size: 14px;
+		.dropdownCategory {
+			a {
+				color: color(text);
+				text-decoration: none;
 			}
 		}
 
-		#mobileSearchInput:-webkit-autofill,
-		#mobileSearchInput:-webkit-autofill:focus,
-		#mobileSearchInput:-webkit-autofill:hover {
-			-webkit-text-fill-color: color(text);
-			-webkit-box-shadow: 0 0 0px 1000px color(secondary) inset;
-			transition: background-color 5000s ease-in-out 0s;
+		.dropdown-menu {
+			text-transform: uppercase;
+			border-radius: 3px;
+			background-clip: border-box;
+			background-color: color(white);
+			box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+			font-family: font(secondary);
+			a {
+				font-weight: 500;
+				color: color(primary);
+				text-decoration: none;
+			}
+
+			:hover,
+			:active {
+				background-color: color(background);
+			}
+		}
+
+		#navSearchBox {
+			display: flex;
+			background-color: color(secondary);
+			border-radius: 3px;
+			height: 2.5rem;
+			margin: auto;
+			margin-right: 1vw;
+
+			@media screen and (max-width: breakpoint(mobileXL)) {
+				display: none;
+			}
+
+			#navSearchIcon {
+				margin: auto 0.5rem auto 1.5rem;
+				width: 20px;
+
+				@media screen and (max-width: 870px) {
+					margin: auto 0.2rem auto 1.2rem;
+				}
+			}
+
+			#navSearchInput {
+				color: color(text);
+				width: 30vw;
+				background-color: color(secondary);
+				border: none;
+				box-shadow: none;
+				height: inherit;
+
+				@media screen and (max-width: 950px) {
+					color: color(text);
+					width: 25vw;
+				}
+
+				@media screen and (max-width: 870px) {
+					width: 35vw;
+				}
+			}
+			#navSearchInput::placeholder {
+				text-align: left;
+			}
+
+			#navSearchInput:-webkit-autofill,
+			#navSearchInput:-webkit-autofill:hover,
+			#navSearchInput:-webkit-autofill:focus {
+				-webkit-text-fill-color: color(text);
+				-webkit-box-shadow: 0 0 0px 1000px color(secondary) inset;
+				transition: background-color 5000s ease-in-out 0s;
+			}
 		}
 	}
-}
 
-#mainNavHeart {
-	color: color(accent);
+	.nav-link {
+		margin: auto 0.15vw;
+
+		@media screen and (max-width: breakpoint(mobileXL)) {
+			margin: auto 0.1vw;
+		}
+	}
+
+	.iconNav {
+		padding-left: 6px !important;
+		padding-right: 6px !important;
+	}
+
+	.navbar-brand {
+		margin-right: 0px;
+	}
+
+	.navIcon {
+		font-size: 22px;
+		color: color(text);
+	}
+
+	#userImage {
+		@media screen and (max-width: breakpoint(mobileXL)) {
+			display: none;
+		}
+	}
+
+	#mobileSearchBox {
+		background-color: color(backgroundSecondary);
+		padding: 0.2rem 0.6rem 0.6rem 0.6rem;
+		display: none;
+
+		@media screen and (max-width: breakpoint(mobileXL)) {
+			display: block;
+			margin-top: -1px;
+		}
+
+		#mobileSearchBoxItem {
+			background-color: color(secondary) !important;
+			display: flex;
+			width: 93vw;
+			margin: 0 auto;
+			border-radius: 5px;
+
+			#mobileSearchIcon {
+				margin: auto 2.5vw;
+				width: 20px;
+
+				@media screen and (max-width: breakpoint(mobileS)) {
+					display: none;
+				}
+			}
+
+			#mobileSearchInput {
+				color: color(text);
+				margin-right: 10px;
+				background-color: color(secondary);
+				border: none;
+				font-size: 16px;
+				box-shadow: none;
+
+				@media screen and (max-width: breakpoint(mobileS)) {
+					font-size: 14px;
+				}
+			}
+
+			#mobileSearchInput:-webkit-autofill,
+			#mobileSearchInput:-webkit-autofill:focus,
+			#mobileSearchInput:-webkit-autofill:hover {
+				-webkit-text-fill-color: color(text);
+				-webkit-box-shadow: 0 0 0px 1000px color(secondary) inset;
+				transition: background-color 5000s ease-in-out 0s;
+			}
+		}
+	}
+
+	#mainNavHeart {
+		color: color(accent);
+	}
 }
