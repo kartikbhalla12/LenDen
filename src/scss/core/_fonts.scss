@@ -44,7 +44,9 @@
 
 $fonts: (
 	primary: 'raleway',
-	secondary: 'Cera Pro',
+	secondary: #{'Cera Pro',
+	'Segoe UI',
+	'Roboto'},
 	kalam: 'kalam',
 	ptSans: 'PT Sans',
 );
