@@ -19,20 +19,18 @@ class Products extends CommonForm {
 		return (
 			<div className='productsContainer'>
 				<div className='container productsInnerContainer'>
-					{list.map(product => {
-						return (
-							<ProductSelector
-								key={product.id}
-								details={product}
-								onClick={() =>
-									this.props.history.push(`/${product.category}/${product.id}`)
-								}
+					{list.map(product => (
+						<ProductSelector
+							key={product.id}
+							details={product}
+							onClick={() =>
+								this.props.history.push(`/${product.category}/${product.id}`)
+							}
 
-								//TODO
-								// onBarter={this.props.onBarter}
-							/>
-						);
-					})}
+							//TODO
+							// onBarter={this.props.onBarter}
+						/>
+					))}
 				</div>
 				{showButton && (
 					<Button onClick={this.props.getProducts}>Load More Products</Button>

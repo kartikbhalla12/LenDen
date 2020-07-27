@@ -56,7 +56,7 @@ const slice = createSlice({
 		buttonStatusChanged: (products, action) => {
 			products.showButton = action.payload;
 		},
-		changeLoadingStatus: (products, action) => {
+		loadingStatusChanged: (products, action) => {
 			products.loading = action.payload;
 			products.loadingPage = action.payload;
 		},
@@ -70,7 +70,7 @@ const {
 	productsInitiated,
 	pageChanged,
 	buttonStatusChanged,
-	changeLoadingStatus,
+	loadingStatusChanged,
 } = slice.actions;
 
 export const getProducts = () => async (dispatch, getState) => {
@@ -92,7 +92,8 @@ export const getProducts = () => async (dispatch, getState) => {
 			onSuccess: productsReceived.type,
 		})
 	);
-	dispatch(changeLoadingStatus(false));
+	setTimeout(() => dispatch(loadingStatusChanged(false)), 0);
+	// dispatch(loadingStatusChanged(false));
 };
 
 export const changeButtonStatus = value => buttonStatusChanged(value);
