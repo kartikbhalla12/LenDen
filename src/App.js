@@ -1,19 +1,19 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import Main from './components/main';
 import Login from './components/sign/login';
 import Signup from './components/sign/signup';
 import { ToastContainer, Flip } from 'react-toastify';
 import { Switch, Route } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
-import { getUser, getAddress } from './app/auth/user';
+import { getUser } from './app/auth/user';
 
 function App() {
 	const dispatch = useDispatch();
 	dispatch(getUser());
 
-	useEffect(() => {
-		dispatch(getAddress());
-	}, [dispatch]);
+	// useEffect(() => {
+	// 	dispatch(getAddress());
+	// }, [dispatch]);
 
 	return (
 		<React.Fragment>
