@@ -45,8 +45,7 @@ const slice = createSlice({
 					mapToViewModel(product, action.payload.userId)
 				)
 			);
-
-			// products.loading = false;
+			products.loading = false;
 			// products.loadingPage = false;
 
 			if (action.payload.data.length < products.limit)
@@ -92,7 +91,10 @@ export const getProducts = () => async (dispatch, getState) => {
 			onSuccess: productsReceived.type,
 		})
 	);
-	setTimeout(() => dispatch(loadingStatusChanged(false)), 0);
+
+	setTimeout(() => {
+		dispatch(loadingStatusChanged(false));
+	}, 1000);
 	// dispatch(loadingStatusChanged(false));
 };
 
