@@ -19,7 +19,7 @@ const slice = createSlice({
 			state.loading = true;
 		},
 		loginFulfilled: (state, action) => {
-			state.loading = false;
+			// state.loading = false;
 		},
 		loginFailed: (state, action) => {
 			if (action.payload === 403) state.error = 'Invalid email or password';

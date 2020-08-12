@@ -4,16 +4,16 @@
 	font-family: 'Cera Pro';
 	font-weight: normal;
 	font-style: normal;
-	font-display: swap; /* Read next point */
-	unicode-range: U+000-5FF; /* Download only latin glyphs */
+	font-display: swap;
+	unicode-range: U+000-5FF;
 	src: url('/fonts/CeraPro-Regular.woff') format('woff');
 }
 @font-face {
 	font-family: 'Cera Pro';
 	font-weight: 500;
 	font-style: normal;
-	font-display: swap; /* Read next point */
-	unicode-range: U+000-5FF; /* Download only latin glyphs */
+	font-display: swap;
+	unicode-range: U+000-5FF;
 	src: url('/fonts/CeraPro-Medium.woff') format('woff');
 }
 
@@ -21,16 +21,16 @@
 	font-family: 'Cera Pro';
 	font-weight: bold;
 	font-style: normal;
-	font-display: swap; /* Read next point */
-	unicode-range: U+000-5FF; /* Download only latin glyphs */
+	font-display: swap;
+	unicode-range: U+000-5FF;
 	src: url('/fonts/CeraPro-Bold.woff') format('woff');
 }
 @font-face {
 	font-family: 'Cera Pro';
 	font-weight: 900;
 	font-style: normal;
-	font-display: swap; /* Read next point */
-	unicode-range: U+000-5FF; /* Download only latin glyphs */
+	font-display: swap;
+	unicode-range: U+000-5FF;
 	src: url('/fonts/CeraPro-Black.woff') format('woff');
 }
 
@@ -43,4 +43,34 @@ $fonts: (
 
 @function font($fontName) {
 	@return map-get($map: $fonts, $key: $fontName);
+}
+
+$sizes: (
+	body-sm: 14px,
+	body: 18px,
+	action: 14px,
+	hyperlink: 11px,
+	caption: 12px,
+	header7: 18px,
+	header6: 24px,
+	header5: 28px,
+	header4: 32px,
+	header3: 40px,
+	header2: 56px,
+	header1: 64px,
+);
+
+@function fontSize($size) {
+	@return map-get($map: $sizes, $key: $size);
+}
+
+$weights: (
+	regular: normal,
+	medium: 500,
+	bold: bold,
+	black: 900,
+);
+
+@function fontWeight($weight) {
+	@return map-get($map: $weights, $key: $weight);
 }

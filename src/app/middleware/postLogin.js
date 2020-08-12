@@ -1,7 +1,7 @@
 import { setToken } from '../../services/authService';
 import { loginFulfilled } from '../auth/login';
 
-const postLogin = store => next => action => {
+const postLogin = ({ dispatch, getState }) => next => action => {
 	if (action.type !== loginFulfilled.type) return next(action);
 
 	const { location } = action.payload;
